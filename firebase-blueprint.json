@@ -1,0 +1,163 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Represents a user profile and stats",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "username": { "type": "string" },
+        "avatar": { "type": "string" },
+        "banner": { "type": "string" },
+        "joinDate": { "type": "string", "format": "date-time" },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "animeWatched": { "type": "number" },
+            "animeSaved": { "type": "number" },
+            "hoursWatched": { "type": "number" }
+          }
+        }
+      },
+      "required": ["name", "username", "joinDate"]
+    },
+    "Bookmark": {
+      "title": "Bookmark",
+      "description": "User's bookmarked anime",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "image": { "type": "string" },
+        "slug": { "type": "string" },
+        "type": { "type": "string" },
+        "status": { "type": "string" },
+        "addedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "addedAt"]
+    },
+    "History": {
+      "title": "History",
+      "description": "User's watch history",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "image": { "type": "string" },
+        "slug": { "type": "string" },
+        "episode": { "type": "string" },
+        "server": { "type": "string" },
+        "watchedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "episode", "watchedAt"]
+    },
+    "Download": {
+      "title": "Download",
+      "description": "User's download history",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "episode": { "type": "string" },
+        "slug": { "type": "string" },
+        "downloadedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "slug", "episode", "downloadedAt"]
+    },
+    "Room": {
+      "title": "Room",
+      "description": "Represents a watch-together room",
+      "type": "object",
+      "properties": {
+        "hostId": { "type": "string" },
+        "hostName": { "type": "string" },
+        "animeSlug": { "type": "string" },
+        "animeTitle": { "type": "string" },
+        "animeImage": { "type": "string" },
+        "animeBanner": { "type": "string" },
+        "episodeIndex": { "type": "number" },
+        "password": { "type": "string" },
+        "playbackState": {
+           "type": "object",
+           "properties": {
+             "isPlaying": { "type": "boolean" },
+             "currentTime": { "type": "number" },
+             "lastUpdated": { "type": "string", "format": "date-time" }
+           }
+        },
+        "members": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "status": { "type": "string" }
+      },
+      "required": ["hostId", "animeSlug", "episodeIndex", "status"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "Represents a comment or reply on an anime episode",
+      "type": "object",
+      "properties": {
+        "animeSlug": { "type": "string" },
+        "episodeIndex": { "type": "number" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userUsername": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "content": { "type": "string" },
+        "parentId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["animeSlug", "episodeIndex", "userId", "content", "createdAt"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Represents a message in the global chat",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "username": { "type": "string" },
+        "avatar": { "type": "string" },
+        "level": { "type": "number" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "replyTo": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "text": { "type": "string" },
+            "username": { "type": "string" }
+          }
+        },
+        "mentions": { "type": "array" }
+      },
+      "required": ["userId", "name", "username", "text", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile data"
+    },
+    "/users/{userId}/bookmarks/{bookmarkId}": {
+      "schema": "Bookmark",
+      "description": "Individual bookmarks"
+    },
+    "/users/{userId}/history/{historyId}": {
+      "schema": "History",
+      "description": "Individual watch history entries"
+    },
+    "/users/{userId}/downloads/{downloadId}": {
+      "schema": "Download",
+      "description": "Individual download entries"
+    },
+    "/rooms/{roomId}": {
+      "schema": "Room",
+      "description": "Active watch-together rooms"
+    },
+    "/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Comments and replies for anime episodes"
+    },
+    "/global_chat/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Global chat messages"
+    }
+  }
+}

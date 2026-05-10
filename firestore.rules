@@ -1,0 +1,155 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Helpers ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_-]+$');
+    }
+
+    // --- Connection Test ---
+    match /test/connection {
+      allow read: if true;
+    }
+
+    // --- Admin Access ---
+    match /admins/{userId} {
+      allow read: if isSignedIn();
+      // Allow the owner email to bootstrap their own admin document, or existing admins to add others
+      allow write: if isAdmin() || (isSignedIn() && request.auth.token.email == 'gadingkencana04@gmail.com' && request.auth.uid == userId);
+    }
+
+    // --- App Stats ---
+    match /app_stats/{statId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // --- Users Collection ---
+    match /users/{userId} {
+      // Profile access: Allow anyone signed in to see profiles
+      allow read: if isSignedIn();
+      allow list: if isSignedIn();
+
+      // Write operations: Must be owner or admin
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUser(request.resource.data);
+      allow update: if (isOwner(userId) || isAdmin()) && isValidId(userId) && isValidUser(request.resource.data);
+      allow delete: if isAdmin();
+
+      function isValidUser(data) {
+        return data.get('name', '') is string && data.get('name', '').size() <= 200 &&
+               data.get('username', '') is string && data.get('username', '').size() <= 100;
+      }
+
+      // --- Subcollections ---
+      
+      // Bookmarks
+      match /bookmarks/{id} {
+        allow get: if isOwner(userId) && isValidId(id);
+        allow list: if isOwner(userId);
+        allow write: if isOwner(userId) && isValidId(id);
+      }
+
+      // History
+      match /history/{id} {
+        allow get: if isOwner(userId) && isValidId(id);
+        allow list: if isOwner(userId);
+        allow write: if isOwner(userId) && isValidId(id);
+      }
+
+      // Downloads
+      match /downloads/{id} {
+        allow get: if isOwner(userId) && isValidId(id);
+        allow list: if isOwner(userId);
+        allow write: if isOwner(userId) && isValidId(id);
+      }
+    }
+
+    // --- Rooms Collection ---
+    match /rooms/{roomId} {
+      // Allow anyone to read basic info of open rooms (Lobby visibility)
+      allow read: if (resource == null || resource.data.status == 'open') || (isSignedIn() && isValidId(roomId));
+      
+      allow create: if isSignedIn() && isValidId(roomId) && isValidRoom(request.resource.data);
+      allow update: if isSignedIn() && isValidId(roomId) && (
+        // Host can update anything valid
+        (request.auth.uid == (resource != null ? resource.data.hostId : '')) ||
+        // Anyone signed in can join (update members)
+        isJoinAction()
+      );
+      allow delete: if isSignedIn() && request.auth.uid == resource.data.hostId;
+
+      function isValidRoom(data) {
+        return data.hostId is string &&
+               data.hostId == request.auth.uid &&
+               data.animeTitle is string && data.animeTitle.size() <= 200 &&
+               data.status in ['open', 'closed'] &&
+               data.get('password', '') is string;
+      }
+
+      function isJoinAction() {
+        return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members']);
+      }
+      
+      // Messages subcollection
+      match /messages/{messageId} {
+        allow read: if isSignedIn();
+        allow create: if isSignedIn() && isValidMessage(request.resource.data);
+      }
+
+      function isValidMessage(data) {
+        return data.text is string && data.text.size() <= 1000 &&
+               data.senderId == request.auth.uid;
+      }
+    }
+
+    // --- Comments Collection ---
+    match /comments/{commentId} {
+      allow get, list: if true;
+      allow create: if isSignedIn() && isValidId(commentId) && isValidComment(request.resource.data);
+      allow delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+
+      function isValidComment(data) {
+        return data.userId == request.auth.uid &&
+               data.content is string && data.content.size() <= 2000 &&
+               data.animeSlug is string &&
+               data.episodeIndex is int &&
+               (data.get('parentId', null) == null || (data.parentId is string && data.parentId.size() <= 128));
+      }
+    }
+
+    // --- Global Chat Collection ---
+    match /global_chat/{messageId} {
+      allow list: if isSignedIn();
+      allow get: if isSignedIn();
+      allow create: if isSignedIn() && isValidId(messageId) && isValidChatMessage(request.resource.data);
+      allow delete: if isSignedIn() && resource.data.userId == request.auth.uid;
+
+      function isValidChatMessage(data) {
+        return data.userId == request.auth.uid &&
+               data.text is string && data.text.size() <= 5000 &&
+               data.name is string && data.username is string &&
+               data.avatar is string && data.level is int &&
+               (data.get('replyTo', null) == null || (data.replyTo.id is string && data.replyTo.username is string)) &&
+               (data.get('mentions', null) == null || data.mentions is list);
+      }
+    }
+  }
+}
