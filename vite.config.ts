@@ -22,7 +22,63 @@ export default defineConfig(({mode}) => {
           changeOrigin: true,
           secure: false,
           rewrite: (path) => path.replace(/^\/api\/proxy/, '')
-        }
+        },
+        '/api/sanka-proxy': {
+          target: 'https://www.sankavollerei.com',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (p) => p.replace(/^\/api\/sanka-proxy/, '/anime/animasu'),
+          headers: {
+            Referer: 'https://www.sankavollerei.com/',
+            Origin: 'https://www.sankavollerei.com',
+          },
+        },
+        '/api/comic-proxy': {
+          target: 'https://www.sankavollerei.com',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (p) => p.replace(/^\/api\/comic-proxy/, '/comic'),
+          headers: {
+            Referer: 'https://www.sankavollerei.com/',
+            Origin: 'https://www.sankavollerei.com',
+          },
+        },
+        '/api/dev-proxy': {
+          target: 'https://dev.nefusoft.cloud',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (p) => p.replace(/^\/api\/dev-proxy/, ''),
+          headers: {
+            Referer: 'https://dev.nefusoft.cloud/',
+            Origin: 'https://dev.nefusoft.cloud',
+          },
+        },
+        '/api/backup-proxy': {
+          target: 'https://api.hsoft.eu.cc',
+          changeOrigin: true,
+          secure: false,
+          rewrite: (p) => p.replace(/^\/api\/backup-proxy/, '/api'),
+          headers: {
+            Referer: 'https://hsoft.eu.cc/',
+            Origin: 'https://hsoft.eu.cc',
+          },
+        },
+        '/api/image-proxy': {
+          target: 'https://www.sankavollerei.com',
+          changeOrigin: true,
+          secure: false,
+          bypass: (req, res) => {
+            try {
+              const u = new URL(req.url || '', 'http://localhost');
+              const target = u.searchParams.get('url');
+              if (target && res) {
+                res.writeHead(302, { Location: decodeURIComponent(target) });
+                res.end();
+                return false;
+              }
+            } catch {}
+          },
+        },
       },
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
