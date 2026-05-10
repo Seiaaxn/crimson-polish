@@ -255,7 +255,7 @@ const SocialBtn = ({ icon, href }: { icon: any, href: string }) => (
 const FeedbackInfo = ({ icon, text }: { icon: any, text: string }) => (
   <div className="flex items-center gap-4">
      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5">
-        {React.cloneElement(icon as React.ReactElement, { size: 18 })}
+        {React.cloneElement(icon as React.ReactElement, { size: 18 } as any)}
      </div>
      <span className="text-xs font-black text-white/60 tracking-wider uppercase">{text}</span>
   </div>

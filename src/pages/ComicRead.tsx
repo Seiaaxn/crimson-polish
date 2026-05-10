@@ -14,7 +14,7 @@ const ComicRead = () => {
   // Auto-scroll state
   const [isAutoScrolling, setIsAutoScrolling] = useState(false);
   const [scrollSpeed, setScrollSpeed] = useState(1); // 1 = normal, 1.5, 2.0, 2.5
-  const scrollRef = useRef<number>();
+  const scrollRef = useRef<number | undefined>(undefined);
   
   const [showControls, setShowControls] = useState(true);
 
@@ -70,7 +70,7 @@ const ComicRead = () => {
 
   // Hide controls on manual scroll
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
     const handleScroll = () => {
       if (!isAutoScrolling) {
         setShowControls(true);

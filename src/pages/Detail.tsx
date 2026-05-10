@@ -440,7 +440,7 @@ const Detail = () => {
 const InfoItem = ({ icon, label, value }: { icon: any, label: string, value: string }) => (
   <div className="flex items-center gap-4 px-2">
      <div className="w-10 h-10 shrink-0 flex items-center justify-center">
-        {React.cloneElement(icon as React.ReactElement, { size: 20 })}
+        {React.cloneElement(icon as React.ReactElement, { size: 20 } as any)}
      </div>
      <div className="min-w-0">
         <p className="text-[9px] font-black text-white/20 uppercase tracking-[0.2em] mb-0.5">{label}</p>
