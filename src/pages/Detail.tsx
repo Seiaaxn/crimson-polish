@@ -161,7 +161,7 @@ const Detail = () => {
         <div className="flex items-center gap-3">
           <button onClick={() => navigate('/search')} className="w-10 h-10 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-[#EF4444] transition-colors"><Search size={20} /></button>
           <button onClick={toggleBookmark} className={`w-10 h-10 backdrop-blur-md rounded-full flex items-center justify-center transition-all ${isBookmarked ? 'bg-[#EF4444] text-black scale-110 shadow-[0_0_20px_rgba(246,207,128,0.4)]' : 'bg-white/5 text-white hover:text-[#EF4444]'}`}>
-             {isBookmarked ? <BookmarkCheck size={20} weight="fill" /> : <Bookmark size={20} />}
+             {isBookmarked ? <BookmarkCheck size={20} /> : <Bookmark size={20} />}
           </button>
         </div>
       </div>
