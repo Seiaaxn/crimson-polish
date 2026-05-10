@@ -68,6 +68,8 @@ export interface UserProfile {
     image: string;
     addedAt: any;
   }[];
+  uid?: string;
+  isDevEntry?: boolean;
 }
 
 export interface UserStats {
