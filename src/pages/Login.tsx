@@ -266,7 +266,7 @@ const Login = () => {
                     damping: 20,
                     delay: 0.2 
                   }}
-                  className="w-48 h-48 md:w-56 md:h-56 drop-shadow-[0_0_60px_rgba(246,207,128,0.2)]"
+                  className="w-24 h-24 md:w-28 md:h-28 drop-shadow-[0_0_40px_rgba(239,68,68,0.35)]"
                 >
                   <img 
                     src="https://repgyetdcodkynrbxocg.supabase.co/storage/v1/object/public/images/telegram-1778401091005-146ffc5f.jpg" 
@@ -275,7 +275,7 @@ const Login = () => {
                   />
                 </motion.div>
                 
-                <h1 className="text-5xl md:text-6xl font-black italic tracking-tighter mt-[-20px] select-none flex">
+                <h1 className="text-3xl md:text-4xl font-black italic tracking-tighter mt-3 select-none flex">
                   <span className="text-[#EF4444]">Chisa</span>
                   <span className="text-white">Stream</span>
                 </h1>
@@ -348,7 +348,7 @@ const Login = () => {
                 <p className="text-[#EF4444] text-[9px] font-black uppercase tracking-[0.3em] opacity-40">Please authenticate to continue</p>
               </motion.div>
 
-              <div className="w-32 h-32 mb-10 drop-shadow-[0_0_50px_rgba(246,207,128,0.3)]">
+              <div className="w-20 h-20 mb-8 drop-shadow-[0_0_40px_rgba(239,68,68,0.35)]">
                 <img src="https://repgyetdcodkynrbxocg.supabase.co/storage/v1/object/public/images/telegram-1778401091005-146ffc5f.jpg" className="w-full h-full object-contain transition-transform hover:scale-110 contrast-125" alt="Logo" />
               </div>
 
