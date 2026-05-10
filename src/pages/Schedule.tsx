@@ -80,19 +80,19 @@ const ScheduleCard: React.FC<ScheduleCardProps> = ({ a, onClick, index }) => {
     >
       {/* Time Label / Status */}
       <div className="w-12 md:w-16 shrink-0 flex justify-end pt-4">
-        <span className="text-[#F6CF80] font-black text-[10px] md:text-xs tracking-tighter text-right leading-tight">{timeDisplay}</span>
+        <span className="text-[#EF4444] font-black text-[10px] md:text-xs tracking-tighter text-right leading-tight">{timeDisplay}</span>
       </div>
 
       {/* Timeline Indicator */}
       <div className="relative flex flex-col items-center shrink-0 w-px self-stretch bg-white/5">
-        <div className="absolute top-5 w-2.5 h-2.5 rounded-full bg-[#16161a] border-2 border-white/20 z-10 -left-[5px] group-hover:border-[#F6CF80] transition-colors"></div>
+        <div className="absolute top-5 w-2.5 h-2.5 rounded-full bg-[#16161a] border-2 border-white/20 z-10 -left-[5px] group-hover:border-[#EF4444] transition-colors"></div>
       </div>
 
       {/* Card Content */}
       <div className="flex-1 pb-8 min-w-0 group">
         <div 
           onClick={onClick}
-          className="bg-[#16161a] border border-white/5 rounded-2xl p-3 md:p-5 flex gap-4 md:gap-6 cursor-pointer hover:border-[#F6CF80]/40 transition-all active:scale-[0.98] shadow-2xl overflow-hidden relative w-full"
+          className="bg-[#16161a] border border-white/5 rounded-2xl p-3 md:p-5 flex gap-4 md:gap-6 cursor-pointer hover:border-[#EF4444]/40 transition-all active:scale-[0.98] shadow-2xl overflow-hidden relative w-full"
         >
           {/* Poster */}
           <div className="w-20 md:w-28 aspect-[3/4.2] overflow-hidden rounded-xl shadow-xl shrink-0">
@@ -108,13 +108,13 @@ const ScheduleCard: React.FC<ScheduleCardProps> = ({ a, onClick, index }) => {
           {/* Details */}
           <div className="flex flex-col flex-1 min-w-0 py-1">
             <div className="mb-3 flex gap-2 items-center">
-              <div className="bg-[#F6CF80] text-black text-[9px] md:text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider shadow-[0_4px_12px_rgba(246,207,128,0.2)]">
+              <div className="bg-[#EF4444] text-black text-[9px] md:text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider shadow-[0_4px_12px_rgba(246,207,128,0.2)]">
                 {a.isSanka ? 'Server 2' : 'Utama'}: {lastEp}
               </div>
               {a.type && <span className="text-[8px] font-black bg-white/5 text-white/40 px-2 py-0.5 rounded uppercase">{a.type}</span>}
             </div>
 
-            <h3 className="font-black text-sm md:text-xl text-white mb-4 line-clamp-2 leading-tight group-hover:text-[#F6CF80] transition-colors break-words">
+            <h3 className="font-black text-sm md:text-xl text-white mb-4 line-clamp-2 leading-tight group-hover:text-[#EF4444] transition-colors break-words">
               {a.title}
             </h3>
 
@@ -129,7 +129,7 @@ const ScheduleCard: React.FC<ScheduleCardProps> = ({ a, onClick, index }) => {
               </div>
               <div className="flex items-start text-[10px] md:text-xs min-w-0 w-full">
                 <span className="w-16 md:w-24 shrink-0 font-black text-white/30 uppercase tracking-[0.1em]">Info</span>
-                <span className="flex-1 text-[#F6CF80] font-black italic tracking-widest text-[11px] md:text-[13px] uppercase">{a.isSanka ? 'Update Baru' : 'New !!'}</span>
+                <span className="flex-1 text-[#EF4444] font-black italic tracking-widest text-[11px] md:text-[13px] uppercase">{a.isSanka ? 'Update Baru' : 'New !!'}</span>
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@ const Schedule = () => {
   const getAnimeList = () => schedule[selectedDay] || [];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#F6CF80] selection:text-black pb-32">
+    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#EF4444] selection:text-black pb-32">
       {isLoading && <Loading />}
       <style>{`
         @keyframes shimmer { 0% { transform: translate3d(-100%, 0, 0) skewX(-20deg); } 100% { transform: translate3d(200%, 0, 0) skewX(-20deg); } }
@@ -221,11 +221,11 @@ const Schedule = () => {
                 <span className={`text-base md:text-xl font-black transition-all z-10 ${selectedDay === w.key ? 'text-black scale-110' : 'text-white/80'}`}>{w.date}</span>
                 
                 {selectedDay === w.key && (
-                  <div id={`selected-day-${w.key}`} className="absolute inset-x-1 inset-y-1 bg-[#F6CF80] rounded-[20px] shadow-[0_8px_20px_rgba(246,207,128,0.4)] transition-all duration-500 ease-out z-0"></div>
+                  <div id={`selected-day-${w.key}`} className="absolute inset-x-1 inset-y-1 bg-[#EF4444] rounded-[20px] shadow-[0_8px_20px_rgba(246,207,128,0.4)] transition-all duration-500 ease-out z-0"></div>
                 )}
                 
                 {w.isToday && selectedDay !== w.key && (
-                   <div className="absolute bottom-2 w-1.5 h-1.5 bg-[#F6CF80] rounded-full shadow-[0_0_8px_rgba(246,207,128,0.8)]"></div>
+                   <div className="absolute bottom-2 w-1.5 h-1.5 bg-[#EF4444] rounded-full shadow-[0_0_8px_rgba(246,207,128,0.8)]"></div>
                 )}
               </button>
             ))}

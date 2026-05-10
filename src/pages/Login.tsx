@@ -82,7 +82,7 @@ const Login = () => {
       text,
       background: '#16161a',
       color: '#fff',
-      confirmButtonColor: '#F6CF80',
+      confirmButtonColor: '#EF4444',
       customClass: {
         popup: 'rounded-[32px] border border-white/10 shadow-2xl backdrop-blur-xl',
         title: 'font-black uppercase tracking-tight',
@@ -210,7 +210,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center font-sans selection:bg-[#F6CF80] selection:text-black overflow-hidden">
+    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center font-sans selection:bg-[#EF4444] selection:text-black overflow-hidden">
       {/* Background Image - Fixed and Immersive */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -229,7 +229,7 @@ const Login = () => {
           onClick={() => navigate('/')} 
           className="flex items-center gap-3 bg-black/40 backdrop-blur-xl border border-white/10 px-6 py-3 rounded-2xl hover:bg-white/10 transition-all group active:scale-95"
         >
-          <Home size={20} className="text-[#F6CF80]" />
+          <Home size={20} className="text-[#EF4444]" />
           <span className="text-white text-xs font-black uppercase tracking-[0.2em]">Beranda</span>
         </button>
       </div>
@@ -251,7 +251,7 @@ const Login = () => {
                 transition={{ delay: 0.1 }}
                 className="mb-4"
               >
-                <p className="text-[#F6CF80] text-[11px] font-black uppercase tracking-[0.5em] mb-2">HI THERE,</p>
+                <p className="text-[#EF4444] text-[11px] font-black uppercase tracking-[0.5em] mb-2">HI THERE,</p>
                 <h2 className="text-white text-4xl font-black italic tracking-tighter mb-1 mt-[-8px] select-none">Welcome Back</h2>
               </motion.div>
 
@@ -276,7 +276,7 @@ const Login = () => {
                 </motion.div>
                 
                 <h1 className="text-5xl md:text-6xl font-black italic tracking-tighter mt-[-20px] select-none flex">
-                  <span className="text-[#F6CF80]">Chisa</span>
+                  <span className="text-[#EF4444]">Chisa</span>
                   <span className="text-white">Stream</span>
                 </h1>
 
@@ -324,7 +324,7 @@ const Login = () => {
 
                 <div className="pt-8">
                   <p className="text-white/40 text-[13px] font-medium">
-                    Belum punya akun? <button onClick={() => setView('register')} className="text-[#F6CF80] font-black hover:underline transition-all uppercase tracking-wider ml-1">Daftar Sekarang <ChevronRight className="inline w-3 h-3 ml-1" /></button>
+                    Belum punya akun? <button onClick={() => setView('register')} className="text-[#EF4444] font-black hover:underline transition-all uppercase tracking-wider ml-1">Daftar Sekarang <ChevronRight className="inline w-3 h-3 ml-1" /></button>
                   </p>
                 </div>
               </div>
@@ -345,7 +345,7 @@ const Login = () => {
                 className="mb-8 text-center"
               >
                 <h2 className="text-white text-3xl font-black uppercase tracking-tight mb-1">Hi User!</h2>
-                <p className="text-[#F6CF80] text-[9px] font-black uppercase tracking-[0.3em] opacity-40">Please authenticate to continue</p>
+                <p className="text-[#EF4444] text-[9px] font-black uppercase tracking-[0.3em] opacity-40">Please authenticate to continue</p>
               </motion.div>
 
               <div className="w-32 h-32 mb-10 drop-shadow-[0_0_50px_rgba(246,207,128,0.3)]">
@@ -355,23 +355,23 @@ const Login = () => {
               <div className="w-full space-y-4">
                 <div className="space-y-3">
                   <div className="relative group">
-                    <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#F6CF80] transition-colors"><Mail size={18} /></div>
+                    <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#EF4444] transition-colors"><Mail size={18} /></div>
                     <input 
                       type="email" 
                       placeholder="EMAIL ADDRESS" 
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="w-full h-[64px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#F6CF80]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
+                      className="w-full h-[64px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#EF4444]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
                     />
                   </div>
                   <div className="relative group">
-                    <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#F6CF80] transition-colors"><Lock size={18} /></div>
+                    <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#EF4444] transition-colors"><Lock size={18} /></div>
                     <input 
                       type={showPassword ? 'text' : 'password'} 
                       placeholder="PASSWORD" 
                       value={formData.password}
                       onChange={(e) => setFormData({...formData, password: e.target.value})}
-                      className="w-full h-[64px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-14 text-white outline-none focus:border-[#F6CF80]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
+                      className="w-full h-[64px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-14 text-white outline-none focus:border-[#EF4444]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
                     />
                     <button 
                       onClick={() => setShowPassword(!showPassword)}
@@ -387,7 +387,7 @@ const Login = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={handleEmailAuth}
                   disabled={isLoading}
-                  className="w-full h-[64px] bg-[#F6CF80] text-black font-black uppercase tracking-[0.2em] text-xs rounded-2xl shadow-[0_20px_40px_rgba(246,207,128,0.3)] active:scale-95 transition-all mt-4"
+                  className="w-full h-[64px] bg-[#EF4444] text-black font-black uppercase tracking-[0.2em] text-xs rounded-2xl shadow-[0_20px_40px_rgba(246,207,128,0.3)] active:scale-95 transition-all mt-4"
                 >
                   {isLoading ? 'Processing...' : 'Authentication'}
                 </motion.button>
@@ -408,30 +408,30 @@ const Login = () => {
               className="flex flex-col items-center w-full"
             >
               <div className="flex flex-col items-center mb-8 relative">
-                <div onClick={() => fileInputRef.current?.click()} className="w-32 h-32 rounded-[32px] overflow-hidden bg-[#0c0c0e] border-2 border-white/5 hover:border-[#F6CF80]/50 transition-all cursor-pointer group shadow-2xl relative">
+                <div onClick={() => fileInputRef.current?.click()} className="w-32 h-32 rounded-[32px] overflow-hidden bg-[#0c0c0e] border-2 border-white/5 hover:border-[#EF4444]/50 transition-all cursor-pointer group shadow-2xl relative">
                   <img src={formData.avatar} className="w-full h-full object-cover group-hover:scale-110 transition-all" alt="Avatar" />
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    {uploadingAvatar ? <Loader2 className="text-[#F6CF80] animate-spin" /> : <Camera className="text-white" />}
+                    {uploadingAvatar ? <Loader2 className="text-[#EF4444] animate-spin" /> : <Camera className="text-white" />}
                   </div>
                 </div>
                 <input type="file" ref={fileInputRef} className="hidden" accept="image/*" onChange={handleAvatarUpload} />
                 <h2 className="text-white text-2xl font-black uppercase tracking-tight mt-6 mb-1">Create Account</h2>
-                <p className="text-[#F6CF80] text-[9px] font-black uppercase tracking-[0.3em] opacity-40">Setup your premium identity</p>
+                <p className="text-[#EF4444] text-[9px] font-black uppercase tracking-[0.3em] opacity-40">Setup your premium identity</p>
               </div>
 
               <div className="w-full space-y-3">
                 <div className="relative group">
-                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#F6CF80] transition-colors"><UserIcon size={18} /></div>
+                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#EF4444] transition-colors"><UserIcon size={18} /></div>
                   <input 
                     type="text" 
                     placeholder="FULL NAME" 
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#F6CF80]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
+                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#EF4444]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
                   />
                 </div>
                 <div className="relative group">
-                   <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#F6CF80] transition-colors"><Zap size={18} /></div>
+                   <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#EF4444] transition-colors"><Zap size={18} /></div>
                    <input 
                      type="text" 
                      placeholder="USERNAME (EX: @USER)" 
@@ -441,27 +441,27 @@ const Login = () => {
                        if (!val.startsWith('@')) val = '@' + val;
                        setFormData({...formData, username: val});
                      }}
-                     className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#F6CF80]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
+                     className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#EF4444]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
                    />
                 </div>
                 <div className="relative group">
-                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#F6CF80] transition-colors"><Mail size={18} /></div>
+                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#EF4444] transition-colors"><Mail size={18} /></div>
                   <input 
                     type="email" 
                     placeholder="EMAIL ADDRESS" 
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#F6CF80]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
+                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-6 text-white outline-none focus:border-[#EF4444]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
                   />
                 </div>
                 <div className="relative group">
-                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#F6CF80] transition-colors"><Lock size={18} /></div>
+                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#EF4444] transition-colors"><Lock size={18} /></div>
                   <input 
                     type={showPassword ? 'text' : 'password'} 
                     placeholder="PASSWORD" 
                     value={formData.password}
                     onChange={(e) => setFormData({...formData, password: e.target.value})}
-                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-14 text-white outline-none focus:border-[#F6CF80]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
+                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-14 text-white outline-none focus:border-[#EF4444]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
                   />
                   <button 
                     onClick={() => setShowPassword(!showPassword)}
@@ -471,13 +471,13 @@ const Login = () => {
                   </button>
                 </div>
                 <div className="relative group">
-                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#F6CF80] transition-colors"><ShieldCheck size={18} /></div>
+                  <div className="absolute left-5 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-[#EF4444] transition-colors"><ShieldCheck size={18} /></div>
                   <input 
                     type={showConfirmPassword ? 'text' : 'password'} 
                     placeholder="CONFIRM PASSWORD" 
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
-                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-14 text-white outline-none focus:border-[#F6CF80]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
+                    className="w-full h-[60px] bg-[#0c0c0e] border-2 border-white/5 rounded-2xl pl-14 pr-14 text-white outline-none focus:border-[#EF4444]/40 transition-all font-black text-[11px] uppercase tracking-widest shadow-xl"
                   />
                   <button 
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
@@ -496,7 +496,7 @@ const Login = () => {
                       </span>
                     </div>
                     <motion.div 
-                      className={`absolute top-0 left-0 h-full bg-[#F6CF80]/20 flex items-center justify-end pr-4 transition-colors ${isVerified ? 'bg-green-500/20' : ''}`}
+                      className={`absolute top-0 left-0 h-full bg-[#EF4444]/20 flex items-center justify-end pr-4 transition-colors ${isVerified ? 'bg-green-500/20' : ''}`}
                       style={{ width: `${Math.max(sliderValue, 60)}px` }}
                     >
                        {isVerified && <Check size={20} className="text-green-500 animate-in zoom-in" />}
@@ -520,7 +520,7 @@ const Login = () => {
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                     />
                     <motion.div 
-                      className={`absolute top-1 bottom-1 w-12 rounded-xl flex items-center justify-center shadow-2xl transition-colors ${isVerified ? 'bg-green-500' : 'bg-[#F6CF80]'}`}
+                      className={`absolute top-1 bottom-1 w-12 rounded-xl flex items-center justify-center shadow-2xl transition-colors ${isVerified ? 'bg-green-500' : 'bg-[#EF4444]'}`}
                       style={{ left: `calc(${sliderValue}% * 0.85 + 4px)` }}
                     >
                       <Zap size={18} className={isVerified ? 'text-white' : 'text-black'} />
@@ -533,14 +533,14 @@ const Login = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={handleEmailAuth}
                   disabled={isLoading}
-                  className="w-full h-[60px] bg-[#F6CF80] text-black font-black uppercase tracking-[0.2em] text-xs rounded-2xl shadow-[0_20px_40_rgba(246,207,128,0.3)] active:scale-95 transition-all mt-4"
+                  className="w-full h-[60px] bg-[#EF4444] text-black font-black uppercase tracking-[0.2em] text-xs rounded-2xl shadow-[0_20px_40_rgba(246,207,128,0.3)] active:scale-95 transition-all mt-4"
                 >
                   {isLoading ? <Loader2 className="animate-spin" /> : 'Register Now'}
                 </motion.button>
 
                 <div className="pt-6 text-center">
                   <p className="text-white/40 text-[13px] font-medium">
-                    Sudah punya akun? <button onClick={() => setView('login')} className="text-[#F6CF80] font-black uppercase tracking-wider ml-1 hover:underline">Masuk</button>
+                    Sudah punya akun? <button onClick={() => setView('login')} className="text-[#EF4444] font-black uppercase tracking-wider ml-1 hover:underline">Masuk</button>
                   </p>
                 </div>
               </div>

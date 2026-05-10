@@ -12,9 +12,9 @@ const Loading = () => {
         />
       </div>
       <div className="mt-[-20px] flex flex-col items-center gap-2">
-        <p className="text-[#F6CF80] text-sm md:text-base font-black uppercase tracking-[0.4em] animate-pulse">Loading</p>
-        <div className="w-12 h-[2px] bg-[#F6CF80]/20 rounded-full overflow-hidden">
-          <div className="w-full h-full bg-[#F6CF80] origin-left animate-[loading-bar_1.5s_infinite_ease-in-out]"></div>
+        <p className="text-[#EF4444] text-sm md:text-base font-black uppercase tracking-[0.4em] animate-pulse">Loading</p>
+        <div className="w-12 h-[2px] bg-[#EF4444]/20 rounded-full overflow-hidden">
+          <div className="w-full h-full bg-[#EF4444] origin-left animate-[loading-bar_1.5s_infinite_ease-in-out]"></div>
         </div>
       </div>
 

@@ -126,7 +126,7 @@ const Detail = () => {
   if (!anime) return null;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#F6CF80] selection:text-black text-white pb-32">
+    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#EF4444] selection:text-black text-white pb-32">
       {/* Floating EXP Indicators */}
       <div className="fixed top-24 right-10 z-[200] pointer-events-none space-y-2">
         <AnimatePresence>
@@ -136,7 +136,7 @@ const Detail = () => {
               initial={{ opacity: 0, x: 50, scale: 0.5 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, y: -50, scale: 1.2 }}
-              className="bg-[#F6CF80] text-black px-4 py-2 rounded-full font-black text-xs flex items-center gap-2 shadow-2xl"
+              className="bg-[#EF4444] text-black px-4 py-2 rounded-full font-black text-xs flex items-center gap-2 shadow-2xl"
             >
               <Zap size={14} fill="currentColor" />
               +{f.amount} EXP
@@ -148,7 +148,7 @@ const Detail = () => {
       {/* Top Header - Improved Positioning */}
       <div className="absolute top-0 left-0 right-0 z-[100] px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center text-white hover:text-[#F6CF80] transition-colors">
+          <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center text-white hover:text-[#EF4444] transition-colors">
             <ArrowLeft size={24} />
           </button>
           <div className="flex items-center gap-2">
@@ -159,8 +159,8 @@ const Detail = () => {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button onClick={() => navigate('/search')} className="w-10 h-10 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-[#F6CF80] transition-colors"><Search size={20} /></button>
-          <button onClick={toggleBookmark} className={`w-10 h-10 backdrop-blur-md rounded-full flex items-center justify-center transition-all ${isBookmarked ? 'bg-[#F6CF80] text-black scale-110 shadow-[0_0_20px_rgba(246,207,128,0.4)]' : 'bg-white/5 text-white hover:text-[#F6CF80]'}`}>
+          <button onClick={() => navigate('/search')} className="w-10 h-10 bg-white/5 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-[#EF4444] transition-colors"><Search size={20} /></button>
+          <button onClick={toggleBookmark} className={`w-10 h-10 backdrop-blur-md rounded-full flex items-center justify-center transition-all ${isBookmarked ? 'bg-[#EF4444] text-black scale-110 shadow-[0_0_20px_rgba(246,207,128,0.4)]' : 'bg-white/5 text-white hover:text-[#EF4444]'}`}>
              {isBookmarked ? <BookmarkCheck size={20} weight="fill" /> : <Bookmark size={20} />}
           </button>
         </div>
@@ -215,7 +215,7 @@ const Detail = () => {
 
           <div className="flex-1 min-w-0 pb-2">
              <div className="flex flex-wrap items-center gap-2 mb-3">
-                <span className="bg-[#F6CF80] text-black text-[9px] font-black px-3 py-1 rounded-md uppercase tracking-widest">{anime.type || 'SERIES'}</span>
+                <span className="bg-[#EF4444] text-black text-[9px] font-black px-3 py-1 rounded-md uppercase tracking-widest">{anime.type || 'SERIES'}</span>
                 <span className="bg-white/10 text-white/80 text-[9px] font-black px-3 py-1 rounded-md uppercase tracking-widest border border-white/5">{anime.status}</span>
              </div>
              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-[1.1] mb-2 drop-shadow-2xl">{anime.title}</h1>
@@ -224,7 +224,7 @@ const Detail = () => {
                 <p className="text-white/40 font-bold text-xs md:text-sm tracking-tight">{anime.alternative_title || 'ワンピース'}</p>
                 <button 
                   onClick={toggleBookmark}
-                  className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${isBookmarked ? 'bg-[#F6CF80] text-black' : 'bg-white/5 text-white hover:bg-white/10'}`}
+                  className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${isBookmarked ? 'bg-[#EF4444] text-black' : 'bg-white/5 text-white hover:bg-white/10'}`}
                 >
                   {isBookmarked ? <BookmarkCheck size={14} /> : <Bookmark size={14} />}
                   {isBookmarked ? 'Tersimpan' : 'Simpan'}
@@ -232,7 +232,7 @@ const Detail = () => {
              </div>
              
              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] md:text-xs font-bold text-white/50">
-                <div className="flex items-center gap-1.5"><Star size={14} className="text-[#F6CF80] fill-[#F6CF80]" /> <span>{anime.favorites || '8.82'}</span></div>
+                <div className="flex items-center gap-1.5"><Star size={14} className="text-[#EF4444] fill-[#EF4444]" /> <span>{anime.favorites || '8.82'}</span></div>
                 <span className="text-white/20">|</span>
                 <div>{anime.year || '1999'}</div>
                 <span className="text-white/20">|</span>
@@ -249,7 +249,7 @@ const Detail = () => {
                    <button 
                     key={i} 
                     onClick={() => navigate(`/genre/${gslug}`)}
-                    className="bg-white/5 border border-white/10 px-5 py-2 rounded-2xl text-[10px] font-black uppercase text-white/50 hover:text-[#F6CF80] hover:bg-white/10 transition-all cursor-pointer"
+                    className="bg-white/5 border border-white/10 px-5 py-2 rounded-2xl text-[10px] font-black uppercase text-white/50 hover:text-[#EF4444] hover:bg-white/10 transition-all cursor-pointer"
                    >
                     {gname}
                    </button>
@@ -276,7 +276,7 @@ const Detail = () => {
                <button 
                 key={i} 
                 onClick={() => navigate(`/genre/${gslug}`)}
-                className="bg-white/5 border border-white/5 px-4 py-2 rounded-xl text-[9px] font-black uppercase text-white/40 hover:text-[#F6CF80] transition-colors"
+                className="bg-white/5 border border-white/5 px-4 py-2 rounded-xl text-[9px] font-black uppercase text-white/40 hover:text-[#EF4444] transition-colors"
                >
                 {gname}
                </button>
@@ -300,40 +300,40 @@ const Detail = () => {
 
         {/* Dynamic info Grid - Exactly like image */}
         <section className="bg-white/[0.03] border border-white/5 p-8 md:p-10 rounded-[32px] grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-2">
-           <InfoItem icon={<Info className="text-[#F6CF80]" />} label="STUDIO" value={anime.studio || 'Toei Animation'} />
-           <InfoItem icon={<LayoutGrid className="text-[#F6CF80]" />} label="EPISODE" value={(anime.episode_list?.length || '1102') + '+'} />
-           <InfoItem icon={<Calendar className="text-[#F6CF80]" />} label="TAHUN" value={(anime.year || '1999') + ' - Sekarang'} />
-           <InfoItem icon={<Clock className="text-[#F6CF80]" />} label="DURASI" value={(anime.duration || '24 min') + ' / eps'} />
-           <InfoItem icon={<Play className="text-[#F6CF80]" />} label="STATUS" value={anime.status || 'Ongoing'} />
-           <InfoItem icon={<Star className="text-[#F6CF80]" />} label="SKOR" value={(anime.favorites || '8.82') + ' (33161)'} />
-           <InfoItem icon={<Shield className="text-[#F6CF80]" />} label="RATING" value={anime.rating || 'PG-13'} />
-           <InfoItem icon={<Languages className="text-[#F6CF80]" />} label="BAHASA" value="Jepang (Sub Indo)" />
+           <InfoItem icon={<Info className="text-[#EF4444]" />} label="STUDIO" value={anime.studio || 'Toei Animation'} />
+           <InfoItem icon={<LayoutGrid className="text-[#EF4444]" />} label="EPISODE" value={(anime.episode_list?.length || '1102') + '+'} />
+           <InfoItem icon={<Calendar className="text-[#EF4444]" />} label="TAHUN" value={(anime.year || '1999') + ' - Sekarang'} />
+           <InfoItem icon={<Clock className="text-[#EF4444]" />} label="DURASI" value={(anime.duration || '24 min') + ' / eps'} />
+           <InfoItem icon={<Play className="text-[#EF4444]" />} label="STATUS" value={anime.status || 'Ongoing'} />
+           <InfoItem icon={<Star className="text-[#EF4444]" />} label="SKOR" value={(anime.favorites || '8.82') + ' (33161)'} />
+           <InfoItem icon={<Shield className="text-[#EF4444]" />} label="RATING" value={anime.rating || 'PG-13'} />
+           <InfoItem icon={<Languages className="text-[#EF4444]" />} label="BAHASA" value="Jepang (Sub Indo)" />
         </section>
 
         {/* Episodes Terbaru (List Mode) */}
         <section className="space-y-6">
            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex items-center gap-3">
-                 <div className="w-1.5 h-6 bg-[#F6CF80] rounded-full"></div>
+                 <div className="w-1.5 h-6 bg-[#EF4444] rounded-full"></div>
                  <h2 className="text-sm font-black uppercase tracking-[0.2em] text-white">Episode</h2>
               </div>
               
               <div className="flex items-center gap-4">
                  {showFullEpisodes && (
                    <div className="relative group">
-                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#F6CF80] transition-colors" size={16} />
+                      <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#EF4444] transition-colors" size={16} />
                       <input 
                         type="text" 
                         placeholder="Cari eps..."
                         value={searchQuery}
                         onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(0); }}
-                        className="bg-white/5 border border-white/10 rounded-2xl py-2.5 pl-10 pr-4 text-xs font-bold text-white focus:outline-none focus:border-[#F6CF80]/50 focus:bg-white/10 transition-all w-full md:w-48 placeholder:text-white/10"
+                        className="bg-white/5 border border-white/10 rounded-2xl py-2.5 pl-10 pr-4 text-xs font-bold text-white focus:outline-none focus:border-[#EF4444]/50 focus:bg-white/10 transition-all w-full md:w-48 placeholder:text-white/10"
                       />
                    </div>
                  )}
                  <button 
                    onClick={() => { setShowFullEpisodes(!showFullEpisodes); setSearchQuery(''); }}
-                   className="shrink-0 flex items-center gap-1.5 text-xs font-black text-[#F6CF80] uppercase tracking-wider hover:opacity-70"
+                   className="shrink-0 flex items-center gap-1.5 text-xs font-black text-[#EF4444] uppercase tracking-wider hover:opacity-70"
                  >
                    {showFullEpisodes ? 'Ciutkan' : 'Lihat Semua'} <ChevronRight size={14} className={showFullEpisodes ? 'rotate-90' : ''} />
                  </button>
@@ -358,7 +358,7 @@ const Detail = () => {
                       className="bg-white/[0.03] hover:bg-white/[0.08] border-b border-white/5 p-4 md:p-6 flex items-center justify-between group cursor-pointer transition-colors"
                     >
                        <div className="flex items-center gap-5">
-                          <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${idx === 0 && !showFullEpisodes ? 'bg-[#F6CF80] text-black' : 'bg-white/5 text-white/20 group-hover:text-white'}`}>
+                          <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-all ${idx === 0 && !showFullEpisodes ? 'bg-[#EF4444] text-black' : 'bg-white/5 text-white/20 group-hover:text-white'}`}>
                              {idx === 0 && !showFullEpisodes ? <Play size={20} fill="black" /> : <span className="font-black text-sm">{ep.index}</span>}
                           </div>
                           <div>
@@ -367,7 +367,7 @@ const Detail = () => {
                           </div>
                        </div>
                        {idx === 0 && !showFullEpisodes && (
-                         <span className="bg-[#F6CF80]/10 text-[#F6CF80] text-[9px] font-black px-3 py-1.5 rounded-lg uppercase tracking-widest border border-[#F6CF80]/20">TERBARU</span>
+                         <span className="bg-[#EF4444]/10 text-[#EF4444] text-[9px] font-black px-3 py-1.5 rounded-lg uppercase tracking-widest border border-[#EF4444]/20">TERBARU</span>
                        )}
                     </motion.div>
                  ))}
@@ -388,7 +388,7 @@ const Detail = () => {
         <section className="space-y-10 pt-6">
            <div className="flex items-center justify-between px-2">
               <h2 className="text-sm font-black uppercase tracking-[0.2em] text-white">Rekomendasi</h2>
-              <button onClick={() => navigate('/')} className="flex items-center gap-1.5 text-xs font-black text-[#F6CF80] uppercase tracking-wider hover:opacity-70">Lihat Semua <ChevronRight size={14} /></button>
+              <button onClick={() => navigate('/')} className="flex items-center gap-1.5 text-xs font-black text-[#EF4444] uppercase tracking-wider hover:opacity-70">Lihat Semua <ChevronRight size={14} /></button>
            </div>
            
            <div className="space-y-5">
@@ -420,9 +420,9 @@ const Detail = () => {
                    </div>
                    
                    <div className="relative z-10 flex-1 min-w-0">
-                      <h4 className="text-white font-black text-sm md:text-2xl truncate group-hover:text-[#F6CF80] transition-colors uppercase tracking-tight mb-3">{a.title}</h4>
+                      <h4 className="text-white font-black text-sm md:text-2xl truncate group-hover:text-[#EF4444] transition-colors uppercase tracking-tight mb-3">{a.title}</h4>
                       <div className="flex items-center gap-3">
-                         <span className="bg-[#F6CF80] text-black text-[8px] md:text-[10px] font-black px-4 py-1.5 rounded-lg uppercase tracking-widest leading-none shadow-lg">SERIES</span>
+                         <span className="bg-[#EF4444] text-black text-[8px] md:text-[10px] font-black px-4 py-1.5 rounded-lg uppercase tracking-widest leading-none shadow-lg">SERIES</span>
                          <span className="bg-white/10 text-white/40 text-[8px] md:text-[10px] font-black px-4 py-1.5 rounded-lg uppercase tracking-widest leading-none border border-white/5">FINISHED</span>
                       </div>
                    </div>

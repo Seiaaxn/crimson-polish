@@ -42,11 +42,11 @@ export class ErrorBoundary extends Component<Props, State> {
             transition={{ delay: 0.2 }}
             className="max-w-md"
           >
-            <h1 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter text-[#F6CF80]">Waduh, Ada Yang Salah!</h1>
+            <h1 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tighter text-[#EF4444]">Waduh, Ada Yang Salah!</h1>
             <p className="text-white/60 mb-8 font-medium">Bisa jadi karena koneksi internet lagi jelek atau sistem sedang bermasalah. Coba muat ulang halamannya ya!</p>
             <button 
               onClick={() => window.location.reload()}
-              className="bg-[#F6CF80] text-black font-black uppercase tracking-widest px-8 py-4 rounded-2xl hover:bg-white hover:scale-105 active:scale-95 transition-all outline-none flex items-center justify-center gap-2 mx-auto"
+              className="bg-[#EF4444] text-black font-black uppercase tracking-widest px-8 py-4 rounded-2xl hover:bg-white hover:scale-105 active:scale-95 transition-all outline-none flex items-center justify-center gap-2 mx-auto"
             >
               <RefreshCw size={20} />
               <span>Muat Ulang</span>

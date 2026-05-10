@@ -150,7 +150,7 @@ const ComicHome = () => {
                         
                         <div className="flex items-center gap-4 mt-2">
                           <button 
-                            className="bg-[#F6CF80] text-black px-4 md:px-6 py-2 rounded-xl flex items-center gap-2 font-black text-xs md:text-sm shadow-xl active:scale-95 transition-transform truncate"
+                            className="bg-[#EF4444] text-black px-4 md:px-6 py-2 rounded-xl flex items-center gap-2 font-black text-xs md:text-sm shadow-xl active:scale-95 transition-transform truncate"
                           >
                             <Play fill="black" size={14} className="shrink-0" />
                             <span className="truncate">BACA SEKARANG</span>
@@ -172,7 +172,7 @@ const ComicHome = () => {
                     setIsTransitioning(true);
                     setHeroIndex(i);
                   }}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${heroIndex === i || (heroIndex === displaySlider.length && i === 0) ? 'w-8 bg-[#F6CF80]' : 'w-2 bg-white/20 hover:bg-white/40'}`} 
+                  className={`h-1.5 rounded-full transition-all duration-300 ${heroIndex === i || (heroIndex === displaySlider.length && i === 0) ? 'w-8 bg-[#EF4444]' : 'w-2 bg-white/20 hover:bg-white/40'}`} 
                 />
              ))}
           </div>
@@ -182,7 +182,7 @@ const ComicHome = () => {
         <section className="px-4 md:px-12 mt-8 md:mt-12 overflow-hidden">
           <div className="flex items-center justify-between mb-4 md:mb-6">
             <h2 className="text-xl md:text-2xl font-black text-white tracking-tighter uppercase relative pl-4 md:pl-6 leading-none">
-              <span className="absolute left-0 top-0 bottom-0 w-1 md:w-2 bg-[#F6CF80] rounded-r-full"></span>
+              <span className="absolute left-0 top-0 bottom-0 w-1 md:w-2 bg-[#EF4444] rounded-r-full"></span>
                Terbaru
             </h2>
           </div>
@@ -203,12 +203,12 @@ const ComicHome = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                       alt="" 
                     />
-                    <div className="absolute top-2 left-2 bg-[#F6CF80] text-black text-[9px] font-black px-1.5 py-0.5 rounded shadow-lg z-20">
+                    <div className="absolute top-2 left-2 bg-[#EF4444] text-black text-[9px] font-black px-1.5 py-0.5 rounded shadow-lg z-20">
                       {a.type || 'Comic'}
                     </div>
                   </div>
-                  <h3 className="text-[11px] md:text-xs font-bold text-white line-clamp-2 uppercase group-hover:text-[#F6CF80] transition-colors">{a.title}</h3>
-                  <div className="text-[9px] text-[#F6CF80] md:text-[10px] font-black uppercase mt-1">
+                  <h3 className="text-[11px] md:text-xs font-bold text-white line-clamp-2 uppercase group-hover:text-[#EF4444] transition-colors">{a.title}</h3>
+                  <div className="text-[9px] text-[#EF4444] md:text-[10px] font-black uppercase mt-1">
                     {a.chapters}
                   </div>
                 </div>
@@ -221,7 +221,7 @@ const ComicHome = () => {
         <section className="px-4 md:px-12 mt-8 overflow-hidden">
           <div className="flex items-center justify-between mb-4 md:mb-6">
             <h2 className="text-xl md:text-2xl font-black text-white tracking-tighter uppercase relative pl-4 md:pl-6 leading-none">
-              <span className="absolute left-0 top-0 bottom-0 w-1 md:w-2 bg-[#F6CF80] rounded-r-full"></span>
+              <span className="absolute left-0 top-0 bottom-0 w-1 md:w-2 bg-[#EF4444] rounded-r-full"></span>
                Populer
             </h2>
           </div>
@@ -243,7 +243,7 @@ const ComicHome = () => {
                       alt="" 
                     />
                   </div>
-                  <h3 className="text-[11px] md:text-xs font-bold text-white line-clamp-2 uppercase group-hover:text-[#F6CF80] transition-colors">{a.title}</h3>
+                  <h3 className="text-[11px] md:text-xs font-bold text-white line-clamp-2 uppercase group-hover:text-[#EF4444] transition-colors">{a.title}</h3>
                 </div>
               ))
             }

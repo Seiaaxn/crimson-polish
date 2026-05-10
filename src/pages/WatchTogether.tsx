@@ -62,7 +62,7 @@ const WatchTogether = () => {
             icon: 'info',
             background: '#16161a',
             color: '#fff',
-            confirmButtonColor: '#F6CF80'
+            confirmButtonColor: '#EF4444'
           });
           setActiveRoom(null);
           navigate('/nobar');
@@ -133,7 +133,7 @@ const WatchTogether = () => {
                 cancelButtonText: 'Batal',
                 background: '#16161a',
                 color: '#fff',
-                confirmButtonColor: '#F6CF80',
+                confirmButtonColor: '#EF4444',
                 cancelButtonColor: 'rgba(255,255,255,0.1)'
               }).then((result) => {
                 if (result.isConfirmed) {
@@ -178,7 +178,7 @@ const WatchTogether = () => {
       inputPlaceholder: 'Enter password...',
       background: '#16161a',
       color: '#fff',
-      confirmButtonColor: '#F6CF80',
+      confirmButtonColor: '#EF4444',
       showCancelButton: true,
       cancelButtonText: 'Batal',
       inputAttributes: {
@@ -269,7 +269,7 @@ const WatchTogether = () => {
           inputPlaceholder: 'Password...',
           background: '#16161a',
           color: '#fff',
-          confirmButtonColor: '#F6CF80',
+          confirmButtonColor: '#EF4444',
           showCancelButton: true,
           cancelButtonText: 'Batal'
         });
@@ -340,7 +340,7 @@ const WatchTogether = () => {
   if (loading || joining) {
     return (
       <div className="min-h-screen bg-[#0a0a0c] flex flex-col items-center justify-center">
-        <Loader2 className="text-[#F6CF80] animate-spin mb-4" size={48} />
+        <Loader2 className="text-[#EF4444] animate-spin mb-4" size={48} />
         <p className="text-white/40 font-black uppercase text-xs tracking-widest animate-pulse">
           {loading ? 'Menyiapkan Ruangan...' : 'Mencoba Masuk...'}
         </p>
@@ -349,7 +349,7 @@ const WatchTogether = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-white selection:bg-[#F6CF80] selection:text-black">
+    <div className="min-h-screen bg-[#0a0a0c] text-white selection:bg-[#EF4444] selection:text-black">
       <Helmet>
         <title>{activeRoom ? `${activeRoom.animeTitle} - Nobar Bareng ${activeRoom.hostName}` : 'ChisaStream - Nonton Anime Bareng'}</title>
         <meta property="og:title" content={activeRoom ? `Nobar ${activeRoom.animeTitle} - ChisaStream` : 'ChisaStream - Nobar Anime Seru'} />
@@ -368,7 +368,7 @@ const WatchTogether = () => {
                animate={{ opacity: 1, scale: 1 }}
                className="text-center space-y-4"
             >
-              <div className="inline-flex p-6 bg-[#F6CF80]/10 rounded-[40px] text-[#F6CF80] mb-4">
+              <div className="inline-flex p-6 bg-[#EF4444]/10 rounded-[40px] text-[#EF4444] mb-4">
                  <Users size={48} />
               </div>
               <h1 className="text-4xl md:text-6xl font-black tracking-tight">NOBAR SERU!</h1>
@@ -389,9 +389,9 @@ const WatchTogether = () => {
                        placeholder="Cari anime..." 
                        value={searchQuery}
                        onChange={(e) => setSearchQuery(e.target.value)}
-                       className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 pl-6 pr-14 text-sm font-black focus:border-[#F6CF80]/50 outline-none transition-all"
+                       className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 pl-6 pr-14 text-sm font-black focus:border-[#EF4444]/50 outline-none transition-all"
                      />
-                     <button className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-[#F6CF80] text-black rounded-xl flex items-center justify-center">
+                     <button className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 bg-[#EF4444] text-black rounded-xl flex items-center justify-center">
                         <Search size={20} />
                      </button>
                   </form>
@@ -399,14 +399,14 @@ const WatchTogether = () => {
                   <div className="space-y-4 max-h-[400px] overflow-y-auto pr-2 scrollbar-hide">
                      {isSearching && (
                         <div className="flex items-center justify-center py-8">
-                           <Loader2 className="animate-spin text-[#F6CF80]" />
+                           <Loader2 className="animate-spin text-[#EF4444]" />
                         </div>
                      )}
                      
                       {searchResults.map((anime, idx) => (
                         <div 
                           key={`${anime.id || anime.slug || 'search'}-${idx}`}
-                          className="flex items-center gap-4 bg-white/5 p-4 rounded-3xl border border-white/5 hover:border-[#F6CF80]/30 transition-all group cursor-pointer"
+                          className="flex items-center gap-4 bg-white/5 p-4 rounded-3xl border border-white/5 hover:border-[#EF4444]/30 transition-all group cursor-pointer"
                           onClick={() => handleCreateRoom(anime)}
                         >
                            <img 
@@ -416,9 +416,9 @@ const WatchTogether = () => {
                              alt="" 
                            />
                            <div className="flex-1">
-                              <h4 className="font-black text-sm text-white group-hover:text-[#F6CF80] transition-colors line-clamp-1">{anime.title}</h4>
+                              <h4 className="font-black text-sm text-white group-hover:text-[#EF4444] transition-colors line-clamp-1">{anime.title}</h4>
                               <p className="text-[10px] text-white/40 font-black uppercase tracking-widest mt-1">{anime.type || 'Series'} • {anime.status || 'Unknown'}</p>
-                              <button className="mt-3 px-4 py-2 bg-white/5 group-hover:bg-[#F6CF80] group-hover:text-black text-white/40 rounded-xl text-[8px] font-black uppercase tracking-widest transition-all">SELECT ANIME</button>
+                              <button className="mt-3 px-4 py-2 bg-white/5 group-hover:bg-[#EF4444] group-hover:text-black text-white/40 rounded-xl text-[8px] font-black uppercase tracking-widest transition-all">SELECT ANIME</button>
                            </div>
                         </div>
                      ))}
@@ -439,11 +439,11 @@ const WatchTogether = () => {
                       placeholder="ROOM ID..." 
                       value={roomId}
                       onChange={(e) => setRoomId(e.target.value.toUpperCase())}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 font-black uppercase text-xs tracking-[0.2em] focus:border-[#F6CF80]/50 outline-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 font-black uppercase text-xs tracking-[0.2em] focus:border-[#EF4444]/50 outline-none"
                     />
                     <button 
                       onClick={() => handleJoinRoom()}
-                      className="w-full py-4 bg-[#F6CF80] text-black rounded-2xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-2"
+                      className="w-full py-4 bg-[#EF4444] text-black rounded-2xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 flex items-center justify-center gap-2"
                     >
                        <LogIn size={18} /> JOIN NOW
                     </button>
@@ -463,7 +463,7 @@ const WatchTogether = () => {
                         </button>
                         <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
                            <span className="text-[10px] font-black text-white/40 uppercase">Room ID:</span>
-                           <span className="text-xs font-black text-[#F6CF80]">{activeRoom.id}</span>
+                           <span className="text-xs font-black text-[#EF4444]">{activeRoom.id}</span>
                            <button onClick={copyRoomId} className="text-white/20 hover:text-white transition-colors ml-2">
                               {copied ? <Check size={14} className="text-green-500" /> : <Copy size={14} />}
                            </button>
@@ -488,7 +488,7 @@ const WatchTogether = () => {
                                 <>
                                   <button 
                                     onClick={startStreaming}
-                                    className="px-6 py-3 bg-[#F6CF80] text-black rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#F6CF80]/20"
+                                    className="px-6 py-3 bg-[#EF4444] text-black rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#EF4444]/20"
                                   >
                                      <Play size={16} fill="black" /> {activeRoom.currentPath ? 'RESUME WATCHING' : 'START WATCHING'}
                                   </button>
@@ -503,7 +503,7 @@ const WatchTogether = () => {
                                 <button 
                                   onClick={() => activeRoom.currentPath && navigate(activeRoom.currentPath)}
                                   disabled={!activeRoom.currentPath}
-                                  className={`px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-3 border transition-all ${activeRoom.currentPath ? 'bg-[#F6CF80] text-black border-[#F6CF80] hover:scale-105' : 'bg-white/5 text-white/20 border-white/10'}`}
+                                  className={`px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-3 border transition-all ${activeRoom.currentPath ? 'bg-[#EF4444] text-black border-[#EF4444] hover:scale-105' : 'bg-white/5 text-white/20 border-white/10'}`}
                                 >
                                    {activeRoom.currentPath ? (
                                      <><Play size={16} fill="black" /> JOIN SESSION</>
@@ -527,7 +527,7 @@ const WatchTogether = () => {
                         className="p-8 border-t border-white/5 space-y-6 overflow-hidden"
                       >
                          <div className="flex items-center justify-between">
-                            <h3 className="font-black text-xs uppercase tracking-widest text-[#F6CF80]">Cari Anime Baru</h3>
+                            <h3 className="font-black text-xs uppercase tracking-widest text-[#EF4444]">Cari Anime Baru</h3>
                          </div>
                          <form onSubmit={handleSearch} className="relative">
                             <input 
@@ -535,9 +535,9 @@ const WatchTogether = () => {
                               placeholder="Ketik judul anime..." 
                               value={searchQuery}
                               onChange={(e) => setSearchQuery(e.target.value)}
-                              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-6 pr-14 text-xs font-black focus:border-[#F6CF80]/50 outline-none"
+                              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-6 pr-14 text-xs font-black focus:border-[#EF4444]/50 outline-none"
                             />
-                            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#F6CF80] text-black rounded-xl flex items-center justify-center">
+                            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#EF4444] text-black rounded-xl flex items-center justify-center">
                                <Search size={18} />
                             </button>
                          </form>
@@ -547,7 +547,7 @@ const WatchTogether = () => {
                               <div 
                                 key={`${anime.slug || anime.id || 'host-search'}-${idx}`}
                                 onClick={() => handleUpdateAnime(anime)}
-                                className="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5 hover:border-[#F6CF80]/30 transition-all cursor-pointer group"
+                                className="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5 hover:border-[#EF4444]/30 transition-all cursor-pointer group"
                               >
                                  <img 
                                    src={getImageUrl(anime.image || anime.image_poster)} 
@@ -555,7 +555,7 @@ const WatchTogether = () => {
                                    alt=""
                                  />
                                  <div className="flex-1 min-w-0">
-                                    <p className="font-black text-[10px] text-white uppercase truncate group-hover:text-[#F6CF80]">{anime.title}</p>
+                                    <p className="font-black text-[10px] text-white uppercase truncate group-hover:text-[#EF4444]">{anime.title}</p>
                                     <p className="text-[8px] text-white/40 font-black uppercase mt-1">Pilih Anime Ini</p>
                                  </div>
                               </div>
@@ -570,7 +570,7 @@ const WatchTogether = () => {
                      <div className="flex flex-wrap gap-8">
                         {activeRoom.members.map((member) => (
                            <div key={member.uid} className="flex flex-col items-center gap-3 group">
-                              <div className={`w-16 h-16 rounded-2xl overflow-hidden border-2 transition-all group-hover:scale-110 ${member.uid === activeRoom.hostId ? 'border-[#F6CF80]' : 'border-white/5'}`}>
+                              <div className={`w-16 h-16 rounded-2xl overflow-hidden border-2 transition-all group-hover:scale-110 ${member.uid === activeRoom.hostId ? 'border-[#EF4444]' : 'border-white/5'}`}>
                                  <img 
                                    src={member.avatar || `https://api.dicebear.com/7.x/avataaars/svg?seed=${member.name}`} 
                                    className="w-full h-full object-cover" 
@@ -579,7 +579,7 @@ const WatchTogether = () => {
                               </div>
                               <div className="text-center">
                                  <p className="text-[10px] font-black text-white truncate max-w-[90px] uppercase tracking-widest">{member.name?.split(' ')[0] || 'User'}</p>
-                                 {member.uid === activeRoom.hostId && <p className="text-[8px] font-black text-[#F6CF80] uppercase tracking-widest mt-0.5">HOST</p>}
+                                 {member.uid === activeRoom.hostId && <p className="text-[8px] font-black text-[#EF4444] uppercase tracking-widest mt-0.5">HOST</p>}
                               </div>
                            </div>
                         ))}
@@ -589,15 +589,15 @@ const WatchTogether = () => {
                
                <div className="bg-[#16161a] p-8 rounded-[48px] border border-white/5 shadow-2xl">
                   <h3 className="text-xl font-black mb-6 flex items-center gap-3">
-                     <Play size={20} className="text-[#F6CF80]" />
+                     <Play size={20} className="text-[#EF4444]" />
                      CARA NOBAR
                   </h3>
                   <div className="space-y-4 text-white/40 text-sm font-medium leading-relaxed">
-                     <p><span className="text-[#F6CF80] font-black mr-2">1.</span> Host memilih anime yang ingin ditonton.</p>
-                     <p><span className="text-[#F6CF80] font-black mr-2">2.</span> Host membagikan link atau <span className="text-white font-bold">Room ID</span> ke teman-teman.</p>
-                     <p><span className="text-[#F6CF80] font-black mr-2">3.</span> Teman-teman bergabung menggunakan ID tersebut.</p>
-                     <p><span className="text-[#F6CF80] font-black mr-2">4.</span> Klik tombol <span className="text-[#F6CF80] font-bold">"GO TO VIDEO"</span> untuk masuk ke halaman pemutar.</p>
-                     <p><span className="text-[#F6CF80] font-black mr-2">5.</span> Jika kamu host, kontrol putar/jeda akan tersinkronisasi (Coming Soon Full Sync).</p>
+                     <p><span className="text-[#EF4444] font-black mr-2">1.</span> Host memilih anime yang ingin ditonton.</p>
+                     <p><span className="text-[#EF4444] font-black mr-2">2.</span> Host membagikan link atau <span className="text-white font-bold">Room ID</span> ke teman-teman.</p>
+                     <p><span className="text-[#EF4444] font-black mr-2">3.</span> Teman-teman bergabung menggunakan ID tersebut.</p>
+                     <p><span className="text-[#EF4444] font-black mr-2">4.</span> Klik tombol <span className="text-[#EF4444] font-bold">"GO TO VIDEO"</span> untuk masuk ke halaman pemutar.</p>
+                     <p><span className="text-[#EF4444] font-black mr-2">5.</span> Jika kamu host, kontrol putar/jeda akan tersinkronisasi (Coming Soon Full Sync).</p>
                   </div>
                </div>
             </div>
@@ -606,7 +606,7 @@ const WatchTogether = () => {
             <div className="bg-[#111114] rounded-[48px] border border-white/5 shadow-2xl flex flex-col h-[700px] relative overflow-hidden">
                <div className="p-6 border-b border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                     <MessageSquare size={20} className="text-[#F6CF80]" />
+                     <MessageSquare size={20} className="text-[#EF4444]" />
                      <h4 className="font-black text-sm uppercase tracking-widest">Chat Room</h4>
                   </div>
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
@@ -622,7 +622,7 @@ const WatchTogether = () => {
                      messages.map((msg) => (
                         <div key={msg.id} className={`flex flex-col ${msg.senderId === auth.currentUser?.uid ? 'items-end' : 'items-start'}`}>
                            <p className="text-[8px] font-black text-white/20 uppercase tracking-widest mb-1 mx-1">{msg.senderName}</p>
-                           <div className={`max-w-[85%] px-4 py-3 rounded-2xl text-xs font-medium ${msg.senderId === auth.currentUser?.uid ? 'bg-[#F6CF80] text-black rounded-tr-none' : 'bg-white/5 text-white/80 rounded-tl-none border border-white/5'}`}>
+                           <div className={`max-w-[85%] px-4 py-3 rounded-2xl text-xs font-medium ${msg.senderId === auth.currentUser?.uid ? 'bg-[#EF4444] text-black rounded-tr-none' : 'bg-white/5 text-white/80 rounded-tl-none border border-white/5'}`}>
                               {msg.text}
                            </div>
                         </div>
@@ -638,11 +638,11 @@ const WatchTogether = () => {
                        placeholder="Tulis pesan..." 
                        value={chatText}
                        onChange={(e) => setChatText(e.target.value)}
-                       className="w-full bg-black/40 border border-white/10 rounded-2xl py-4 pl-5 pr-14 text-sm font-medium focus:border-[#F6CF80]/50 outline-none transition-all"
+                       className="w-full bg-black/40 border border-white/10 rounded-2xl py-4 pl-5 pr-14 text-sm font-medium focus:border-[#EF4444]/50 outline-none transition-all"
                      />
                      <button 
                        type="submit"
-                       className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#F6CF80] text-black rounded-xl flex items-center justify-center hover:scale-105 active:scale-90 transition-all shadow-lg shadow-[#F6CF80]/20"
+                       className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#EF4444] text-black rounded-xl flex items-center justify-center hover:scale-105 active:scale-90 transition-all shadow-lg shadow-[#EF4444]/20"
                      >
                         <Send size={18} />
                      </button>
@@ -655,8 +655,8 @@ const WatchTogether = () => {
         {/* Active Rooms Section - Global Visibility */}
         <div className="mt-32 max-w-6xl mx-auto px-4 md:px-8">
            <div className="flex flex-col text-left mb-10">
-              <h3 className="text-[#F6CF80] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2">
-                 <div className="w-6 h-0.5 bg-[#F6CF80]"></div>
+              <h3 className="text-[#EF4444] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2">
+                 <div className="w-6 h-0.5 bg-[#EF4444]"></div>
                  Sedang Berlangsung
               </h3>
               <h3 className="text-white font-black uppercase text-xl md:text-3xl tracking-tight">Cek Room Nobar Lain</h3>
@@ -689,12 +689,12 @@ const WatchTogether = () => {
                              
                              {/* Room Status Badges */}
                              <div className="absolute top-6 inset-x-6 flex justify-between items-start z-10">
-                                <div className="flex items-center gap-2 bg-[#F6CF80] px-4 py-2 rounded-2xl border border-white/20 shadow-xl shadow-[#F6CF80]/20 scale-100 group-hover:scale-110 transition-transform">
+                                <div className="flex items-center gap-2 bg-[#EF4444] px-4 py-2 rounded-2xl border border-white/20 shadow-xl shadow-[#EF4444]/20 scale-100 group-hover:scale-110 transition-transform">
                                    <div className="w-2 h-2 bg-black rounded-full animate-pulse" />
                                    <span className="text-[10px] font-black uppercase text-black tracking-[0.2em]">LIHAT LIVE • {room.members?.length || 1}</span>
                                 </div>
                                 {room.password && room.password !== '' && (
-                                   <div className="w-10 h-10 bg-black/60 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/10 text-[#F6CF80]">
+                                   <div className="w-10 h-10 bg-black/60 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/10 text-[#EF4444]">
                                       <LogIn size={18} />
                                    </div>
                                 )}
@@ -711,21 +711,21 @@ const WatchTogether = () => {
                                             alt=""
                                          />
                                       </div>
-                                      <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-widest">{room.hostName}</span>
+                                      <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-widest">{room.hostName}</span>
                                    </div>
-                                   <h4 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 group-hover:text-[#F6CF80] transition-colors line-clamp-2 drop-shadow-lg">{room.animeTitle}</h4>
+                                   <h4 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 group-hover:text-[#EF4444] transition-colors line-clamp-2 drop-shadow-lg">{room.animeTitle}</h4>
                                    <p className="text-xs text-white/40 font-black uppercase tracking-[0.3em]">EPISODE {room.episodeIndex + 1}</p>
                                 </div>
                                 
                                 <div className="flex items-center gap-2 w-full translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                                   <button className="flex-1 py-4 bg-[#F6CF80] text-black rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-[#F6CF80]/20 flex items-center justify-center gap-2">
+                                   <button className="flex-1 py-4 bg-[#EF4444] text-black rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-[#EF4444]/20 flex items-center justify-center gap-2">
                                       <Zap size={16} fill="currentColor" /> GABUNG SEKARANG
                                    </button>
                                 </div>
                              </div>
                              
                              {/* Hover Overlay Light */}
-                             <div className="absolute inset-0 bg-[#F6CF80]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                             <div className="absolute inset-0 bg-[#EF4444]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                           </div>
                        ))}
                     </div>

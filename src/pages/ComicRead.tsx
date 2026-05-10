@@ -112,7 +112,7 @@ const ComicRead = () => {
       >
         <button 
           onClick={() => navigate(-1)}
-          className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-[#F6CF80] hover:text-black transition-colors"
+          className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center hover:bg-[#EF4444] hover:text-black transition-colors"
         >
           <ArrowLeft size={20} />
         </button>
@@ -153,7 +153,7 @@ const ComicRead = () => {
               <button 
                 onClick={() => prevSlug && navigate(`/comic-read/${prevSlug}`)}
                 disabled={!prevSlug}
-                className="flex items-center gap-2 bg-white/10 hover:bg-[#F6CF80] hover:text-black border border-white/10 px-4 py-3 rounded-xl disabled:opacity-30 disabled:pointer-events-none transition-colors"
+                className="flex items-center gap-2 bg-white/10 hover:bg-[#EF4444] hover:text-black border border-white/10 px-4 py-3 rounded-xl disabled:opacity-30 disabled:pointer-events-none transition-colors"
               >
                 <ChevronLeft size={20} />
                 <span className="text-xs font-black uppercase tracking-widest">Prev</span>
@@ -162,7 +162,7 @@ const ComicRead = () => {
               <button 
                 onClick={() => nextSlug && navigate(`/comic-read/${nextSlug}`)}
                 disabled={!nextSlug}
-                className="flex items-center gap-2 bg-[#F6CF80] text-black border border-transparent px-6 py-3 rounded-xl disabled:opacity-30 disabled:pointer-events-none hover:bg-white transition-colors"
+                className="flex items-center gap-2 bg-[#EF4444] text-black border border-transparent px-6 py-3 rounded-xl disabled:opacity-30 disabled:pointer-events-none hover:bg-white transition-colors"
               >
                 <span className="text-xs font-black uppercase tracking-widest">Next</span>
                 <ChevronRight size={20} />

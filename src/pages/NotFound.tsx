@@ -35,7 +35,7 @@ const NotFound = () => {
           </button>
           <button 
             onClick={() => navigate('/')}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-[#F6CF80] text-black rounded-2xl font-black uppercase text-xs tracking-widest shadow-[0_15px_30px_rgba(246,207,128,0.3)] hover:scale-105 transition-all active:scale-95"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-[#EF4444] text-black rounded-2xl font-black uppercase text-xs tracking-widest shadow-[0_15px_30px_rgba(246,207,128,0.3)] hover:scale-105 transition-all active:scale-95"
           >
             <Home size={16} />
             Beranda

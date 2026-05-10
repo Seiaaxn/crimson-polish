@@ -88,7 +88,7 @@ const ComicDetail = () => {
 
             <div className="flex-1 min-w-0 pb-2">
                <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="bg-[#F6CF80] text-black text-[9px] font-black px-3 py-1 rounded-md uppercase tracking-widest">{comic.type || 'COMIC'}</span>
+                  <span className="bg-[#EF4444] text-black text-[9px] font-black px-3 py-1 rounded-md uppercase tracking-widest">{comic.type || 'COMIC'}</span>
                   <span className="bg-white/10 text-white/80 text-[9px] font-black px-3 py-1 rounded-md uppercase tracking-widest border border-white/5">{comic.status}</span>
                </div>
                <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-[1.1] mb-2 drop-shadow-2xl">{comic.title}</h1>
@@ -104,15 +104,15 @@ const ComicDetail = () => {
         <section className="px-6 md:px-12 py-8 max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
            <div className="flex-1 min-w-0 flex flex-col gap-8">
               <div>
-                <h3 className="text-xl font-black mb-4 uppercase tracking-tighter text-[#F6CF80]">Sinopsis</h3>
+                <h3 className="text-xl font-black mb-4 uppercase tracking-tighter text-[#EF4444]">Sinopsis</h3>
                 <p className="text-white/70 text-sm md:text-base leading-relaxed font-medium">{comic.synopsis || "Belum ada sinopsis."}</p>
               </div>
 
               <div>
-                <h3 className="text-xl font-black mb-4 uppercase tracking-tighter text-[#F6CF80]">Genre</h3>
+                <h3 className="text-xl font-black mb-4 uppercase tracking-tighter text-[#EF4444]">Genre</h3>
                 <div className="flex flex-wrap gap-2">
                    {comic.genres.map((g: any, i) => (
-                      <span key={i} className="bg-white/5 border border-white/10 text-white/80 text-xs font-black px-4 py-2 rounded-xl uppercase tracking-widest hover:bg-[#F6CF80] hover:text-black hover:border-transparent transition-colors cursor-pointer">{g.name || g}</span>
+                      <span key={i} className="bg-white/5 border border-white/10 text-white/80 text-xs font-black px-4 py-2 rounded-xl uppercase tracking-widest hover:bg-[#EF4444] hover:text-black hover:border-transparent transition-colors cursor-pointer">{g.name || g}</span>
                    ))}
                 </div>
               </div>
@@ -120,7 +120,7 @@ const ComicDetail = () => {
               {/* Chapter List */}
               <div className="bg-[#16161a] border border-white/5 rounded-3xl p-6 md:p-8 mt-4">
                  <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/5">
-                    <h3 className="text-2xl font-black uppercase tracking-tighter">Daftar Chapter <span className="text-[#F6CF80]">({chapters.length})</span></h3>
+                    <h3 className="text-2xl font-black uppercase tracking-tighter">Daftar Chapter <span className="text-[#EF4444]">({chapters.length})</span></h3>
                     <button 
                       onClick={() => setSortAsc(!sortAsc)}
                       className="text-xs bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2 rounded-lg font-bold uppercase tracking-widest transition-colors flex items-center gap-2"
@@ -136,7 +136,7 @@ const ComicDetail = () => {
                       <button 
                         key={i}
                         onClick={() => navigate(`/comic-read/${chSlug}`)}
-                        className="flex items-center text-left bg-white/5 hover:bg-[#F6CF80] border border-white/5 hover:border-transparent rounded-2xl p-4 transition-all group overflow-hidden relative"
+                        className="flex items-center text-left bg-white/5 hover:bg-[#EF4444] border border-white/5 hover:border-transparent rounded-2xl p-4 transition-all group overflow-hidden relative"
                       >
                          <div className="relative z-10 flex-1 min-w-0 pr-4">
                             <span className="text-[10px] font-black text-white/40 group-hover:text-black/60 block mb-1 tracking-widest uppercase">{ep.date || 'New'}</span>

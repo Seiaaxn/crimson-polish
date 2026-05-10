@@ -38,7 +38,7 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ a, onClick, index }) => {
       onClick={onClick} 
       className="w-full flex flex-col gap-3 group cursor-pointer active:scale-95 transition-all"
     >
-      <div className="relative aspect-[3/4.2] w-full overflow-hidden bg-white/5 rounded-[24px] shadow-2xl border border-white/5 group-hover:border-[#F6CF80]/30 transition-all duration-500">
+      <div className="relative aspect-[3/4.2] w-full overflow-hidden bg-white/5 rounded-[24px] shadow-2xl border border-white/5 group-hover:border-[#EF4444]/30 transition-all duration-500">
         {a?.isDevEntry && <div className="absolute top-2 right-2 bg-red-600/90 text-white text-[8px] font-black px-1.5 py-0.5 rounded shadow-lg z-20 tracking-wider border border-white/10">ND</div>}
                 <img 
           src={getImageUrl(a.image_poster)} 
@@ -49,13 +49,13 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ a, onClick, index }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
            <div className="flex items-center gap-2">
-              <Star size={12} className="text-[#F6CF80] fill-[#F6CF80]" />
+              <Star size={12} className="text-[#EF4444] fill-[#EF4444]" />
               <span className="text-[10px] font-black text-white uppercase tracking-wider">{a.favorites || 'N/A'}</span>
            </div>
         </div>
       </div>
       <div className="px-1 space-y-1">
-        <h3 className="text-xs md:text-sm font-black text-white/80 line-clamp-1 uppercase tracking-tight group-hover:text-[#F6CF80] transition-colors">{a.title}</h3>
+        <h3 className="text-xs md:text-sm font-black text-white/80 line-clamp-1 uppercase tracking-tight group-hover:text-[#EF4444] transition-colors">{a.title}</h3>
         <div className="flex items-center gap-2 text-[10px] font-bold text-white/20 uppercase tracking-widest">
            <span>{a.isDevEntry ? 'DEV API' : (a.status || 'Series')}</span>
            <div className="w-1 h-1 bg-white/10 rounded-full"></div>
@@ -80,7 +80,7 @@ const Pagination = ({ page, setPage, hasMore }: { page: number, setPage: (p: num
       <button 
         onClick={() => setPage(Math.max(1, page - 1))} 
         disabled={page === 1} 
-        className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-2xl disabled:opacity-20 hover:bg-[#F6CF80] hover:text-black hover:border-transparent transition-all active:scale-90"
+        className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-2xl disabled:opacity-20 hover:bg-[#EF4444] hover:text-black hover:border-transparent transition-all active:scale-90"
       >
         <ChevronLeft size={20} />
       </button>
@@ -89,7 +89,7 @@ const Pagination = ({ page, setPage, hasMore }: { page: number, setPage: (p: num
         <button 
           key={p} 
           onClick={() => setPage(p)}
-          className={`w-12 h-12 flex items-center justify-center rounded-2xl font-black text-sm transition-all shadow-xl active:scale-90 ${p === page ? 'bg-[#F6CF80] text-black shadow-[0_0_20px_rgba(246,207,128,0.3)]' : 'bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10'}`}
+          className={`w-12 h-12 flex items-center justify-center rounded-2xl font-black text-sm transition-all shadow-xl active:scale-90 ${p === page ? 'bg-[#EF4444] text-black shadow-[0_0_20px_rgba(246,207,128,0.3)]' : 'bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10'}`}
         >
           {p}
         </button>
@@ -98,7 +98,7 @@ const Pagination = ({ page, setPage, hasMore }: { page: number, setPage: (p: num
       <button 
         onClick={() => setPage(page + 1)} 
         disabled={!hasMore}
-        className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-2xl disabled:opacity-20 hover:bg-[#F6CF80] hover:text-black hover:border-transparent transition-all active:scale-90"
+        className="w-12 h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-2xl disabled:opacity-20 hover:bg-[#EF4444] hover:text-black hover:border-transparent transition-all active:scale-90"
       >
         <ChevronRight size={20} />
       </button>
@@ -275,7 +275,7 @@ const Search = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#F6CF80] selection:text-black pb-32">
+    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#EF4444] selection:text-black pb-32">
       <style>{`
         @keyframes shimmer { 0% { transform: translate3d(-100%, 0, 0) skewX(-20deg); } 100% { transform: translate3d(200%, 0, 0) skewX(-20deg); } }
       `}</style>
@@ -292,7 +292,7 @@ const Search = () => {
                 placeholder={`Cari Anime di Server ${isSanka ? '2' : '1'}...`}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full bg-white/[0.03] border border-white/10 rounded-[32px] py-6 px-16 text-lg font-black text-white placeholder:text-white/10 focus:outline-none focus:border-[#F6CF80]/50 focus:bg-white/[0.05] transition-all shadow-2xl"
+                className="w-full bg-white/[0.03] border border-white/10 rounded-[32px] py-6 px-16 text-lg font-black text-white placeholder:text-white/10 focus:outline-none focus:border-[#EF4444]/50 focus:bg-white/[0.05] transition-all shadow-2xl"
             />
             {query && (
                 <button 
@@ -309,12 +309,12 @@ const Search = () => {
           <div className="space-y-6 mb-12">
               <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                      <div className="w-1.5 h-6 bg-[#F6CF80] rounded-full"></div>
+                      <div className="w-1.5 h-6 bg-[#EF4444] rounded-full"></div>
                       <h2 className="text-sm font-black uppercase tracking-[0.2em] text-white">Filter Genre</h2>
                   </div>
                   <button 
                     onClick={() => setShowFilters(!showFilters)}
-                    className={`flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl border transition-all ${showFilters ? 'bg-[#F6CF80] text-black border-transparent' : 'bg-white/5 border-white/10 text-white/40 hover:text-white'}`}
+                    className={`flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl border transition-all ${showFilters ? 'bg-[#EF4444] text-black border-transparent' : 'bg-white/5 border-white/10 text-white/40 hover:text-white'}`}
                   >
                       <SlidersHorizontal size={14} />
                       {showFilters ? 'Tutup' : 'Lainnya'}
@@ -329,7 +329,7 @@ const Search = () => {
                         <button 
                             key={gid} 
                             onClick={() => toggleGenre(gid)} 
-                            className={`px-5 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-2xl transition-all border ${selectedGenres.includes(gid) ? 'bg-[#F6CF80] text-black border-transparent shadow-[0_0_20px_rgba(246,207,128,0.2)] scale-105' : 'bg-white/5 border-white/5 text-white/40 hover:bg-white/10 hover:text-white hover:border-white/10'}`}
+                            className={`px-5 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-2xl transition-all border ${selectedGenres.includes(gid) ? 'bg-[#EF4444] text-black border-transparent shadow-[0_0_20px_rgba(246,207,128,0.2)] scale-105' : 'bg-white/5 border-white/5 text-white/40 hover:bg-white/10 hover:text-white hover:border-white/10'}`}
                         >
                             {gname}
                         </button>
@@ -347,7 +347,7 @@ const Search = () => {
                     {query ? `"${query}"` : selectedGenres.length > 0 ? genres.find(g => g.id === selectedGenres[0])?.name : 'POPULAR ANIME'}
                 </h3>
             </div>
-            <span className="text-xs font-black text-[#F6CF80] uppercase tracking-widest opacity-60">
+            <span className="text-xs font-black text-[#EF4444] uppercase tracking-widest opacity-60">
                 {results.length} Judul Ditemukan
             </span>
         </div>

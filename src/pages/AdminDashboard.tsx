@@ -126,7 +126,7 @@ const AdminDashboard: React.FC = () => {
     return (
       <div className="min-h-screen bg-[#0a0a0c] flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="w-10 h-10 text-[#F6CF80] animate-spin" />
+          <Loader2 className="w-10 h-10 text-[#EF4444] animate-spin" />
           <p className="text-white/40 font-black uppercase tracking-widest text-xs">Loading Security...</p>
         </div>
       </div>
@@ -134,7 +134,7 @@ const AdminDashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-white font-sans selection:bg-[#F6CF80]/30">
+    <div className="min-h-screen bg-[#0a0a0c] text-white font-sans selection:bg-[#EF4444]/30">
       <Navbar />
       
       <main className="max-w-7xl mx-auto px-4 pt-24 pb-20">
@@ -144,11 +144,11 @@ const AdminDashboard: React.FC = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <div className="flex items-center gap-2 mb-2 text-[#F6CF80]">
+            <div className="flex items-center gap-2 mb-2 text-[#EF4444]">
               <Shield size={16} />
               <span className="text-[10px] font-black uppercase tracking-[0.3em]">Administrator Command Center</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">System <span className="text-[#F6CF80]">Dashboard</span></h1>
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">System <span className="text-[#EF4444]">Dashboard</span></h1>
           </motion.div>
 
           <motion.div
@@ -163,7 +163,7 @@ const AdminDashboard: React.FC = () => {
               <RefreshCcw size={20} className={loading ? 'animate-spin' : ''} />
             </button>
             <div className="bg-[#16161a] border border-white/5 rounded-2xl p-1 flex">
-              <button className="px-6 py-2.5 bg-[#F6CF80] text-black font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-[0_10px_20px_rgba(246,207,128,0.2)]">Overview</button>
+              <button className="px-6 py-2.5 bg-[#EF4444] text-black font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-[0_10px_20px_rgba(246,207,128,0.2)]">Overview</button>
               <button className="px-6 py-2.5 text-white/40 font-black text-xs uppercase tracking-widest rounded-xl hover:text-white transition-all">Logs</button>
             </div>
           </motion.div>
@@ -190,20 +190,20 @@ const AdminDashboard: React.FC = () => {
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {[
-            { label: 'Total Registrations', value: stats?.totalUsers || 0, icon: Users, color: '#F6CF80' },
+            { label: 'Total Registrations', value: stats?.totalUsers || 0, icon: Users, color: '#EF4444' },
             { label: 'Active Today', value: stats?.loggedInToday || 0, icon: TrendingUp, color: '#4ADE80' },
-            { label: 'Live Now', value: stats?.activeNow || 0, icon: Activity, color: '#F87171', pulse: true }
+            { label: 'Live Now', value: stats?.activeNow || 0, icon: Activity, color: '#FCA5A5', pulse: true }
           ].map((card, i) => (
             <motion.div
               key={card.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="bg-[#16161a] border border-white/5 rounded-[32px] p-8 relative overflow-hidden group hover:border-[#F6CF80]/20 transition-colors"
+              className="bg-[#16161a] border border-white/5 rounded-[32px] p-8 relative overflow-hidden group hover:border-[#EF4444]/20 transition-colors"
             >
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-2xl bg-white/5 text-white/40 group-hover:bg-[#F6CF80]/10 group-hover:text-[#F6CF80] transition-all">
+                  <div className="p-3 rounded-2xl bg-white/5 text-white/40 group-hover:bg-[#EF4444]/10 group-hover:text-[#EF4444] transition-all">
                     <card.icon size={24} />
                   </div>
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">{card.label}</span>
@@ -229,13 +229,13 @@ const AdminDashboard: React.FC = () => {
             </div>
 
             <div className="relative group w-full md:w-96">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-hover:text-[#F6CF80] transition-colors" size={18} />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-hover:text-[#EF4444] transition-colors" size={18} />
               <input 
                 type="text" 
                 placeholder="SEARCH BY NAME, USERNAME OR ID..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 pl-12 pr-6 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-[#F6CF80]/40 focus:bg-white/10 transition-all"
+                className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 pl-12 pr-6 text-xs font-black uppercase tracking-widest focus:outline-none focus:border-[#EF4444]/40 focus:bg-white/10 transition-all"
               />
             </div>
           </div>
@@ -275,7 +275,7 @@ const AdminDashboard: React.FC = () => {
                       </div>
                     </td>
                     <td className="py-6 px-8">
-                      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border ${user.isAdmin ? 'bg-[#F6CF80]/10 border-[#F6CF80]/20 text-[#F6CF80]' : 'bg-white/5 border-white/5 text-white/20'}`}>
+                      <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border ${user.isAdmin ? 'bg-[#EF4444]/10 border-[#EF4444]/20 text-[#EF4444]' : 'bg-white/5 border-white/5 text-white/20'}`}>
                         {user.isAdmin ? <Shield size={12} /> : <Users size={12} />}
                         <span className="text-[10px] font-black uppercase tracking-widest">{user.isAdmin ? 'Sys Admin' : 'Member'}</span>
                       </div>
@@ -283,12 +283,12 @@ const AdminDashboard: React.FC = () => {
                     <td className="py-6 px-8">
                       <div className="flex flex-col gap-2">
                         <div className="flex items-center justify-between text-[9px] font-black uppercase tracking-widest">
-                          <span className="text-[#F6CF80]">LVL {user.levelInfo?.level || 1}</span>
+                          <span className="text-[#EF4444]">LVL {user.levelInfo?.level || 1}</span>
                           <span className="text-white/20">{user.levelInfo?.exp || 0} EXP</span>
                         </div>
                         <div className="h-1 bg-white/5 rounded-full overflow-hidden w-32">
                           <div 
-                            className="h-full bg-linear-to-r from-[#F6CF80] to-[#E5B14B]" 
+                            className="h-full bg-linear-to-r from-[#EF4444] to-[#DC2626]" 
                             style={{ width: `${( (user.levelInfo?.exp || 0) % 1000 ) / 10}%` }}
                           ></div>
                         </div>
@@ -302,20 +302,20 @@ const AdminDashboard: React.FC = () => {
                     <td className="py-6 px-8">
                       <div className="flex items-center justify-end gap-2">
                         {actionLoading === user.uid ? (
-                          <Loader2 className="w-5 h-5 text-[#F6CF80] animate-spin" />
+                          <Loader2 className="w-5 h-5 text-[#EF4444] animate-spin" />
                         ) : (
                           <>
                             <button 
                               onClick={() => updateExp(user.uid, user.levelInfo?.exp || 0)}
                               title="Update EXP"
-                              className="p-2.5 bg-white/5 border border-white/5 rounded-xl hover:bg-[#F6CF80]/10 hover:border-[#F6CF80]/20 hover:text-[#F6CF80] transition-all"
+                              className="p-2.5 bg-white/5 border border-white/5 rounded-xl hover:bg-[#EF4444]/10 hover:border-[#EF4444]/20 hover:text-[#EF4444] transition-all"
                             >
                               <Award size={18} />
                             </button>
                             <button 
                               onClick={() => toggleAdmin(user.uid, !!user.isAdmin)}
                               title={user.isAdmin ? "Revoke Admin" : "Make Admin"}
-                              className={`p-2.5 border rounded-xl transition-all ${user.isAdmin ? 'bg-red-500/10 border-red-500/20 text-red-500 hover:bg-red-500/20' : 'bg-white/5 border-white/5 hover:bg-[#F6CF80]/10 hover:border-[#F6CF80]/20 hover:text-[#F6CF80]'}`}
+                              className={`p-2.5 border rounded-xl transition-all ${user.isAdmin ? 'bg-red-500/10 border-red-500/20 text-red-500 hover:bg-red-500/20' : 'bg-white/5 border-white/5 hover:bg-[#EF4444]/10 hover:border-[#EF4444]/20 hover:text-[#EF4444]'}`}
                             >
                               {user.isAdmin ? <ShieldOff size={18} /> : <Shield size={18} />}
                             </button>

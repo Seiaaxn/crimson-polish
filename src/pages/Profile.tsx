@@ -112,7 +112,7 @@ const Profile = () => {
       cancelButtonText: 'Batal',
       background: '#16161a',
       color: '#fff',
-      confirmButtonColor: '#F6CF80',
+      confirmButtonColor: '#EF4444',
       cancelButtonColor: '#333'
     });
 
@@ -151,7 +151,7 @@ const Profile = () => {
         text: 'Silakan coba lagi nanti.',
         background: '#16161a',
         color: '#fff',
-        confirmButtonColor: '#F6CF80'
+        confirmButtonColor: '#EF4444'
       });
     } finally {
       setUploading(null);
@@ -213,7 +213,7 @@ const Profile = () => {
         text: 'Semua riwayat telah dihapus.',
         background: '#16161a',
         color: '#fff',
-        confirmButtonColor: '#F6CF80'
+        confirmButtonColor: '#EF4444'
       });
     }
   };
@@ -243,7 +243,7 @@ const Profile = () => {
         text: 'Semua bookmark telah dihapus.',
         background: '#16161a',
         color: '#fff',
-        confirmButtonColor: '#F6CF80'
+        confirmButtonColor: '#EF4444'
       });
     }
   };
@@ -273,7 +273,7 @@ const Profile = () => {
           text: 'Kamu mungkin perlu login ulang sebelum menghapus akun karena ini tindakan sensitif.',
           background: '#16161a',
           color: '#fff',
-          confirmButtonColor: '#F6CF80'
+          confirmButtonColor: '#EF4444'
         });
       }
     }
@@ -310,7 +310,7 @@ const Profile = () => {
       confirmButtonText: 'Kirim Email',
       background: '#16161a',
       color: '#fff',
-      confirmButtonColor: '#F6CF80'
+      confirmButtonColor: '#EF4444'
     });
 
     if (result.isConfirmed) {
@@ -390,7 +390,7 @@ const Profile = () => {
       inputPlaceholder: 'Ketik judul anime...',
       background: '#16161a',
       color: '#fff',
-      confirmButtonColor: '#F6CF80',
+      confirmButtonColor: '#EF4444',
       showCancelButton: true,
       cancelButtonText: 'Batal',
       confirmButtonText: 'Cari',
@@ -423,7 +423,7 @@ const Profile = () => {
           inputPlaceholder: 'Pilih salah satu',
           background: '#16161a',
           color: '#fff',
-          confirmButtonColor: '#F6CF80',
+          confirmButtonColor: '#EF4444',
           showCancelButton: true,
           confirmButtonText: 'Tambah'
         });
@@ -502,7 +502,7 @@ const Profile = () => {
       focusConfirm: false,
       background: '#16161a',
       color: '#fff',
-      confirmButtonColor: '#F6CF80',
+      confirmButtonColor: '#EF4444',
       preConfirm: () => {
         return {
           platform: (document.getElementById('swal-platform') as HTMLSelectElement).value,
@@ -534,13 +534,13 @@ const Profile = () => {
   if (loading || !profile) {
     return (
       <div className="min-h-screen bg-[#0a0a0c] flex items-center justify-center">
-        <Loader2 className="text-[#F6CF80] animate-spin" size={48} />
+        <Loader2 className="text-[#EF4444] animate-spin" size={48} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-white selection:bg-[#F6CF80] selection:text-black [will-change:transform,opacity]">
+    <div className="min-h-screen bg-[#0a0a0c] text-white selection:bg-[#EF4444] selection:text-black [will-change:transform,opacity]">
       <Navbar />
       
       <main className="pt-24 pb-32 px-4 md:px-8 max-w-4xl mx-auto [transform:translateZ(0)]">
@@ -561,7 +561,7 @@ const Profile = () => {
                 {/* Gear Icon / Edit Trigger */}
                 <button 
                   onClick={() => setIsEditing(!isEditing)}
-                  className={`absolute top-6 left-6 z-20 p-2.5 rounded-2xl border transition-all hover:scale-110 active:scale-95 ${isEditing ? 'bg-[#F6CF80] text-black border-[#F6CF80]' : 'bg-black/40 backdrop-blur-xl text-white border-white/10'}`}
+                  className={`absolute top-6 left-6 z-20 p-2.5 rounded-2xl border transition-all hover:scale-110 active:scale-95 ${isEditing ? 'bg-[#EF4444] text-black border-[#EF4444]' : 'bg-black/40 backdrop-blur-xl text-white border-white/10'}`}
                 >
                   <Settings size={22} className={isEditing ? 'animate-spin-slow' : ''} />
                 </button>
@@ -579,10 +579,10 @@ const Profile = () => {
                   {uploading === 'banner' && (
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-md z-30 flex flex-col items-center justify-center animate-in fade-in duration-300">
                       <div className="relative">
-                        <div className="w-20 h-20 border-[3px] border-white/10 border-t-[#F6CF80] rounded-full animate-spin" />
-                        <Camera className="absolute inset-0 m-auto text-[#F6CF80]" size={24} />
+                        <div className="w-20 h-20 border-[3px] border-white/10 border-t-[#EF4444] rounded-full animate-spin" />
+                        <Camera className="absolute inset-0 m-auto text-[#EF4444]" size={24} />
                       </div>
-                      <p className="mt-4 text-[#F6CF80] font-black uppercase text-[10px] tracking-[0.3em] animate-pulse">Memproses Banner...</p>
+                      <p className="mt-4 text-[#EF4444] font-black uppercase text-[10px] tracking-[0.3em] animate-pulse">Memproses Banner...</p>
                     </div>
                   )}
 
@@ -590,7 +590,7 @@ const Profile = () => {
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center opacity-100 transition-opacity z-20">
                       <button 
                         onClick={() => bannerInputRef.current?.click()}
-                        className="p-4 bg-[#F6CF80] text-black rounded-[24px] font-black uppercase text-[10px] tracking-widest flex items-center gap-3 shadow-2xl hover:scale-105 active:scale-95 transition-all"
+                        className="p-4 bg-[#EF4444] text-black rounded-[24px] font-black uppercase text-[10px] tracking-widest flex items-center gap-3 shadow-2xl hover:scale-105 active:scale-95 transition-all"
                       >
                         <Camera size={18} />
                         Ganti Banner
@@ -613,8 +613,8 @@ const Profile = () => {
                         
                         {uploading === 'avatar' && (
                           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex flex-col items-center justify-center z-40">
-                            <Loader2 size={32} className="animate-spin text-[#F6CF80]" />
-                            <span className="text-[8px] font-black text-[#F6CF80] uppercase mt-2">Loading</span>
+                            <Loader2 size={32} className="animate-spin text-[#EF4444]" />
+                            <span className="text-[8px] font-black text-[#EF4444] uppercase mt-2">Loading</span>
                           </div>
                         )}
 
@@ -622,7 +622,7 @@ const Profile = () => {
                           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-100 transition-opacity">
                             <button 
                               onClick={() => avatarInputRef.current?.click()}
-                              className="p-3.5 bg-[#F6CF80] text-black rounded-2xl shadow-xl hover:scale-110 transition-transform"
+                              className="p-3.5 bg-[#EF4444] text-black rounded-2xl shadow-xl hover:scale-110 transition-transform"
                             >
                                <Camera size={22} strokeWidth={3} />
                             </button>
@@ -634,8 +634,8 @@ const Profile = () => {
                     <div className="flex-1 min-w-0 pb-2">
                        {isEditing ? (
                          <div className="space-y-3 animate-in fade-in slide-in-from-left-4">
-                            <p className="text-[10px] font-black uppercase tracking-widest text-[#F6CF80] flex items-center gap-2">
-                               <span className="w-1.5 h-1.5 bg-[#F6CF80] rounded-full animate-pulse" />
+                            <p className="text-[10px] font-black uppercase tracking-widest text-[#EF4444] flex items-center gap-2">
+                               <span className="w-1.5 h-1.5 bg-[#EF4444] rounded-full animate-pulse" />
                                Mode Edit Aktif - Ubah profilmu di bawah
                             </p>
                             <div className="flex flex-col gap-2">
@@ -643,20 +643,20 @@ const Profile = () => {
                                 value={editData.name}
                                 onChange={(e) => setEditData({...editData, name: e.target.value})}
                                 placeholder="Nama Lengkap"
-                                className="bg-white/5 border border-white/10 p-3 rounded-2xl text-xl font-black outline-none focus:border-[#F6CF80]/50 w-full md:max-w-md text-white"
+                                className="bg-white/5 border border-white/10 p-3 rounded-2xl text-xl font-black outline-none focus:border-[#EF4444]/50 w-full md:max-w-md text-white"
                               />
                               <input 
                                 value={editData.username.startsWith('@') ? editData.username : `@${editData.username}`}
                                 onChange={(e) => setEditData({...editData, username: e.target.value})}
                                 placeholder="@username"
-                                className="bg-white/5 border border-white/10 p-3 rounded-2xl text-sm font-black outline-none focus:border-[#F6CF80]/50 w-full md:max-w-xs text-white/50"
+                                className="bg-white/5 border border-white/10 p-3 rounded-2xl text-sm font-black outline-none focus:border-[#EF4444]/50 w-full md:max-w-xs text-white/50"
                               />
                               <textarea 
                                 value={editData.bio}
                                 onChange={(e) => setEditData({...editData, bio: e.target.value})}
                                 placeholder="Tulis bio singkat kamu..."
                                 rows={2}
-                                className="bg-white/5 border border-white/10 p-3 rounded-2xl text-xs font-medium outline-none focus:border-[#F6CF80]/50 w-full md:max-w-lg text-white/80 resize-none"
+                                className="bg-white/5 border border-white/10 p-3 rounded-2xl text-xs font-medium outline-none focus:border-[#EF4444]/50 w-full md:max-w-lg text-white/80 resize-none"
                               />
                             </div>
                             
@@ -673,14 +673,14 @@ const Profile = () => {
                                     </button>
                                   </div>
                                 ))}
-                                <button onClick={addSocialLink} className="flex items-center gap-2 bg-[#F6CF80]/10 border border-[#F6CF80]/20 text-[#F6CF80] py-1.5 px-3 rounded-xl hover:bg-[#F6CF80]/20 transition-all">
+                                <button onClick={addSocialLink} className="flex items-center gap-2 bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#EF4444] py-1.5 px-3 rounded-xl hover:bg-[#EF4444]/20 transition-all">
                                   <Plus size={14} />
                                   <span className="text-[10px] font-black uppercase">Tambah Link</span>
                                 </button>
                               </div>
                             </div>
                             <div className="flex items-center gap-2 pt-2">
-                               <button onClick={saveProfileChanges} className="px-6 py-2.5 bg-[#F6CF80] text-black rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[#F6CF80]/20">
+                               <button onClick={saveProfileChanges} className="px-6 py-2.5 bg-[#EF4444] text-black rounded-xl font-black text-[10px] uppercase tracking-widest flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-lg shadow-[#EF4444]/20">
                                   <Save size={14} /> Simpan
                                </button>
                                <button onClick={() => setIsEditing(false)} className="px-6 py-2.5 bg-white/5 border border-white/10 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all text-white/50 hover:text-white">
@@ -692,7 +692,7 @@ const Profile = () => {
                          <>
                             <div className="flex flex-col md:flex-row md:items-center gap-4">
                                <h1 className="text-3xl md:text-4xl font-black tracking-tight">{profile.name}</h1>
-                               <div className="px-3 py-1 bg-[#F6CF80] text-black rounded-lg text-[10px] font-black uppercase tracking-widest shadow-lg shadow-[#F6CF80]/20">
+                               <div className="px-3 py-1 bg-[#EF4444] text-black rounded-lg text-[10px] font-black uppercase tracking-widest shadow-lg shadow-[#EF4444]/20">
                                   LVL {profile.levelInfo?.level || 1}
                                </div>
                             </div>
@@ -721,7 +721,7 @@ const Profile = () => {
                                         href={link.url} 
                                         target="_blank" 
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2 bg-white/5 border border-white/5 py-1.5 px-3 rounded-2xl hover:bg-[#F6CF80]/10 hover:border-[#F6CF80]/20 hover:text-[#F6CF80] transition-all"
+                                        className="flex items-center gap-2 bg-white/5 border border-white/5 py-1.5 px-3 rounded-2xl hover:bg-[#EF4444]/10 hover:border-[#EF4444]/20 hover:text-[#EF4444] transition-all"
                                       >
                                          {getPlatformIcon(link.platform)}
                                          <span className="text-[10px] font-black uppercase tracking-tight">{link.platform}</span>
@@ -734,7 +734,7 @@ const Profile = () => {
                             <div className="mt-4 w-full md:max-w-sm">
                                <div className="flex items-center justify-between mb-1.5">
                                   <span className="text-[9px] font-black uppercase tracking-widest text-white/40">EXP Progress</span>
-                                  <span className="text-[9px] font-black text-[#F6CF80] uppercase tracking-widest">
+                                  <span className="text-[9px] font-black text-[#EF4444] uppercase tracking-widest">
                                      {profile.levelInfo?.exp || 0} / {getExpForNextLevel(profile.levelInfo?.level || 1)}
                                   </span>
                                </div>
@@ -742,16 +742,16 @@ const Profile = () => {
                                   <motion.div 
                                      initial={{ width: 0 }}
                                      animate={{ width: `${getProgressToNextLevel(profile.levelInfo?.exp || 0)}%` }}
-                                     className="h-full bg-gradient-to-r from-[#F6CF80] to-[#fceabb] rounded-full shadow-[0_0_10px_rgba(246,207,128,0.3)]"
+                                     className="h-full bg-gradient-to-r from-[#EF4444] to-[#FCA5A5] rounded-full shadow-[0_0_10px_rgba(246,207,128,0.3)]"
                                   />
                                </div>
                                <p className="text-[8px] font-bold text-white/20 uppercase tracking-widest mt-1.5">
                                   Butuh {getExpForNextLevel(profile.levelInfo?.level || 1) - (profile.levelInfo?.exp || 0)} EXP lagi untuk naik level!
                                 </p>
                             </div>
-                            <p className="text-[#F6CF80]/40 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mt-4 flex items-center gap-2">
-                               <span className="w-1.5 h-1.5 bg-[#F6CF80] rounded-full" />
-                               Bergabung <span className="text-[#F6CF80]">{profile.joinDate}</span>
+                            <p className="text-[#EF4444]/40 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mt-4 flex items-center gap-2">
+                               <span className="w-1.5 h-1.5 bg-[#EF4444] rounded-full" />
+                               Bergabung <span className="text-[#EF4444]">{profile.joinDate}</span>
                             </p>
                          </>
                        )}
@@ -767,9 +767,9 @@ const Profile = () => {
                   { label: 'Disimpan', value: stats.animeSaved, icon: Bookmark },
                   { label: 'Waktu', value: stats.hoursWatched, icon: Clock },
                 ].map((stat, idx) => (
-                  <div key={idx} className="bg-[#16161a] p-5 md:p-8 rounded-[40px] border border-white/5 flex flex-col items-center text-center group hover:bg-[#F6CF80]/5 hover:border-[#F6CF80]/20 transition-all">
-                    <div className="w-10 h-10 md:w-16 md:h-16 bg-white/5 rounded-2xl md:rounded-3xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 group-hover:bg-[#F6CF80]/10 transition-all">
-                      <stat.icon className="text-[#F6CF80]" size={20} />
+                  <div key={idx} className="bg-[#16161a] p-5 md:p-8 rounded-[40px] border border-white/5 flex flex-col items-center text-center group hover:bg-[#EF4444]/5 hover:border-[#EF4444]/20 transition-all">
+                    <div className="w-10 h-10 md:w-16 md:h-16 bg-white/5 rounded-2xl md:rounded-3xl flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 group-hover:bg-[#EF4444]/10 transition-all">
+                      <stat.icon className="text-[#EF4444]" size={20} />
                     </div>
                     <span className="text-xl md:text-3xl font-black text-white">{stat.value}</span>
                     <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.2em] text-white/20 mt-0.5 md:mt-1">{stat.label}</span>
@@ -778,14 +778,14 @@ const Profile = () => {
               </div>
 
               {/* Install App Banner */}
-              <div className="relative overflow-hidden bg-gradient-to-br from-[#F6CF80]/20 to-[#16161a] p-6 md:p-8 rounded-[40px] border border-[#F6CF80]/30 shadow-[0_0_40px_rgba(246,207,128,0.1)] group">
+              <div className="relative overflow-hidden bg-gradient-to-br from-[#EF4444]/20 to-[#16161a] p-6 md:p-8 rounded-[40px] border border-[#EF4444]/30 shadow-[0_0_40px_rgba(246,207,128,0.1)] group">
                  <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <Smartphone size={120} className="text-[#F6CF80] rotate-12" />
+                    <Smartphone size={120} className="text-[#EF4444] rotate-12" />
                  </div>
                  <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div>
                        <div className="flex items-center gap-3 mb-2">
-                          <div className="bg-[#F6CF80] text-black p-2 rounded-xl">
+                          <div className="bg-[#EF4444] text-black p-2 rounded-xl">
                              <Download size={20} />
                           </div>
                           <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter">Download Aplikasi</h3>
@@ -809,7 +809,7 @@ const Profile = () => {
                               });
                           }
                        }}
-                       className="bg-[#F6CF80] text-black hover:bg-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs shadow-2xl hover:scale-105 active:scale-95 transition-all text-center"
+                       className="bg-[#EF4444] text-black hover:bg-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs shadow-2xl hover:scale-105 active:scale-95 transition-all text-center"
                     >
                        Install Sekarang
                     </button>
@@ -820,7 +820,7 @@ const Profile = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between px-2">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 bg-[#F6CF80]/10 rounded-xl text-[#F6CF80]">
+                    <div className="p-2.5 bg-[#EF4444]/10 rounded-xl text-[#EF4444]">
                       <Sparkles size={18} />
                     </div>
                     <div>
@@ -831,7 +831,7 @@ const Profile = () => {
                   {activeTab === 'menu' && !loading && profile.uid === auth.currentUser?.uid && (
                     <button 
                       onClick={() => handleAddRecommendation()}
-                      className="p-2 bg-white/5 hover:bg-[#F6CF80]/20 border border-white/5 hover:border-[#F6CF80]/30 rounded-xl text-white/40 hover:text-[#F6CF80] transition-all"
+                      className="p-2 bg-white/5 hover:bg-[#EF4444]/20 border border-white/5 hover:border-[#EF4444]/30 rounded-xl text-white/40 hover:text-[#EF4444] transition-all"
                     >
                       <Plus size={18} />
                     </button>
@@ -889,7 +889,7 @@ const Profile = () => {
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
                     <h3 className="text-xs font-black uppercase tracking-[0.3em] text-white/40">User Online Saat Ini</h3>
                   </div>
-                  <span className="text-[10px] font-black text-[#F6CF80] bg-[#F6CF80]/10 px-3 py-1 rounded-full">{onlineUsers.length} Online</span>
+                  <span className="text-[10px] font-black text-[#EF4444] bg-[#EF4444]/10 px-3 py-1 rounded-full">{onlineUsers.length} Online</span>
                 </div>
                 
                 <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide -mx-2 px-2 mask-linear-fade">
@@ -904,7 +904,7 @@ const Profile = () => {
                         onClick={() => navigate('/u/' + user.username)}
                       >
                         <div className="relative">
-                          <div className="w-16 h-16 rounded-2xl border-2 border-white/5 p-1 group-hover:border-[#F6CF80]/50 transition-all overflow-hidden bg-[#16161a]">
+                          <div className="w-16 h-16 rounded-2xl border-2 border-white/5 p-1 group-hover:border-[#EF4444]/50 transition-all overflow-hidden bg-[#16161a]">
                             <img 
                               src={getImageUrl(user.avatar)} 
                               onError={(e) => handleImageError(e, user.avatar)}
@@ -931,9 +931,9 @@ const Profile = () => {
 
               {/* Navigation Menu */}
               <div className="bg-[#16161a] rounded-[48px] p-8 border border-white/5 mb-6 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#F6CF80]/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-[#F6CF80]/10 transition-all" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#EF4444]/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-[#EF4444]/10 transition-all" />
                 <div className="flex items-center gap-4 mb-8">
-                   <div className="w-12 h-12 bg-[#F6CF80]/10 rounded-2xl flex items-center justify-center border border-[#F6CF80]/20 text-[#F6CF80] shadow-inner"><Zap size={24} fill="currentColor" /></div>
+                   <div className="w-12 h-12 bg-[#EF4444]/10 rounded-2xl flex items-center justify-center border border-[#EF4444]/20 text-[#EF4444] shadow-inner"><Zap size={24} fill="currentColor" /></div>
                    <div>
                       <h3 className="text-xl font-black uppercase tracking-tight">Daily Quests</h3>
                       <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">Selesaikan misi harian untuk EXP ekstra</p>
@@ -942,7 +942,7 @@ const Profile = () => {
                 <div className="space-y-4">
                    {profile.dailyQuests?.filter(q => q.current < q.target).length === 0 ? (
                       <div className="py-12 bg-white/[0.02] border border-dashed border-white/10 rounded-[32px] flex flex-col items-center justify-center text-center">
-                         <div className="w-16 h-16 bg-[#F6CF80]/10 rounded-full flex items-center justify-center text-[#F6CF80] mb-4">
+                         <div className="w-16 h-16 bg-[#EF4444]/10 rounded-full flex items-center justify-center text-[#EF4444] mb-4">
                             <Trophy size={32} />
                          </div>
                          <h4 className="font-black text-white uppercase tracking-widest">Semua Misi Selesai!</h4>
@@ -950,7 +950,7 @@ const Profile = () => {
                       </div>
                    ) : (
                      profile.dailyQuests?.filter(q => q.current < q.target).map((q, i) => (
-                       <div key={i} className="flex items-center justify-between p-5 rounded-3xl border bg-white/[0.02] border-white/5 hover:border-[#F6CF80]/30 hover:bg-white/[0.04] transition-all">
+                       <div key={i} className="flex items-center justify-between p-5 rounded-3xl border bg-white/[0.02] border-white/5 hover:border-[#EF4444]/30 hover:bg-white/[0.04] transition-all">
                           <div className="flex items-center gap-5">
                              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${q.current >= q.target ? 'bg-green-500/20 text-green-500' : 'bg-white/5 text-white/20'}`}>
                                 {q.type === 'comment' ? <MessageCircle size={20} /> : q.type === 'watch' ? <Play size={20} /> : <Bookmark size={20} />}
@@ -963,13 +963,13 @@ const Profile = () => {
                           <div className="flex items-center gap-6">
                              <div className="flex flex-col items-end">
                                 <div className="flex items-center gap-1.5 mb-1.5">
-                                   <span className={`text-[10px] font-black ${q.current >= q.target ? 'text-green-500' : 'text-[#F6CF80]'}`}>{q.current}</span>
+                                   <span className={`text-[10px] font-black ${q.current >= q.target ? 'text-green-500' : 'text-[#EF4444]'}`}>{q.current}</span>
                                    <span className="text-[10px] font-black text-white/10">/</span>
                                    <span className="text-[10px] font-black text-white/40">{q.target}</span>
                                 </div>
                                 <div className="w-24 h-1.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
                                    <div 
-                                      className={`h-full transition-all duration-700 ${q.current >= q.target ? 'bg-green-500' : 'bg-[#F6CF80]'}`} 
+                                      className={`h-full transition-all duration-700 ${q.current >= q.target ? 'bg-green-500' : 'bg-[#EF4444]'}`} 
                                       style={{ width: `${(q.current / q.target) * 100}%` }} 
                                    />
                                 </div>
@@ -1004,7 +1004,7 @@ const Profile = () => {
                     className="w-full flex items-center justify-between p-6 hover:bg-white/[0.04] transition-all group rounded-[32px]"
                   >
                     <div className="flex items-center gap-5">
-                      <div className="p-3 rounded-2xl bg-white/5 text-[#F6CF80] group-hover:scale-110 transition-transform">
+                      <div className="p-3 rounded-2xl bg-white/5 text-[#EF4444] group-hover:scale-110 transition-transform">
                          <item.icon size={22} />
                       </div>
                       <div className="text-left">
@@ -1012,7 +1012,7 @@ const Profile = () => {
                         {item.count !== null && <span className="text-[10px] font-black uppercase tracking-widest text-white/20">{item.count} items</span>}
                       </div>
                     </div>
-                    <ChevronRight size={20} className="text-white/10 group-hover:text-[#F6CF80] transform group-hover:translate-x-1 transition-all" />
+                    <ChevronRight size={20} className="text-white/10 group-hover:text-[#EF4444] transform group-hover:translate-x-1 transition-all" />
                   </button>
                 ))}
                 
@@ -1056,8 +1056,8 @@ const Profile = () => {
                   {/* Account Information Section */}
                   <div className="bg-[#16161a] rounded-[40px] border border-white/5 overflow-hidden shadow-2xl">
                     <div className="p-6 md:p-8 border-b border-white/5 flex items-center gap-4 bg-white/[0.02]">
-                       <div className="w-12 h-12 bg-[#F6CF80]/10 rounded-[20px] flex items-center justify-center">
-                          <Info className="text-[#F6CF80]" size={24} />
+                       <div className="w-12 h-12 bg-[#EF4444]/10 rounded-[20px] flex items-center justify-center">
+                          <Info className="text-[#EF4444]" size={24} />
                        </div>
                        <div>
                           <h3 className="text-lg md:text-xl font-black uppercase tracking-tight">Informasi Akun</h3>
@@ -1111,7 +1111,7 @@ const Profile = () => {
                              <p className="text-sm font-black text-white/80 group-hover:text-white transition-colors">Auto Next Episode</p>
                              <p className="text-[10px] font-bold text-white/20 mt-1 uppercase tracking-widest">Lanjut episode otomatis saat selesai</p>
                           </div>
-                          <div className={`w-12 h-6 rounded-full relative transition-all duration-300 ${userSettings.autoNext ? 'bg-[#F6CF80]' : 'bg-white/10'}`}>
+                          <div className={`w-12 h-6 rounded-full relative transition-all duration-300 ${userSettings.autoNext ? 'bg-[#EF4444]' : 'bg-white/10'}`}>
                              <div className={`absolute top-1 w-4 h-4 rounded-full bg-black transition-all duration-300 ${userSettings.autoNext ? 'left-7' : 'left-1'}`} />
                           </div>
                        </button>
@@ -1124,7 +1124,7 @@ const Profile = () => {
                              <p className="text-sm font-black text-white/80 group-hover:text-white transition-colors">Skip Opening & Ending</p>
                              <p className="text-[10px] font-bold text-white/20 mt-1 uppercase tracking-widest">Lompati OP/ED otomatis (jika ada data)</p>
                           </div>
-                          <div className={`w-12 h-6 rounded-full relative transition-all duration-300 ${userSettings.autoSkipOpEd ? 'bg-[#F6CF80]' : 'bg-white/10'}`}>
+                          <div className={`w-12 h-6 rounded-full relative transition-all duration-300 ${userSettings.autoSkipOpEd ? 'bg-[#EF4444]' : 'bg-white/10'}`}>
                              <div className={`absolute top-1 w-4 h-4 rounded-full bg-black transition-all duration-300 ${userSettings.autoSkipOpEd ? 'left-7' : 'left-1'}`} />
                           </div>
                        </button>
@@ -1137,7 +1137,7 @@ const Profile = () => {
                              <p className="text-sm font-black text-white/80 group-hover:text-white transition-colors">Lanjutkan Menonton</p>
                              <p className="text-[10px] font-bold text-white/20 mt-1 uppercase tracking-widest">Tampilkan daftar tontonan terakhir di Home</p>
                           </div>
-                          <div className={`w-12 h-6 rounded-full relative transition-all duration-300 ${userSettings.showContinueWatching ? 'bg-[#F6CF80]' : 'bg-white/10'}`}>
+                          <div className={`w-12 h-6 rounded-full relative transition-all duration-300 ${userSettings.showContinueWatching ? 'bg-[#EF4444]' : 'bg-white/10'}`}>
                              <div className={`absolute top-1 w-4 h-4 rounded-full bg-black transition-all duration-300 ${userSettings.showContinueWatching ? 'left-7' : 'left-1'}`} />
                           </div>
                        </button>
@@ -1146,7 +1146,7 @@ const Profile = () => {
 
                        <div className="flex items-center justify-between p-4 rounded-2xl bg-white/[0.02] border border-white/5">
                           <div className="flex items-center gap-3">
-                             <div className="w-10 h-10 rounded-xl bg-[#F6CF80]/10 flex items-center justify-center text-[#F6CF80]">
+                             <div className="w-10 h-10 rounded-xl bg-[#EF4444]/10 flex items-center justify-center text-[#EF4444]">
                                 <Server size={20} />
                              </div>
                              <div>
@@ -1157,19 +1157,19 @@ const Profile = () => {
                           <div className="flex items-center gap-2 bg-white/5 p-1 rounded-xl border border-white/10">
                              <button 
                                onClick={() => handleUpdateSettings({ apiServer: 'main' })}
-                               className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${userSettings.apiServer === 'main' ? 'bg-[#F6CF80] text-black shadow-lg shadow-[#F6CF80]/20' : 'text-white/30 hover:text-white'}`}
+                               className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${userSettings.apiServer === 'main' ? 'bg-[#EF4444] text-black shadow-lg shadow-[#EF4444]/20' : 'text-white/30 hover:text-white'}`}
                              >
                                Utama
                              </button>
                              <button 
                                onClick={() => handleUpdateSettings({ apiServer: 'backup' })}
-                               className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${userSettings.apiServer === 'backup' ? 'bg-[#F6CF80] text-black shadow-lg shadow-[#F6CF80]/20' : 'text-white/30 hover:text-white'}`}
+                               className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${userSettings.apiServer === 'backup' ? 'bg-[#EF4444] text-black shadow-lg shadow-[#EF4444]/20' : 'text-white/30 hover:text-white'}`}
                              >
                                Cadangan
                              </button>
                              <button 
                                onClick={() => handleUpdateSettings({ apiServer: 'sanka' })}
-                               className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${userSettings.apiServer === 'sanka' ? 'bg-[#F6CF80] text-black shadow-lg shadow-[#F6CF80]/20' : 'text-white/30 hover:text-white'}`}
+                               className={`px-3 py-1.5 rounded-lg text-[10px] font-black uppercase transition-all ${userSettings.apiServer === 'sanka' ? 'bg-[#EF4444] text-black shadow-lg shadow-[#EF4444]/20' : 'text-white/30 hover:text-white'}`}
                              >
                                Server 2
                              </button>
@@ -1178,7 +1178,7 @@ const Profile = () => {
 
                        <div className="flex items-center justify-between p-4 rounded-2xl bg-white/[0.02] border border-white/5">
                           <div className="flex items-center gap-3">
-                             <div className="w-10 h-10 rounded-xl bg-[#F6CF80]/10 flex items-center justify-center text-[#F6CF80]">
+                             <div className="w-10 h-10 rounded-xl bg-[#EF4444]/10 flex items-center justify-center text-[#EF4444]">
                                 <Zap size={20} />
                              </div>
                              <div>
@@ -1188,7 +1188,7 @@ const Profile = () => {
                           </div>
                           <button 
                             onClick={() => handleUpdateSettings({ fallbackStream: !userSettings.fallbackStream })}
-                            className={`w-12 h-6 rounded-full transition-all duration-300 relative border border-white/10 ${userSettings.fallbackStream ? 'bg-[#F6CF80]' : 'bg-white/5'}`}
+                            className={`w-12 h-6 rounded-full transition-all duration-300 relative border border-white/10 ${userSettings.fallbackStream ? 'bg-[#EF4444]' : 'bg-white/5'}`}
                           >
                              <div className={`absolute top-1 w-4 h-4 rounded-full bg-black transition-all duration-300 ${userSettings.fallbackStream ? 'left-7' : 'left-1'}`} />
                           </button>
@@ -1210,10 +1210,10 @@ const Profile = () => {
                     <div className="p-6 md:p-8 space-y-4">
                        <button 
                         onClick={handleChangePassword}
-                        className="w-full flex items-center justify-between p-5 rounded-[24px] bg-white/5 border border-white/5 hover:border-[#F6CF80]/30 hover:bg-white/[0.08] transition-all group"
+                        className="w-full flex items-center justify-between p-5 rounded-[24px] bg-white/5 border border-white/5 hover:border-[#EF4444]/30 hover:bg-white/[0.08] transition-all group"
                        >
                           <div className="flex items-center gap-4">
-                             <Key size={18} className="text-white/40 group-hover:text-[#F6CF80] transition-colors" />
+                             <Key size={18} className="text-white/40 group-hover:text-[#EF4444] transition-colors" />
                              <span className="font-black text-sm uppercase tracking-tight">Ganti Kata Sandi</span>
                           </div>
                           <ChevronRight size={16} className="text-white/20 group-hover:translate-x-1 transition-all" />
@@ -1268,7 +1268,7 @@ const Profile = () => {
                 ) : (
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
                     {bookmarks.map((anime) => (
-                      <div key={anime.slug} className="group bg-[#16161a] rounded-[40px] overflow-hidden border border-white/5 hover:border-[#F6CF80]/30 transition-all flex flex-col shadow-xl">
+                      <div key={anime.slug} className="group bg-[#16161a] rounded-[40px] overflow-hidden border border-white/5 hover:border-[#EF4444]/30 transition-all flex flex-col shadow-xl">
                         <div className="relative aspect-[3/4] overflow-hidden">
                           <img 
                             src={getImageUrl(anime.image)} 
@@ -1285,10 +1285,10 @@ const Profile = () => {
                           </button>
                         </div>
                         <div className="p-4 md:p-6 flex-1 flex flex-col">
-                          <h3 className="font-black text-sm md:text-base line-clamp-2 mb-4 group-hover:text-[#F6CF80] transition-colors h-10 md:h-12">{anime.title}</h3>
+                          <h3 className="font-black text-sm md:text-base line-clamp-2 mb-4 group-hover:text-[#EF4444] transition-colors h-10 md:h-12">{anime.title}</h3>
                           <button 
                             onClick={() => handleBookmarkClick(anime)}
-                            className="mt-auto w-full py-3 bg-white/5 rounded-[18px] text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#F6CF80] hover:text-black transition-all shadow-lg active:scale-95"
+                            className="mt-auto w-full py-3 bg-white/5 rounded-[18px] text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#EF4444] hover:text-black transition-all shadow-lg active:scale-95"
                           >
                             Tonton Sekarang
                           </button>
@@ -1339,24 +1339,24 @@ const Profile = () => {
                             </div>
                             <div className="flex-1 min-w-0">
                                <div className="flex items-center gap-2 mb-2">
-                                  <span className="bg-[#F6CF80] text-black text-[8px] md:text-[10px] font-black px-2 py-0.5 rounded-lg uppercase">EP {item.episode}</span>
+                                  <span className="bg-[#EF4444] text-black text-[8px] md:text-[10px] font-black px-2 py-0.5 rounded-lg uppercase">EP {item.episode}</span>
                                </div>
                                <h4 
-                                className="font-black text-sm md:text-xl truncate group-hover:text-[#F6CF80] transition-colors cursor-pointer"
+                                className="font-black text-sm md:text-xl truncate group-hover:text-[#EF4444] transition-colors cursor-pointer"
                                 onClick={() => navigate(`/anime/${item.slug}/${item.episode}${item.server === 'sanka' ? '?src=sanka' : ''}`)}
                                >
                                 {item.title}
                                </h4>
                                
                                <div className="flex items-center gap-4 mt-3 md:mt-4 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-white/20">
-                                  <div className="flex items-center gap-1.5"><Clock size={12} className="text-[#F6CF80]" /> {Math.floor(item.timestamp/60)}m / {Math.floor(item.duration/60)}m</div>
+                                  <div className="flex items-center gap-1.5"><Clock size={12} className="text-[#EF4444]" /> {Math.floor(item.timestamp/60)}m / {Math.floor(item.duration/60)}m</div>
                                </div>
 
                                <div className="mt-3 md:mt-4 h-1 bg-white/5 rounded-full overflow-hidden w-full max-w-[120px]">
-                                  <div className="h-full bg-[#F6CF80]" style={{ width: `${(item.timestamp/item.duration)*100}%` }} />
+                                  <div className="h-full bg-[#EF4444]" style={{ width: `${(item.timestamp/item.duration)*100}%` }} />
                                </div>
                             </div>
-                            <button onClick={() => navigate(`/anime/${item.slug}/${item.episode}${item.server === 'sanka' ? '?src=sanka' : ''}`)} className="h-12 w-12 md:h-14 md:w-14 bg-white/5 rounded-[20px] text-white/20 hover:text-[#F6CF80] hover:bg-[#F6CF80]/10 transition-all active:scale-90 shrink-0">
+                            <button onClick={() => navigate(`/anime/${item.slug}/${item.episode}${item.server === 'sanka' ? '?src=sanka' : ''}`)} className="h-12 w-12 md:h-14 md:w-14 bg-white/5 rounded-[20px] text-white/20 hover:text-[#EF4444] hover:bg-[#EF4444]/10 transition-all active:scale-90 shrink-0">
                                <Play size={20} fill="currentColor" className="ml-0.5" />
                             </button>
                           </div>
@@ -1370,17 +1370,17 @@ const Profile = () => {
                 ) : (
                   <div className="space-y-4">
                     {downloads.map((item) => (
-                      <div key={item.id} className="bg-[#16161a] p-5 rounded-[32px] border border-white/5 flex items-center justify-between group hover:border-[#F6CF80]/20 transition-all">
+                      <div key={item.id} className="bg-[#16161a] p-5 rounded-[32px] border border-white/5 flex items-center justify-between group hover:border-[#EF4444]/20 transition-all">
                          <div className="flex items-center gap-5">
-                            <div className="w-12 h-12 bg-[#F6CF80]/10 rounded-2xl flex items-center justify-center shrink-0">
-                               <Download size={22} className="text-[#F6CF80]" />
+                            <div className="w-12 h-12 bg-[#EF4444]/10 rounded-2xl flex items-center justify-center shrink-0">
+                               <Download size={22} className="text-[#EF4444]" />
                             </div>
                             <div className="min-w-0">
                                <h4 className="font-black text-base line-clamp-1">{item.title}</h4>
                                <p className="text-[10px] text-white/20 font-black uppercase tracking-widest mt-1">Episode {item.episode} • {item.downloadedAt?.toDate ? item.downloadedAt.toDate().toLocaleDateString('id-ID') : '-'}</p>
                             </div>
                          </div>
-                         <button onClick={() => navigate(`/anime/${item.slug}`)} className="p-3 bg-white/5 rounded-2xl text-white/20 hover:text-[#F6CF80] hover:bg-[#F6CF80]/10 transition-all group-hover:scale-110">
+                         <button onClick={() => navigate(`/anime/${item.slug}`)} className="p-3 bg-white/5 rounded-2xl text-white/20 hover:text-[#EF4444] hover:bg-[#EF4444]/10 transition-all group-hover:scale-110">
                             <Play size={20} fill="currentColor" />
                          </button>
                       </div>

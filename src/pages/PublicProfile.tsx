@@ -69,7 +69,7 @@ const PublicProfile: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0f0f13] pt-24 px-6 flex flex-col items-center justify-center">
-        <Loader2 className="w-12 h-12 text-[#F6CF80] animate-spin" />
+        <Loader2 className="w-12 h-12 text-[#EF4444] animate-spin" />
         <p className="mt-4 text-white/50 font-black uppercase text-xs tracking-widest">Memuat Profil...</p>
       </div>
     );
@@ -82,7 +82,7 @@ const PublicProfile: React.FC = () => {
         <h1 className="text-2xl font-black text-white mb-2">{error || 'Gagal memuat profil'}</h1>
         <button 
           onClick={() => navigate('/')} 
-          className="mt-6 px-10 py-3 bg-[#F6CF80] text-black font-black uppercase text-xs tracking-widest rounded-2xl hover:scale-105 active:scale-95 transition-all"
+          className="mt-6 px-10 py-3 bg-[#EF4444] text-black font-black uppercase text-xs tracking-widest rounded-2xl hover:scale-105 active:scale-95 transition-all"
         >
           Kembali ke Home
         </button>
@@ -124,7 +124,7 @@ const PublicProfile: React.FC = () => {
               <div className="flex-1 min-w-0 pb-2">
                 <div className="flex flex-col md:flex-row md:items-center gap-4">
                   <h1 className="text-3xl md:text-4xl font-black tracking-tight">{profile.name}</h1>
-                  <div className="px-3 py-1 bg-[#F6CF80] text-black rounded-lg text-[10px] font-black uppercase tracking-widest shadow-lg shadow-[#F6CF80]/20">
+                  <div className="px-3 py-1 bg-[#EF4444] text-black rounded-lg text-[10px] font-black uppercase tracking-widest shadow-lg shadow-[#EF4444]/20">
                     LVL {profile.levelInfo?.level || 1}
                   </div>
                 </div>
@@ -153,7 +153,7 @@ const PublicProfile: React.FC = () => {
                         href={link.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 bg-white/5 border border-white/5 py-1.5 px-3 rounded-2xl hover:bg-[#F6CF80]/10 hover:border-[#F6CF80]/20 hover:text-[#F6CF80] transition-all"
+                        className="flex items-center gap-2 bg-white/5 border border-white/5 py-1.5 px-3 rounded-2xl hover:bg-[#EF4444]/10 hover:border-[#EF4444]/20 hover:text-[#EF4444] transition-all"
                       >
                         {getPlatformIcon(link.platform)}
                         <span className="text-[10px] font-black uppercase tracking-tight">{link.platform}</span>
@@ -166,7 +166,7 @@ const PublicProfile: React.FC = () => {
                 <div className="mt-6 w-full md:max-w-sm">
                   <div className="flex items-center justify-between mb-1.5">
                     <span className="text-[9px] font-black uppercase tracking-widest text-white/40">EXP Level Progress</span>
-                    <span className="text-[9px] font-black text-[#F6CF80] uppercase tracking-widest">
+                    <span className="text-[9px] font-black text-[#EF4444] uppercase tracking-widest">
                       {profile.levelInfo?.exp || 0} / {getExpForNextLevel(profile.levelInfo?.level || 1)}
                     </span>
                   </div>
@@ -174,7 +174,7 @@ const PublicProfile: React.FC = () => {
                     <motion.div 
                       initial={{ width: 0 }}
                       animate={{ width: `${getProgressToNextLevel(profile.levelInfo?.exp || 0)}%` }}
-                      className="h-full bg-gradient-to-r from-[#F6CF80] to-[#fceabb] rounded-full"
+                      className="h-full bg-gradient-to-r from-[#EF4444] to-[#FCA5A5] rounded-full"
                     />
                   </div>
                 </div>
@@ -190,7 +190,7 @@ const PublicProfile: React.FC = () => {
             {/* Recommendations */}
             <div className="bg-[#16161a] p-8 rounded-[40px] border border-white/5 space-y-6">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-[#F6CF80]/10 rounded-xl text-[#F6CF80]">
+                <div className="p-2.5 bg-[#EF4444]/10 rounded-xl text-[#EF4444]">
                   <Sparkles size={18} />
                 </div>
                 <div>
@@ -231,7 +231,7 @@ const PublicProfile: React.FC = () => {
             {/* Achivements / Vibe */}
             <div className="grid grid-cols-2 gap-4">
                <div className="bg-[#16161a] p-6 rounded-[32px] border border-white/5 flex flex-col items-center justify-center text-center">
-                  <div className="w-12 h-12 bg-[#F6CF80]/10 rounded-2xl flex items-center justify-center mb-3 text-[#F6CF80]">
+                  <div className="w-12 h-12 bg-[#EF4444]/10 rounded-2xl flex items-center justify-center mb-3 text-[#EF4444]">
                      <Award size={24} />
                   </div>
                   <span className="text-xs font-black uppercase tracking-widest">Anime Master</span>
@@ -254,7 +254,7 @@ const PublicProfile: React.FC = () => {
                 <div className="space-y-4">
                    <div className="flex items-center justify-between">
                       <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Bergabung</span>
-                      <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-widest">{profile.joinDate}</span>
+                      <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-widest">{profile.joinDate}</span>
                    </div>
                    <div className="flex items-center justify-between">
                       <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Status</span>
@@ -265,12 +265,12 @@ const PublicProfile: React.FC = () => {
                 </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#F6CF80]/20 to-transparent p-8 rounded-[40px] border border-[#F6CF80]/10">
-               <h3 className="text-sm font-black uppercase tracking-widest text-[#F6CF80] mb-2">Support User</h3>
+            <div className="bg-gradient-to-br from-[#EF4444]/20 to-transparent p-8 rounded-[40px] border border-[#EF4444]/10">
+               <h3 className="text-sm font-black uppercase tracking-widest text-[#EF4444] mb-2">Support User</h3>
                <p className="text-[10px] font-bold text-white/40 uppercase leading-relaxed mb-4">
                   Beri apresiasi pada profile ini dengan mengikuti mereka!
                </p>
-               <button className="w-full py-3 bg-[#F6CF80] text-black rounded-2xl font-black uppercase text-[10px] tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#F6CF80]/20">
+               <button className="w-full py-3 bg-[#EF4444] text-black rounded-2xl font-black uppercase text-[10px] tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#EF4444]/20">
                   Follow @{profile.username}
                </button>
             </div>

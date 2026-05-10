@@ -39,7 +39,7 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ a, onClick, index }) => {
       onClick={onClick} 
       className={`w-full flex flex-col gap-2 group cursor-pointer active:scale-95 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 blur-none translate-y-0' : 'opacity-0 blur-xl translate-y-4'}`}
     >
-      <div className="relative aspect-[3/4.5] w-full overflow-hidden bg-[#16161a] rounded-xl shadow-xl border border-white/5 group-hover:border-[#F6CF80]/30 transition-colors">
+      <div className="relative aspect-[3/4.5] w-full overflow-hidden bg-[#16161a] rounded-xl shadow-xl border border-white/5 group-hover:border-[#EF4444]/30 transition-colors">
         {a?.isDevEntry && <div className="absolute top-2 right-2 bg-red-600/90 text-white text-[8px] font-black px-1.5 py-0.5 rounded shadow-lg z-20 tracking-wider border border-white/10">ND</div>}
                 <img 
           src={getImageUrl(a.image_poster)} 
@@ -52,12 +52,12 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ a, onClick, index }) => {
           <Zap size={8} fill="white" /> BARU
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-           <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-wider bg-black/40 backdrop-blur-md px-2 py-1 rounded-md">
+           <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-wider bg-black/40 backdrop-blur-md px-2 py-1 rounded-md">
              Detail
            </span>
         </div>
       </div>
-      <h3 className="text-[11px] md:text-xs font-black text-white/80 line-clamp-2 leading-snug group-hover:text-[#F6CF80] transition-colors">{a.title}</h3>
+      <h3 className="text-[11px] md:text-xs font-black text-white/80 line-clamp-2 leading-snug group-hover:text-[#EF4444] transition-colors">{a.title}</h3>
     </div>
   );
 };
@@ -76,7 +76,7 @@ const Pagination = ({ page, setPage, hasMore }: { page: number, setPage: (p: num
       <button 
         onClick={() => setPage(Math.max(1, page - 1))} 
         disabled={page === 1} 
-        className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl md:rounded-2xl disabled:opacity-20 hover:bg-[#F6CF80] hover:text-black hover:border-transparent transition-all active:scale-90"
+        className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl md:rounded-2xl disabled:opacity-20 hover:bg-[#EF4444] hover:text-black hover:border-transparent transition-all active:scale-90"
       >
         <ChevronLeft size={18} />
       </button>
@@ -85,7 +85,7 @@ const Pagination = ({ page, setPage, hasMore }: { page: number, setPage: (p: num
         <button 
           key={p} 
           onClick={() => setPage(p)}
-          className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl md:rounded-2xl font-black text-xs md:text-sm transition-all shadow-xl active:scale-90 ${p === page ? 'bg-[#F6CF80] text-black shadow-[0_0_20px_rgba(246,207,128,0.3)]' : 'bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10'}`}
+          className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl md:rounded-2xl font-black text-xs md:text-sm transition-all shadow-xl active:scale-90 ${p === page ? 'bg-[#EF4444] text-black shadow-[0_0_20px_rgba(246,207,128,0.3)]' : 'bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10'}`}
         >
           {p}
         </button>
@@ -94,7 +94,7 @@ const Pagination = ({ page, setPage, hasMore }: { page: number, setPage: (p: num
       <button 
         onClick={() => setPage(page + 1)} 
         disabled={!hasMore}
-        className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl md:rounded-2xl disabled:opacity-20 hover:bg-[#F6CF80] hover:text-black hover:border-transparent transition-all active:scale-90"
+        className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl md:rounded-2xl disabled:opacity-20 hover:bg-[#EF4444] hover:text-black hover:border-transparent transition-all active:scale-90"
       >
         <ChevronRight size={18} />
       </button>
@@ -132,7 +132,7 @@ const Latest = () => {
   }, [page, fetchData]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#F6CF80] selection:text-black pb-32 text-white">
+    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#EF4444] selection:text-black pb-32 text-white">
       {isLoading && <Loading />}
       <style>{`
         @keyframes shimmer { 0% { transform: translate3d(-100%, 0, 0) skewX(-20deg); } 100% { transform: translate3d(200%, 0, 0) skewX(-20deg); } }

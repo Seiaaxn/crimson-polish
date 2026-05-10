@@ -49,10 +49,10 @@ const AnimeCard: React.FC<AnimeCardProps> = ({ a, onClick, index }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
         <div className="absolute bottom-3 left-3 flex flex-col">
-          <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-widest">{a.episode || a.type}</span>
+          <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-widest">{a.episode || a.type}</span>
         </div>
       </div>
-      <h3 className="text-sm font-black text-white/90 line-clamp-1 group-hover:text-[#F6CF80] transition-colors uppercase tracking-tight">{a.title}</h3>
+      <h3 className="text-sm font-black text-white/90 line-clamp-1 group-hover:text-[#EF4444] transition-colors uppercase tracking-tight">{a.title}</h3>
       <p className="text-[10px] text-white/40 font-bold uppercase mt-1 tracking-widest">{a.status_or_day || 'Server 2'}</p>
     </div>
   );
@@ -69,11 +69,11 @@ const Pagination = ({ page, setPage, hasMore }: { page: number, setPage: (p: num
 
   return (
     <div className="flex justify-center items-center gap-3 mt-12 mb-8 flex-wrap">
-      <button onClick={() => setPage(Math.max(1, page - 1))} disabled={page === 1} className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl disabled:opacity-20 hover:bg-[#F6CF80] hover:text-black transition-all active:scale-90"><ChevronLeft size={18} /></button>
+      <button onClick={() => setPage(Math.max(1, page - 1))} disabled={page === 1} className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl disabled:opacity-20 hover:bg-[#EF4444] hover:text-black transition-all active:scale-90"><ChevronLeft size={18} /></button>
       {pages.map((p) => (
-        <button key={p} onClick={() => setPage(p)} className={`w-10 h-10 flex items-center justify-center rounded-xl font-black text-xs transition-all shadow-xl active:scale-90 ${p === page ? 'bg-[#F6CF80] text-black shadow-[0_0_20px_rgba(246,207,128,0.3)]' : 'bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10'}`}>{p}</button>
+        <button key={p} onClick={() => setPage(p)} className={`w-10 h-10 flex items-center justify-center rounded-xl font-black text-xs transition-all shadow-xl active:scale-90 ${p === page ? 'bg-[#EF4444] text-black shadow-[0_0_20px_rgba(246,207,128,0.3)]' : 'bg-white/5 border border-white/10 text-white/50 hover:text-white hover:bg-white/10'}`}>{p}</button>
       ))}
-      <button onClick={() => setPage(page + 1)} disabled={!hasMore} className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl disabled:opacity-20 hover:bg-[#F6CF80] hover:text-black transition-all active:scale-90"><ChevronRight size={18} /></button>
+      <button onClick={() => setPage(page + 1)} disabled={!hasMore} className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-xl disabled:opacity-20 hover:bg-[#EF4444] hover:text-black transition-all active:scale-90"><ChevronRight size={18} /></button>
     </div>
   );
 };
@@ -108,7 +108,7 @@ const Browse = () => {
   }, [page, fetchData]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#F6CF80] selection:text-black pb-32 text-white">
+    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#EF4444] selection:text-black pb-32 text-white">
       {isLoading && <Loading />}
       <Navbar />
 
@@ -117,7 +117,7 @@ const Browse = () => {
           <div className="flex flex-col">
             <h2 className="text-white font-black uppercase text-2xl md:text-3xl tracking-tighter">Home Collection</h2>
             <div className="flex items-center gap-2 mt-1">
-              <Grid size={12} className="text-[#F6CF80]" />
+              <Grid size={12} className="text-[#EF4444]" />
               <span className="text-[10px] md:text-xs text-white/50 font-black uppercase tracking-widest">Kurasi Terbaik Hari Ini</span>
             </div>
           </div>

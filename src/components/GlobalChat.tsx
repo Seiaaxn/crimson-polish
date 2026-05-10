@@ -61,7 +61,7 @@ const ChatMessageItem = memo(({
         {showAvatar && (
           <div 
             onClick={() => onUserClick(msg.username)}
-            className="w-10 h-10 rounded-full overflow-hidden shrink-0 bg-[#16161a] border-2 border-transparent hover:border-[#F6CF80] shadow-xl transition-all cursor-pointer relative"
+            className="w-10 h-10 rounded-full overflow-hidden shrink-0 bg-[#16161a] border-2 border-transparent hover:border-[#EF4444] shadow-xl transition-all cursor-pointer relative"
           >
             <img 
               src={getImageUrl(msg.avatar)} 
@@ -82,12 +82,12 @@ const ChatMessageItem = memo(({
            <div className={`flex items-center gap-1.5 mb-1 ${isMe ? 'flex-row-reverse' : 'flex-row'}`}>
               <span 
                 onClick={() => onUserClick(msg.username)}
-                className="text-[13px] font-bold text-white hover:text-[#F6CF80] hover:underline cursor-pointer transition-colors tracking-tight line-clamp-1"
+                className="text-[13px] font-bold text-white hover:text-[#EF4444] hover:underline cursor-pointer transition-colors tracking-tight line-clamp-1"
               >
                 {msg.username}
               </span>
-              {isMe && <span className="text-[9px] font-black uppercase tracking-wider bg-[#F6CF80] text-black px-1.5 py-0.5 rounded-md leading-none">YOU</span>}
-              {msg.level && msg.level > 50 && <ShieldCheck size={12} className="text-[#F6CF80] shrink-0" />}
+              {isMe && <span className="text-[9px] font-black uppercase tracking-wider bg-[#EF4444] text-black px-1.5 py-0.5 rounded-md leading-none">YOU</span>}
+              {msg.level && msg.level > 50 && <ShieldCheck size={12} className="text-[#EF4444] shrink-0" />}
               <div className="flex items-center gap-1 shrink-0 px-1.5 py-0.5 bg-white/5 rounded-md border border-white/5">
                  <span className="text-[9px] font-black uppercase tracking-wider text-white/50 leading-none">LV.{msg.level || 1} • {msg.level && msg.level >= 20 ? 'VETERAN' : 'NEWBIE'}</span>
               </div>
@@ -101,11 +101,11 @@ const ChatMessageItem = memo(({
              className={`relative flex items-end gap-2 mb-1.5 cursor-pointer group/reply ${isMe ? 'flex-row-reverse text-right' : 'flex-row text-left'}`}
            >
               {/* Connected Line Effect */}
-              <div className={`w-6 h-4 border-t-2 opacity-30 group-hover/reply:opacity-80 transition-opacity ${isMe ? 'border-r-2 rounded-tr-lg mr-1' : 'border-l-2 rounded-tl-lg ml-1'} border-[#F6CF80]/50 shrink-0`} />
+              <div className={`w-6 h-4 border-t-2 opacity-30 group-hover/reply:opacity-80 transition-opacity ${isMe ? 'border-r-2 rounded-tr-lg mr-1' : 'border-l-2 rounded-tl-lg ml-1'} border-[#EF4444]/50 shrink-0`} />
               <div className="flex flex-col">
                 <div className={`flex items-center gap-1 mb-0.5 opacity-60 group-hover/reply:opacity-100 transition-opacity ${isMe ? 'justify-end' : ''}`}>
-                   <Reply size={10} className="text-[#F6CF80]" />
-                   <span className="text-[10px] font-black uppercase tracking-wider text-[#F6CF80]">Reply to {msg.replyTo.username}</span>
+                   <Reply size={10} className="text-[#EF4444]" />
+                   <span className="text-[10px] font-black uppercase tracking-wider text-[#EF4444]">Reply to {msg.replyTo.username}</span>
                 </div>
                 <div className={`px-3 py-1.5 rounded-[12px] bg-white/5 border border-white/5 max-w-[200px] overflow-hidden ${isMe ? 'rounded-br-sm' : 'rounded-bl-sm'}`}>
                    <p className="text-[11px] text-white/60 line-clamp-1 font-medium truncate">{msg.replyTo.text}</p>
@@ -159,7 +159,7 @@ const ChatMessageItem = memo(({
             }}
             className={`px-4 py-2.5 rounded-[20px] shadow-sm backdrop-blur-md transition-all duration-300 [transform:translateZ(0)] ${
             isMe 
-            ? 'bg-gradient-to-br from-[#F6CF80] via-[#EAB308] to-[#F59E0B] text-black rounded-tr-sm hover:shadow-[#F6CF80]/20' 
+            ? 'bg-gradient-to-br from-[#EF4444] via-[#DC2626] to-[#DC2626] text-black rounded-tr-sm hover:shadow-[#EF4444]/20' 
             : 'bg-[#2a2a32]/80 text-white border border-white/[0.05] rounded-tl-sm hover:bg-[#32323a]'
           }`}>
             <p className={`text-[14px] leading-[1.5] font-medium break-words whitespace-pre-wrap ${isMe ? 'font-semibold tracking-tight' : 'tracking-wide'}`}>
@@ -181,7 +181,7 @@ const ChatMessageItem = memo(({
                     setReplyTo(msg);
                     inputRef.current?.focus();
                   }}
-                  className="w-8 h-8 rounded-full bg-[#32323a] border border-white/10 flex items-center justify-center hover:bg-[#F6CF80] hover:text-black hover:scale-110 active:scale-90 transition-all shadow-xl"
+                  className="w-8 h-8 rounded-full bg-[#32323a] border border-white/10 flex items-center justify-center hover:bg-[#EF4444] hover:text-black hover:scale-110 active:scale-90 transition-all shadow-xl"
                >
                   <Reply size={14} />
                </button>
@@ -266,9 +266,9 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       // Add a high-intensity pulse effect
-      el.classList.add('ring-2', 'ring-[#F6CF80]', 'ring-offset-4', 'ring-offset-[#0c0c0e]', 'rounded-3xl');
+      el.classList.add('ring-2', 'ring-[#EF4444]', 'ring-offset-4', 'ring-offset-[#0c0c0e]', 'rounded-3xl');
       setTimeout(() => {
-        el.classList.remove('ring-2', 'ring-[#F6CF80]', 'ring-offset-4', 'ring-offset-[#0c0c0e]');
+        el.classList.remove('ring-2', 'ring-[#EF4444]', 'ring-offset-4', 'ring-offset-[#0c0c0e]');
       }, 2000);
     }
   };
@@ -355,7 +355,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
       text: "Pesan ini akan hilang selamanya bocil!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#F6CF80',
+      confirmButtonColor: '#EF4444',
       cancelButtonColor: '#303030',
       confirmButtonText: 'Ya, Hapus!',
       cancelButtonText: 'Batal',
@@ -406,7 +406,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
       {/* Community Header */}
       <div className="bg-[#1a1a20]/80 backdrop-blur-xl p-4 flex items-center justify-between border-b border-white/5 relative z-10">
         <div className="flex items-center gap-4">
-           <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-[#F6CF80]">
+           <div className="w-10 h-10 rounded-2xl bg-white/5 flex items-center justify-center text-[#EF4444]">
               <Globe size={24} />
            </div>
            <div>
@@ -434,11 +434,11 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
                </div>`,
                icon: 'info',
                confirmButtonText: 'Oke!',
-               confirmButtonColor: '#F6CF80',
+               confirmButtonColor: '#EF4444',
                background: '#16161a',
                color: '#fff'
              })}
-             className="px-3 py-1.5 rounded-xl bg-[#F6CF80]/10 border border-[#F6CF80]/20 text-[#F6CF80] text-[9px] font-black uppercase tracking-widest hover:bg-[#F6CF80] hover:text-black transition-all mr-2"
+             className="px-3 py-1.5 rounded-xl bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#EF4444] text-[9px] font-black uppercase tracking-widest hover:bg-[#EF4444] hover:text-black transition-all mr-2"
            >
              Rules
            </button>
@@ -447,7 +447,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
       </div>
 
       {/* Pinned Message */}
-      <div className="bg-[#F6CF80] p-3 px-6 flex items-center justify-between text-black relative z-10 overflow-hidden">
+      <div className="bg-[#EF4444] p-3 px-6 flex items-center justify-between text-black relative z-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-transparent pointer-events-none" />
         <div className="flex items-center gap-3 relative z-10">
            <Pin size={14} fill="black" className="shrink-0" />
@@ -466,13 +466,13 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
       >
         {isLoading ? (
           <div className="h-full flex flex-col items-center justify-center gap-4">
-            <Loader2 className="animate-spin text-[#F6CF80]" size={32} />
+            <Loader2 className="animate-spin text-[#EF4444]" size={32} />
             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">Syncing Messages...</span>
           </div>
         ) : messages.length === 0 ? (
           <div className="h-full flex flex-col items-center justify-center text-center opacity-40">
              <div className="w-20 h-20 rounded-[32px] bg-white/5 flex items-center justify-center mb-6">
-                <Smile size={32} className="text-[#F6CF80]" />
+                <Smile size={32} className="text-[#EF4444]" />
              </div>
              <p className="text-sm font-black uppercase tracking-[0.2em] text-white">Sepi amat nih!</p>
              <p className="text-xs font-bold text-white/20 mt-1">Jadilah yang pertama untuk meramaikan room!</p>
@@ -514,7 +514,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
           >
             <div className="p-4 border-b border-white/5 flex items-center justify-between bg-black/20">
                <div className="flex items-center gap-2">
-                  <AtSign size={14} className="text-[#F6CF80]" />
+                  <AtSign size={14} className="text-[#EF4444]" />
                   <span className="text-[10px] font-black uppercase text-white/40 tracking-widest">Siapa yang mau di mention?</span>
                </div>
                <button onClick={() => setShowSuggestions(false)} className="text-white/20 hover:text-white"><X size={16} /></button>
@@ -527,11 +527,11 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
                    className="w-full p-3 flex items-center gap-4 hover:bg-white/5 rounded-2xl transition-all text-left group"
                  >
                    <div className="relative">
-                      <img src={getImageUrl(user.avatar)} alt="" className="w-10 h-10 rounded-xl object-cover border border-white/10 group-hover:border-[#F6CF80] transition-colors" />
+                      <img src={getImageUrl(user.avatar)} alt="" className="w-10 h-10 rounded-xl object-cover border border-white/10 group-hover:border-[#EF4444] transition-colors" />
                       <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-[#1a1a20]" />
                    </div>
                    <div>
-                      <p className="text-sm font-black text-white group-hover:text-[#F6CF80] transition-colors">{user.name}</p>
+                      <p className="text-sm font-black text-white group-hover:text-[#EF4444] transition-colors">{user.name}</p>
                       <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">@{user.username}</p>
                    </div>
                  </button>
@@ -550,7 +550,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
       {showScrollDown && (
         <button 
           onClick={scrollToBottom}
-          className="absolute bottom-28 right-6 w-12 h-12 bg-[#F6CF80] text-black rounded-full shadow-2xl flex items-center justify-center animate-bounce z-50 hover:scale-110 active:scale-95 transition-all"
+          className="absolute bottom-28 right-6 w-12 h-12 bg-[#EF4444] text-black rounded-full shadow-2xl flex items-center justify-center animate-bounce z-50 hover:scale-110 active:scale-95 transition-all"
         >
           <ChevronDown size={24} />
         </button>
@@ -564,12 +564,12 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
                initial={{ height: 0, opacity: 0, y: 10 }}
                animate={{ height: 'auto', opacity: 1, y: 0 }}
                exit={{ height: 0, opacity: 0, y: 10 }}
-               className="mb-4 bg-white/5 p-4 rounded-[24px] flex items-center justify-between border-l-4 border-[#F6CF80] backdrop-blur-xl"
+               className="mb-4 bg-white/5 p-4 rounded-[24px] flex items-center justify-between border-l-4 border-[#EF4444] backdrop-blur-xl"
             >
                <div className="flex-1 min-w-0 pr-4">
                   <div className="flex items-center gap-2 mb-1">
-                     <Reply size={14} className="text-[#F6CF80]" />
-                     <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-[0.2em]">Membalas @{replyTo.username}</span>
+                     <Reply size={14} className="text-[#EF4444]" />
+                     <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-[0.2em]">Membalas @{replyTo.username}</span>
                   </div>
                   <p className="text-xs text-white/50 line-clamp-1 italic font-medium italic">{replyTo.text}</p>
                </div>
@@ -585,7 +585,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
 
         <div className="flex items-end gap-4">
            <div className="flex-1 flex flex-col gap-3">
-              <div className="relative bg-[#0d0d0f] rounded-[28px] border border-white/5 focus-within:border-[#F6CF80]/40 transition-all p-1.5 shadow-inner">
+              <div className="relative bg-[#0d0d0f] rounded-[28px] border border-white/5 focus-within:border-[#EF4444]/40 transition-all p-1.5 shadow-inner">
                  <textarea
                    ref={inputRef}
                    placeholder={`Bicara sebagai ${auth.currentUser?.displayName?.split(' ')[0] || 'Anon'}`}
@@ -604,7 +604,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
                     <div className="flex items-center gap-1">
                        <button 
                          onClick={() => setIsEmojiOpen(!isEmojiOpen)}
-                         className={`w-9 h-9 rounded-2xl flex items-center justify-center transition-all ${isEmojiOpen ? 'bg-[#F6CF80] text-black shadow-lg shadow-[#F6CF80]/20' : 'hover:bg-white/5 text-white/30'}`}
+                         className={`w-9 h-9 rounded-2xl flex items-center justify-center transition-all ${isEmojiOpen ? 'bg-[#EF4444] text-black shadow-lg shadow-[#EF4444]/20' : 'hover:bg-white/5 text-white/30'}`}
                        >
                          <Smile size={20} />
                        </button>
@@ -649,7 +649,7 @@ const GlobalChat: React.FC<GlobalChatProps> = ({ onClose }) => {
              onClick={handleSendMessage}
              className={`w-14 h-14 rounded-3xl flex items-center justify-center transition-all shadow-2xl relative overflow-hidden group ${
                inputText.trim() 
-               ? 'bg-[#F6CF80] text-black hover:scale-105 active:scale-95 shadow-[#F6CF80]/20' 
+               ? 'bg-[#EF4444] text-black hover:scale-105 active:scale-95 shadow-[#EF4444]/20' 
                : 'bg-white/5 text-white/10 cursor-not-allowed opacity-50'
              }`}
            >

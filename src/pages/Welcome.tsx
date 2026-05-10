@@ -59,7 +59,7 @@ const Welcome = () => {
         </div>
         <div className="flex gap-4 md:gap-6 bg-[#16161a]/60 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full shadow-lg">
           {navLinks.map((link, i) => (
-            <button key={i} aria-label={link.label} onClick={() => { sessionStorage.setItem('welcomeShown', 'true'); navigate(link.path); }} className="text-white hover:text-[#F6CF80] transition-colors p-1">
+            <button key={i} aria-label={link.label} onClick={() => { sessionStorage.setItem('welcomeShown', 'true'); navigate(link.path); }} className="text-white hover:text-[#EF4444] transition-colors p-1">
               <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">{link.icon}</svg>
             </button>
           ))}
@@ -67,15 +67,15 @@ const Welcome = () => {
       </nav>
 
       <main className="flex-1 flex flex-col items-center px-4 pt-2">
-        <div className="relative w-full max-w-5xl rounded-[2.5rem] overflow-hidden border border-[#F6CF80]/20 shadow-[0_0_50px_rgba(246,207,128,0.1)] bg-[#0f0f12]">
+        <div className="relative w-full max-w-5xl rounded-[2.5rem] overflow-hidden border border-[#EF4444]/20 shadow-[0_0_50px_rgba(246,207,128,0.1)] bg-[#0f0f12]">
           <div className="w-full h-full aspect-square md:aspect-video bg-[#16161a] relative overflow-hidden flex items-center justify-center">
-             <div className="absolute inset-0 bg-gradient-to-br from-[#F6CF80]/10 to-transparent"></div>
+             <div className="absolute inset-0 bg-gradient-to-br from-[#EF4444]/10 to-transparent"></div>
              <img src="https://repgyetdcodkynrbxocg.supabase.co/storage/v1/object/public/images/telegram-1778401701564-0883fad5.jpg" alt="Hero Banner" className="w-full h-full object-cover opacity-40 mix-blend-screen" />
           </div>
           <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-black/50">
             <div className="w-full max-w-lg relative z-20">
-              <div className="flex items-center bg-white border border-gray-200 rounded-full px-5 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all focus-within:ring-2 focus-within:ring-[#F6CF80] group">
-                <svg className="w-5 h-5 text-gray-400 group-focus-within:text-[#F6CF80] mr-3 shrink-0 transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <div className="flex items-center bg-white border border-gray-200 rounded-full px-5 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all focus-within:ring-2 focus-within:ring-[#EF4444] group">
+                <svg className="w-5 h-5 text-gray-400 group-focus-within:text-[#EF4444] mr-3 shrink-0 transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 <input 
                   type="text" 
                   className="w-full bg-transparent text-black text-sm outline-none font-bold placeholder-gray-400" 
@@ -113,7 +113,7 @@ const Welcome = () => {
                       {r.isDevEntry && <div className="absolute top-1 left-1 bg-red-600/90 text-white text-[8px] font-black px-1 rounded z-10 border border-white/10">ND</div>}
                       <img src={getImageUrl(r.image_cover || r.image_poster)} onError={(e) => handleImageError(e, r.image_cover || r.image_poster)} alt={r.title} className="w-10 rounded-md shadow-sm aspect-[3/4.5] object-cover bg-black/50" />
                       <div className="flex flex-col flex-1 min-w-0">
-                         <span className="text-white font-black text-xs line-clamp-1 group-hover:text-[#F6CF80] transition-colors">{r.title || r.devTitle}</span>
+                         <span className="text-white font-black text-xs line-clamp-1 group-hover:text-[#EF4444] transition-colors">{r.title || r.devTitle}</span>
                          <span className="text-white/40 font-bold text-[9px] uppercase mt-1 tracking-wider">{r.type || 'TV'} • {r.status || 'Unknown'}</span>
                       </div>
                     </div>
@@ -123,7 +123,7 @@ const Welcome = () => {
             </div>
           </div>
           <div className="absolute bottom-10 left-0 right-0 flex justify-center z-10">
-             <button onClick={handleEnterHome} className="bg-[#F6CF80] hover:bg-white text-black font-black px-14 py-4 rounded-full active:scale-95 transition-all shadow-[0_10px_30px_rgba(246,207,128,0.3)] tracking-widest text-xs uppercase hover:-translate-y-1">Masuk Beranda</button>
+             <button onClick={handleEnterHome} className="bg-[#EF4444] hover:bg-white text-black font-black px-14 py-4 rounded-full active:scale-95 transition-all shadow-[0_10px_30px_rgba(246,207,128,0.3)] tracking-widest text-xs uppercase hover:-translate-y-1">Masuk Beranda</button>
           </div>
         </div>
 
@@ -131,7 +131,7 @@ const Welcome = () => {
           <div className="w-56 h-56 md:w-72 md:h-72 mb-6 drop-shadow-2xl transform hover:scale-110 transition-transform duration-500">
              <img src="https://files.catbox.moe/clnzrt.png" alt="ChisaStream Mascot" className="w-full h-full object-contain" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-5 text-white drop-shadow-lg">Chisa<span className="text-[#F6CF80]">Stream</span></h2>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-5 text-white drop-shadow-lg">Chisa<span className="text-[#EF4444]">Stream</span></h2>
           <p className="text-white/60 text-sm md:text-base font-medium leading-relaxed max-w-2xl drop-shadow-md">ChisaStream menyediakan akses menonton ribuan judul anime secara gratis tanpa gangguan iklan. Nikmati nonton anime subtitle indonesia dengan kualitas 360p hingga 1080p secara gratis dan nyaman!!</p>
         </div>
       </main>

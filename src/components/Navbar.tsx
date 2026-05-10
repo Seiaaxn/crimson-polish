@@ -147,10 +147,10 @@ const Navbar = () => {
           className="flex items-center gap-3 group relative z-10 cursor-pointer outline-none"
         >
           <div className="w-8 h-8 md:w-10 md:h-10 overflow-hidden group-hover:scale-110 transition-transform relative">
-            <div className="absolute inset-0 bg-[#F6CF80]/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-[#EF4444]/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
             <img src={getImageUrl("https://repgyetdcodkynrbxocg.supabase.co/storage/v1/object/public/images/telegram-1778401091005-146ffc5f.jpg")} className="w-full h-full object-contain relative z-10" alt="Logo" />
           </div>
-          <span className="text-lg md:text-2xl font-black tracking-tighter text-white group-hover:text-[#F6CF80] transition-colors">ChisaStream</span>
+          <span className="text-lg md:text-2xl font-black tracking-tighter text-white group-hover:text-[#EF4444] transition-colors">ChisaStream</span>
         </button>
       </div>
 
@@ -175,7 +175,7 @@ const Navbar = () => {
             >
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-lg overflow-hidden bg-[#F6CF80]/10 p-1">
+                  <div className="w-6 h-6 rounded-lg overflow-hidden bg-[#EF4444]/10 p-1">
                     <img src={getImageUrl("https://repgyetdcodkynrbxocg.supabase.co/storage/v1/object/public/images/telegram-1778401091005-146ffc5f.jpg")} className="w-full h-full object-contain" alt="" />
                   </div>
                   <span className="text-xs font-black tracking-[0.2em] text-white/40 uppercase">Navigasi</span>
@@ -205,16 +205,16 @@ const Navbar = () => {
                       title: 'Wajib Login', 
                       text: 'Silahkan login terlebih dahulu untuk mengakses Chat Global!', 
                       icon: 'warning',
-                      confirmButtonColor: '#F6CF80'
+                      confirmButtonColor: '#EF4444'
                     });
                   }},
                   { name: 'Timeline Rilis', icon: LayoutGrid, path: '/schedule' },
                   { name: 'Profil Saya', icon: User, path: '/profile' },
                 ].map((item: any, idx) => {
                   const content = (
-                    <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.01] border border-white/5 hover:bg-[#F6CF80]/5 hover:border-[#F6CF80]/20 transition-all group">
+                    <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.01] border border-white/5 hover:bg-[#EF4444]/5 hover:border-[#EF4444]/20 transition-all group">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-[#F6CF80] group-hover:text-black transition-all relative">
+                        <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-[#EF4444] group-hover:text-black transition-all relative">
                           <item.icon size={14} />
                           {item.name === 'Global Chat' && mentions > 0 && (
                             <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-[8px] font-black text-white border-2 border-[#16161a]">
@@ -224,10 +224,10 @@ const Navbar = () => {
                         </div>
                         <div className="flex flex-col">
                           <span className="text-[11px] font-black text-white/60 group-hover:text-white uppercase tracking-wider transition-colors">{item.name}</span>
-                          {item.badge && <span className="text-[7px] font-black uppercase tracking-widest text-[#F6CF80]">{item.badge}</span>}
+                          {item.badge && <span className="text-[7px] font-black uppercase tracking-widest text-[#EF4444]">{item.badge}</span>}
                         </div>
                       </div>
-                      <ChevronRight size={12} className="text-white/10 group-hover:text-[#F6CF80] transition-all transform translate-x-0 group-hover:translate-x-1" />
+                      <ChevronRight size={12} className="text-white/10 group-hover:text-[#EF4444] transition-all transform translate-x-0 group-hover:translate-x-1" />
                     </div>
                   );
 
@@ -263,7 +263,7 @@ const Navbar = () => {
         <div ref={searchRef} className="relative">
           <button 
             onClick={() => setSearchOpen(!searchOpen)}
-            className={`w-10 h-10 rounded-2xl flex items-center justify-center transition-all ${searchOpen ? 'bg-[#F6CF80] text-black shadow-lg shadow-[#F6CF80]/20' : 'bg-white/5 text-white/40 hover:text-white hover:bg-white/10'}`}
+            className={`w-10 h-10 rounded-2xl flex items-center justify-center transition-all ${searchOpen ? 'bg-[#EF4444] text-black shadow-lg shadow-[#EF4444]/20' : 'bg-white/5 text-white/40 hover:text-white hover:bg-white/10'}`}
           >
             {searchOpen ? <X size={20} /> : <Search size={20} />}
           </button>
@@ -284,32 +284,32 @@ const Navbar = () => {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         placeholder="Search Anime Title..."
-                        className="w-full bg-white/5 border border-white/5 rounded-[20px] py-4 pl-12 pr-6 text-sm font-black text-white focus:outline-none focus:border-[#F6CF80]/40 transition-all placeholder:text-white/10 uppercase tracking-widest"
+                        className="w-full bg-white/5 border border-white/5 rounded-[20px] py-4 pl-12 pr-6 text-sm font-black text-white focus:outline-none focus:border-[#EF4444]/40 transition-all placeholder:text-white/10 uppercase tracking-widest"
                       />
                     </div>
                     {/* Search Mode Toggle */}
                     <div className="flex items-center gap-2 mt-4 px-1">
                       <button 
                         onClick={() => setSearchSource('main')}
-                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'main' ? 'bg-[#F6CF80] text-black border-[#F6CF80]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
+                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'main' ? 'bg-[#EF4444] text-black border-[#EF4444]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
                       >
                          Server 1
                       </button>
                       <button 
                         onClick={() => setSearchSource('backup')}
-                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'backup' ? 'bg-[#F6CF80] text-black border-[#F6CF80]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
+                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'backup' ? 'bg-[#EF4444] text-black border-[#EF4444]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
                       >
                          Server Alternatif
                       </button>
                       <button 
                         onClick={() => setSearchSource('sanka')}
-                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'sanka' ? 'bg-[#F6CF80] text-black border-[#F6CF80]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
+                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'sanka' ? 'bg-[#EF4444] text-black border-[#EF4444]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
                       >
                          Server 2
                       </button>
                       <button 
                         onClick={() => { setSearchSource('comic'); setResults([]); setQuery(''); }}
-                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'comic' ? 'bg-[#F6CF80] text-black border-[#F6CF80]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
+                        className={`flex-1 py-2 rounded-xl text-[9px] font-black uppercase tracking-[0.2em] transition-all border ${searchSource === 'comic' ? 'bg-[#EF4444] text-black border-[#EF4444]' : 'bg-white/5 text-white/30 border-white/5 hover:border-white/10'}`}
                       >
                          Manga
                       </button>
@@ -319,8 +319,8 @@ const Navbar = () => {
                   <div className="max-h-[60vh] overflow-y-auto custom-scrollbar p-2">
                     {isLoading ? (
                       <div className="py-12 flex flex-col items-center justify-center gap-4">
-                         <Loader2 className="text-[#F6CF80] animate-spin" size={32} />
-                         <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#F6CF80] animate-pulse">Searching Database...</span>
+                         <Loader2 className="text-[#EF4444] animate-spin" size={32} />
+                         <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#EF4444] animate-pulse">Searching Database...</span>
                       </div>
                     ) : results.length > 0 ? (
                       <div className="space-y-1">
@@ -353,13 +353,13 @@ const Navbar = () => {
                              </div>
                              <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-2 mb-1">
-                                   <Star size={10} className="text-[#F6CF80] fill-[#F6CF80]" />
+                                   <Star size={10} className="text-[#EF4444] fill-[#EF4444]" />
                                    <span className="text-[10px] font-black text-white/40 uppercase tracking-widest">{anime.isDevEntry ? 'DEV API' : (anime.type || 'Series')} • {anime.favorites || 'N/A'}</span>
                                 </div>
-                                <h4 className="text-sm font-black text-white/80 line-clamp-1 group-hover:text-[#F6CF80] transition-colors uppercase tracking-tight">{anime.title}</h4>
+                                <h4 className="text-sm font-black text-white/80 line-clamp-1 group-hover:text-[#EF4444] transition-colors uppercase tracking-tight">{anime.title}</h4>
                                 <p className="text-[10px] font-black text-white/20 truncate uppercase tracking-widest mt-1">{anime.genre || '-'}</p>
                              </div>
-                             <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all group-hover:bg-[#F6CF80] group-hover:text-black">
+                             <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all group-hover:bg-[#EF4444] group-hover:text-black">
                                 <Play size={16} fill="currentColor" className="ml-0.5" />
                              </div>
                           </button>
@@ -367,7 +367,7 @@ const Navbar = () => {
                         <Link 
                           to={`/search?q=${encodeURIComponent(query)}`}
                           onClick={() => setSearchOpen(false)}
-                          className="flex items-center justify-center py-4 text-[10px] font-black uppercase tracking-widest text-white/20 hover:text-[#F6CF80] transition-colors mt-2"
+                          className="flex items-center justify-center py-4 text-[10px] font-black uppercase tracking-widest text-white/20 hover:text-[#EF4444] transition-colors mt-2"
                         >
                            View Full Results
                         </Link>
@@ -381,7 +381,7 @@ const Navbar = () => {
                       </div>
                     ) : (
                       <div className="py-12 flex flex-col items-center text-center px-8">
-                         <Play className="text-[#F6CF80] mb-4 opacity-20" size={48} />
+                         <Play className="text-[#EF4444] mb-4 opacity-20" size={48} />
                          <p className="text-xs font-black text-white/40 uppercase tracking-widest">Type to search thousands of anime</p>
                       </div>
                     )}
@@ -401,11 +401,11 @@ const Navbar = () => {
                 title: 'Wajib Login',
                 text: 'Silahkan login terlebih dahulu untuk mengakses Chat Global!',
                 icon: 'warning',
-                confirmButtonColor: '#F6CF80'
+                confirmButtonColor: '#EF4444'
               });
             }
           }}
-          className="w-10 h-10 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-[#F6CF80] hover:text-black transition-all group relative"
+          className="w-10 h-10 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center hover:bg-[#EF4444] hover:text-black transition-all group relative"
         >
           <MessageSquare size={18} className="group-hover:scale-110 transition-transform" />
           {mentions > 0 && (
@@ -417,7 +417,7 @@ const Navbar = () => {
         
         {profile ? (
           <Link to="/profile" className="flex items-center gap-3 bg-white/5 border border-white/5 rounded-2xl pl-1 pr-3 py-1 hover:bg-white/10 transition-all group">
-             <div className="w-8 h-8 rounded-xl overflow-hidden bg-[#F6CF80]">
+             <div className="w-8 h-8 rounded-xl overflow-hidden bg-[#EF4444]">
                 {profile?.isDevEntry && <div className="absolute top-2 right-2 bg-red-600/90 text-white text-[8px] font-black px-1.5 py-0.5 rounded shadow-lg z-20 tracking-wider border border-white/10">ND</div>}
                 <img 
                   src={getImageUrl(profile.avatar)} 
@@ -428,21 +428,21 @@ const Navbar = () => {
              </div>
              <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                   <span className="text-[10px] font-black text-white group-hover:text-[#F6CF80] transition-colors">LVL {profile.levelInfo?.level || 1}</span>
-                   <Zap size={8} fill="currentColor" className="text-[#F6CF80]" />
+                   <span className="text-[10px] font-black text-white group-hover:text-[#EF4444] transition-colors">LVL {profile.levelInfo?.level || 1}</span>
+                   <Zap size={8} fill="currentColor" className="text-[#EF4444]" />
                 </div>
                 <div className="w-10 h-1 bg-white/10 rounded-full mt-0.5 overflow-hidden">
                    <div 
-                      className="h-full bg-[#F6CF80]" 
+                      className="h-full bg-[#EF4444]" 
                       style={{ width: `${getProgressToNextLevel(profile.levelInfo?.exp || 0)}%` }} 
                    />
                 </div>
              </div>
           </Link>
         ) : (
-          <Link to="/profile" className="w-10 h-10 rounded-full border-2 border-white/10 p-0.5 hover:border-[#F6CF80] transition-all overflow-hidden group">
+          <Link to="/profile" className="w-10 h-10 rounded-full border-2 border-white/10 p-0.5 hover:border-[#EF4444] transition-all overflow-hidden group">
             <div className="w-full h-full rounded-full overflow-hidden bg-white/5 flex items-center justify-center relative">
-                <User size={16} className="text-white/40 group-hover:text-[#F6CF80] transition-colors" />
+                <User size={16} className="text-white/40 group-hover:text-[#EF4444] transition-colors" />
             </div>
           </Link>
         )}

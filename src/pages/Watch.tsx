@@ -30,7 +30,7 @@ const WatchSkeleton = () => (
   <div className="w-full">
     <div className="w-full aspect-video bg-[#16161a] rounded-2xl relative overflow-hidden mb-6 flex flex-col items-center justify-center border border-white/5 shadow-3xl">
       <LottieLoading size="w-64 h-64 md:w-80 md:h-80" />
-      <p className="text-[#F6CF80] text-sm font-black uppercase tracking-[0.3em] relative z-20 animate-pulse text-center px-6 mt-[-40px]">Menyiapkan Player terbaik untukmu...</p>
+      <p className="text-[#EF4444] text-sm font-black uppercase tracking-[0.3em] relative z-20 animate-pulse text-center px-6 mt-[-40px]">Menyiapkan Player terbaik untukmu...</p>
     </div>
     <div className="h-64 bg-[#16161a]/50 rounded-[32px] mb-10 w-full border border-white/5"></div>
   </div>
@@ -150,7 +150,7 @@ const Watch = () => {
       text,
       background: '#16161a',
       color: '#fff',
-      confirmButtonColor: '#F6CF80'
+      confirmButtonColor: '#EF4444'
     });
   };
 
@@ -705,7 +705,7 @@ const Watch = () => {
         @keyframes popSeek { 0% { opacity: 0; transform: translateY(15px) scale(0.8); } 20% { opacity: 1; transform: translateY(0) scale(1.1); } 100% { opacity: 0; transform: translateY(-5px) scale(1); } }
         @keyframes midPop { 0% { opacity: 0; transform: scale(0.5); } 30% { opacity: 1; transform: scale(1.4); } 100% { opacity: 0; transform: scale(1.2); } }
         input[type=range] { -webkit-appearance: none; background: transparent; }
-        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #F6CF80; cursor: pointer; border: 3px solid #16161a; box-shadow: 0 0 15px rgba(246,207,128,0.4); }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 16px; width: 16px; border-radius: 50%; background: #EF4444; cursor: pointer; border: 3px solid #16161a; box-shadow: 0 0 15px rgba(246,207,128,0.4); }
       `}</style>
       
       <Navbar />
@@ -717,14 +717,14 @@ const Watch = () => {
             initial={{ opacity: 0, y: 50, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="fixed bottom-10 left-10 z-[200] bg-[#16161a] border-2 border-[#F6CF80] p-6 rounded-[32px] shadow-2xl flex items-center gap-6 overflow-hidden"
+            className="fixed bottom-10 left-10 z-[200] bg-[#16161a] border-2 border-[#EF4444] p-6 rounded-[32px] shadow-2xl flex items-center gap-6 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-[#F6CF80]/5 animate-pulse" />
-            <div className="relative z-10 w-16 h-16 bg-[#F6CF80] rounded-2xl flex items-center justify-center text-black">
+            <div className="absolute inset-0 bg-[#EF4444]/5 animate-pulse" />
+            <div className="relative z-10 w-16 h-16 bg-[#EF4444] rounded-2xl flex items-center justify-center text-black">
               <Star size={32} fill="currentColor" />
             </div>
             <div className="relative z-10">
-              <h4 className="text-[#F6CF80] text-xs font-black uppercase tracking-[0.3em] mb-1">LEVEL UP!</h4>
+              <h4 className="text-[#EF4444] text-xs font-black uppercase tracking-[0.3em] mb-1">LEVEL UP!</h4>
               <p className="text-white text-xl font-black">Mencapai Level {levelUpData.level}</p>
               <p className="text-white/40 text-[10px] font-medium mt-1">Kamu semakin kuat di ChisaStream!</p>
             </div>
@@ -741,7 +741,7 @@ const Watch = () => {
               initial={{ opacity: 0, x: 50, scale: 0.5 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, y: -50, scale: 1.2 }}
-              className="bg-[#F6CF80] text-black px-4 py-2 rounded-full font-black text-xs flex items-center gap-2 shadow-2xl"
+              className="bg-[#EF4444] text-black px-4 py-2 rounded-full font-black text-xs flex items-center gap-2 shadow-2xl"
             >
               <Zap size={14} fill="currentColor" />
               +{f.amount} EXP
@@ -765,7 +765,7 @@ const Watch = () => {
                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0a0a0c] z-[60]">
                       <LottieLoading size="w-48 h-48 md:w-64 md:h-64" />
                       <div className="flex flex-col items-center gap-1.5 mt-[-20px]">
-                         <p className="text-[#F6CF80] text-sm font-black uppercase tracking-[0.3em] animate-pulse">Menyiapkan Streaming...</p>
+                         <p className="text-[#EF4444] text-sm font-black uppercase tracking-[0.3em] animate-pulse">Menyiapkan Streaming...</p>
                          <p className="text-white/20 text-[10px] font-black uppercase tracking-[0.1em]">Kualitas {selectedServer?.quality || 'Auto'}</p>
                       </div>
                    </div>
@@ -815,7 +815,7 @@ const Watch = () => {
                     >
                        <button 
                          onClick={(e) => { e.stopPropagation(); setIsPureMode(false); resetControlsTimeout(); }}
-                         className="w-12 h-12 bg-black/40 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center text-white/40 hover:text-[#F6CF80] hover:bg-black/60 transition-all shadow-2xl group"
+                         className="w-12 h-12 bg-black/40 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center text-white/40 hover:text-[#EF4444] hover:bg-black/60 transition-all shadow-2xl group"
                        >
                           <Eye size={20} className="group-hover:scale-110 transition-transform" />
                        </button>
@@ -835,7 +835,7 @@ const Watch = () => {
                 <AnimatePresence>
                   {isTogglingPlay && (
                     <motion.div initial={{opacity:0, scale:0.5}} animate={{opacity:1, scale:1}} exit={{opacity:0, scale:1.5}} className="absolute inset-0 z-50 flex items-center justify-center pointer-events-none">
-                       <div className="bg-black/40 backdrop-blur-md p-6 md:p-10 rounded-full border border-white/10 text-[#F6CF80]">
+                       <div className="bg-black/40 backdrop-blur-md p-6 md:p-10 rounded-full border border-white/10 text-[#EF4444]">
                           {isTogglingPlay === 'play' ? <Play size={32} fill="currentColor" /> : <Pause size={32} fill="currentColor" />}
                        </div>
                     </motion.div>
@@ -843,18 +843,18 @@ const Watch = () => {
                 </AnimatePresence>
 
                 {roomId && activeRoom && (
-                    <div className="absolute top-6 left-6 z-[60] flex items-center gap-2 bg-[#F6CF80] text-black px-4 py-2 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-2xl">
+                    <div className="absolute top-6 left-6 z-[60] flex items-center gap-2 bg-[#EF4444] text-black px-4 py-2 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-2xl">
                        <Users size={14} />
                        NOBAR AKTIF ({activeRoom.members.length})
                     </div>
                  )}
 
-                {isBuffering && isVideoReady && <div className="absolute inset-0 flex items-center justify-center z-50 bg-black/30 backdrop-blur-[2px]"><div className="w-16 h-16 border-4 border-[#F6CF80]/20 border-t-[#F6CF80] rounded-full animate-spin shadow-[0_0_30px_rgba(246,207,128,0.2)]"></div></div>}
+                {isBuffering && isVideoReady && <div className="absolute inset-0 flex items-center justify-center z-50 bg-black/30 backdrop-blur-[2px]"><div className="w-16 h-16 border-4 border-[#EF4444]/20 border-t-[#EF4444] rounded-full animate-spin shadow-[0_0_30px_rgba(246,207,128,0.2)]"></div></div>}
 
                 {seekPopup && (
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
                      <div className="bg-black/60 backdrop-blur-2xl p-6 md:p-8 rounded-full border border-white/10 shadow-3xl animate-[popSeek_0.5s_ease-out_forwards]">
-                        <span className="text-[#F6CF80] font-black text-2xl md:text-4xl italic tracking-tighter">{seekPopup.amount > 0 ? `+${seekPopup.amount}` : seekPopup.amount}s</span>
+                        <span className="text-[#EF4444] font-black text-2xl md:text-4xl italic tracking-tighter">{seekPopup.amount > 0 ? `+${seekPopup.amount}` : seekPopup.amount}s</span>
                      </div>
                   </div>
                 )}
@@ -865,14 +865,14 @@ const Watch = () => {
                    <div className="p-4 md:p-8 bg-gradient-to-b from-black/90 via-black/40 to-transparent flex items-center gap-4 player-ui-element pointer-events-auto" onClick={(e) => e.stopPropagation()}>
                       <button 
                         onClick={() => navigate(-1)} 
-                        className="w-12 h-12 md:w-14 md:h-14 bg-black/50 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/10 hover:bg-[#F6CF80] hover:text-black transition-all active:scale-90 shadow-2xl"
+                        className="w-12 h-12 md:w-14 md:h-14 bg-black/50 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/10 hover:bg-[#EF4444] hover:text-black transition-all active:scale-90 shadow-2xl"
                       >
                         <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
                       </button>
                       
                       <div className="flex flex-col min-w-0">
                         <div className="flex items-center gap-3 mb-1">
-                          <span className="bg-[#F6CF80] text-black text-[10px] md:text-[11px] font-black px-2.5 py-1 rounded-lg uppercase tracking-wider">
+                          <span className="bg-[#EF4444] text-black text-[10px] md:text-[11px] font-black px-2.5 py-1 rounded-lg uppercase tracking-wider">
                             {anime?.type || 'SERIAL TV'}
                           </span>
                           <span className="text-white/40 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] border-l border-white/10 pl-3">
@@ -888,11 +888,11 @@ const Watch = () => {
                    {/* Center Controls - Only for direct video */}
                    {selectedServer?.type !== 'iframe' && (
                     <div className="flex items-center justify-center gap-10 md:gap-24 lg:gap-32 player-ui-element pointer-events-auto" onClick={(e) => e.stopPropagation()}>
-                        <button onClick={() => handleSkip(-10)} className="hover:text-[#F6CF80] transition-all hover:scale-110 active:scale-90"><RotateCcw size={28} className="opacity-40 hover:opacity-100"/></button>
+                        <button onClick={() => handleSkip(-10)} className="hover:text-[#EF4444] transition-all hover:scale-110 active:scale-90"><RotateCcw size={28} className="opacity-40 hover:opacity-100"/></button>
                         <button onClick={togglePlay} className="text-white transition-all transform active:scale-95">
                            {isPlaying ? <div className="p-5 md:p-8 bg-white/10 backdrop-blur-md rounded-full border border-white/10"><Pause className="w-6 h-6 md:w-10 md:h-10 fill-current" /></div> : <div className="p-5 md:p-8 bg-white/10 backdrop-blur-md rounded-full border border-white/10"><Play className="w-6 h-6 md:w-10 md:h-10 fill-current ml-1"/></div>}
                         </button>
-                        <button onClick={() => handleSkip(10)} className="hover:text-[#F6CF80] transition-all hover:scale-110 active:scale-90"><RotateCw size={28} className="opacity-40 hover:opacity-100"/></button>
+                        <button onClick={() => handleSkip(10)} className="hover:text-[#EF4444] transition-all hover:scale-110 active:scale-90"><RotateCw size={28} className="opacity-40 hover:opacity-100"/></button>
                      </div>
                    )}
 
@@ -908,7 +908,7 @@ const Watch = () => {
                                    <span className="text-white/40 md:text-base font-bold">{formatTime(duration)}</span>
                                 </div>
                               ) : (
-                                 <div className="text-[9px] font-black uppercase text-[#F6CF80] tracking-widest bg-[#F6CF80]/10 px-2 py-1 rounded">
+                                 <div className="text-[9px] font-black uppercase text-[#EF4444] tracking-widest bg-[#EF4444]/10 px-2 py-1 rounded">
                                     Server Streaming Eksternal
                                  </div>
                               )}
@@ -919,7 +919,7 @@ const Watch = () => {
                                 <div className="relative">
                                    <button 
                                      onClick={(e) => { e.stopPropagation(); setShowSpeeds(!showSpeeds); setShowResolutions(false); }} 
-                                     className={`text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg transition-all ${showSpeeds ? 'bg-[#F6CF80] text-black' : 'text-white/60 hover:text-white bg-white/5 border border-white/5'}`}
+                                     className={`text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg transition-all ${showSpeeds ? 'bg-[#EF4444] text-black' : 'text-white/60 hover:text-white bg-white/5 border border-white/5'}`}
                                    >
                                       {playbackSpeed}x
                                    </button>
@@ -927,7 +927,7 @@ const Watch = () => {
                                    {showSpeeds && (
                                      <motion.div initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} exit={{opacity:0, y:10}} className="absolute bottom-full right-0 mb-3 bg-[#0a0a0c]/90 border border-white/10 rounded-xl overflow-hidden shadow-xl min-w-[90px] backdrop-blur-md z-[70] pointer-events-auto">
                                         {[0.5, 1, 1.25, 1.5, 2].map(s => (
-                                          <button key={s} onClick={(e) => { e.stopPropagation(); if(videoRef.current) {videoRef.current.playbackRate = s; setPlaybackSpeed(s); setShowSpeeds(false);}}} className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest transition-colors ${playbackSpeed === s ? 'text-[#F6CF80] bg-white/5' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>{s}x</button>
+                                          <button key={s} onClick={(e) => { e.stopPropagation(); if(videoRef.current) {videoRef.current.playbackRate = s; setPlaybackSpeed(s); setShowSpeeds(false);}}} className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest transition-colors ${playbackSpeed === s ? 'text-[#EF4444] bg-white/5' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>{s}x</button>
                                         ))}
                                      </motion.div>
                                    )}
@@ -939,7 +939,7 @@ const Watch = () => {
                               <div className="relative">
                                  <button 
                                    onClick={(e) => { e.stopPropagation(); setShowResolutions(!showResolutions); setShowSpeeds(false); }} 
-                                   className={`flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg transition-all ${showResolutions ? 'bg-[#F6CF80] text-black' : 'text-white/60 hover:text-white bg-white/5 border border-white/5'}`}
+                                   className={`flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg transition-all ${showResolutions ? 'bg-[#EF4444] text-black' : 'text-white/60 hover:text-white bg-white/5 border border-white/5'}`}
                                  >
                                     <Settings size={12} className={showResolutions ? 'animate-spin' : ''} />
                                     {selectedServer?.quality || '720p'}
@@ -948,9 +948,9 @@ const Watch = () => {
                                  {showResolutions && (
                                    <motion.div initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} exit={{opacity:0, y:10}} className="absolute bottom-full right-0 mb-3 bg-[#0a0a0c]/90 border border-white/10 rounded-xl overflow-hidden shadow-xl min-w-[130px] backdrop-blur-md z-[70] pointer-events-auto">
                                       {servers.map(s => (
-                                        <button key={s.quality + s.name} onClick={(e) => { e.stopPropagation(); setServerAndQuality(s); }} className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest transition-colors flex items-center justify-between gap-4 ${selectedServer?.quality === s.quality && selectedServer?.name === s.name ? 'text-[#F6CF80] bg-white/5' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
+                                        <button key={s.quality + s.name} onClick={(e) => { e.stopPropagation(); setServerAndQuality(s); }} className={`w-full text-left px-4 py-3 text-[10px] font-black uppercase tracking-widest transition-colors flex items-center justify-between gap-4 ${selectedServer?.quality === s.quality && selectedServer?.name === s.name ? 'text-[#EF4444] bg-white/5' : 'text-white/40 hover:text-white hover:bg-white/5'}`}>
                                            {s.name}
-                                           {selectedServer?.quality === s.quality && selectedServer?.name === s.name && <div className="w-1.5 h-1.5 bg-[#F6CF80] rounded-full"></div>}
+                                           {selectedServer?.quality === s.quality && selectedServer?.name === s.name && <div className="w-1.5 h-1.5 bg-[#EF4444] rounded-full"></div>}
                                         </button>
                                       ))}
                                    </motion.div>
@@ -958,10 +958,10 @@ const Watch = () => {
                                  </AnimatePresence>
                               </div>
 
-                              <button onClick={toggleFullScreen} className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-white/60 hover:text-[#F6CF80] hover:bg-white/10 transition-all"><Maximize size={16}/></button>
+                              <button onClick={toggleFullScreen} className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-white/60 hover:text-[#EF4444] hover:bg-white/10 transition-all"><Maximize size={16}/></button>
                               <button 
                                  onClick={() => setIsPureMode(true)} 
-                                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-white/60 hover:text-[#F6CF80] hover:bg-white/10 transition-all"
+                                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-white/60 hover:text-[#EF4444] hover:bg-white/10 transition-all"
                                  title="Sembunyikan UI"
                               >
                                  <EyeOff size={16}/>
@@ -978,7 +978,7 @@ const Watch = () => {
                                      alert('Mulai mengunduh episode ' + currentEpNum + '...');
                                    }
                                  }} 
-                                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-white/60 hover:text-[#F6CF80] hover:bg-white/10 transition-all"
+                                 className="w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center text-white/60 hover:text-[#EF4444] hover:bg-white/10 transition-all"
                                >
                                  <Download size={16}/>
                                </button>
@@ -990,7 +990,7 @@ const Watch = () => {
                                      if (anime) fetchFallbackStream(anime.title, parseInt(currentEpNum));
                                    }}
                                    disabled={isFallbackLoading}
-                                   className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[#F6CF80] hover:bg-[#F6CF80]/10 transition-all disabled:opacity-50 player-ui-element shadow-lg"
+                                   className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[#EF4444] hover:bg-[#EF4444]/10 transition-all disabled:opacity-50 player-ui-element shadow-lg"
                                  >
                                     {isFallbackLoading ? <Loader2 className="animate-spin" size={12} /> : <Zap size={12} fill="currentColor" />}
                                     Try Fallback
@@ -1002,7 +1002,7 @@ const Watch = () => {
                         {/* Video Seek Bar - Only for direct video */}
                         {selectedServer?.type !== 'iframe' ? (
                           <div className="relative h-1 md:h-1.5 w-full bg-white/10 rounded-full group/progress mx-2">
-                           <div className="absolute inset-y-0 left-0 bg-[#F6CF80] rounded-full shadow-[0_0_15px_rgba(246,207,128,0.5)] z-10 transition-all pointer-events-none" style={{ width: `${progress}%` }}>
+                           <div className="absolute inset-y-0 left-0 bg-[#EF4444] rounded-full shadow-[0_0_15px_rgba(246,207,128,0.5)] z-10 transition-all pointer-events-none" style={{ width: `${progress}%` }}>
                               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 md:w-4 md:h-4 bg-white border-[2px] border-[#16161a] rounded-full shadow-2xl scale-0 group-hover/progress:scale-100 transition-transform"></div>
                            </div>
                            <input type="range" min="0" max="100" step="0.01" value={progress || 0} onChange={(e) => { if(videoRef.current) { const time = (parseFloat(e.target.value) / 100) * duration; videoRef.current.currentTime = time; setProgress(parseFloat(e.target.value)); } }} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20 m-0" />
@@ -1045,7 +1045,7 @@ const Watch = () => {
                     }
                   }} 
                   disabled={epIndex <= 0} 
-                  className="flex-1 h-14 md:h-16 bg-[#F6CF80] text-black rounded-2xl flex items-center justify-center gap-3 font-black uppercase text-xs tracking-[0.2em] transition-all disabled:opacity-20 active:scale-95 shadow-2xl group border-b-4 border-black/10"
+                  className="flex-1 h-14 md:h-16 bg-[#EF4444] text-black rounded-2xl flex items-center justify-center gap-3 font-black uppercase text-xs tracking-[0.2em] transition-all disabled:opacity-20 active:scale-95 shadow-2xl group border-b-4 border-black/10"
                >
                   Next EP <SkipForward className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                </button>
@@ -1057,13 +1057,13 @@ const Watch = () => {
                     className="flex items-center gap-4 mb-4 cursor-pointer group/header"
                     onClick={() => setIsServerSectionOpen(!isServerSectionOpen)}
                 >
-                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border transition-all duration-200 ${isServerSectionOpen ? 'bg-[#F6CF80]/10 border-[#F6CF80]/20' : 'bg-white/5 border-white/5'}`}>
-                        <Server className={`w-6 h-6 ${isServerSectionOpen ? 'text-[#F6CF80]' : 'text-white/40'}`} />
+                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border transition-all duration-200 ${isServerSectionOpen ? 'bg-[#EF4444]/10 border-[#EF4444]/20' : 'bg-white/5 border-white/5'}`}>
+                        <Server className={`w-6 h-6 ${isServerSectionOpen ? 'text-[#EF4444]' : 'text-white/40'}`} />
                     </div>
                     <div className="flex-1">
                         <div className="flex items-center gap-3">
                             <h3 className="text-xl font-black text-white uppercase tracking-tight">PILIH SERVER</h3>
-                            <div className={`p-1 rounded-lg transition-all duration-200 ${isServerSectionOpen ? 'rotate-180 bg-[#F6CF80]/10 text-[#F6CF80]' : 'rotate-0 bg-white/5 text-white/20'}`}>
+                            <div className={`p-1 rounded-lg transition-all duration-200 ${isServerSectionOpen ? 'rotate-180 bg-[#EF4444]/10 text-[#EF4444]' : 'rotate-0 bg-white/5 text-white/20'}`}>
                                 <ChevronDown size={18} />
                             </div>
                         </div>
@@ -1072,7 +1072,7 @@ const Watch = () => {
                         </p>
                     </div>
                     <div className="bg-white/5 px-4 py-2 rounded-xl border border-white/5 hidden md:flex items-center gap-3">
-                       <Activity className={`w-3 h-3 animate-pulse transition-colors ${isServerSectionOpen ? 'text-[#F6CF80]' : 'text-white/10'}`} />
+                       <Activity className={`w-3 h-3 animate-pulse transition-colors ${isServerSectionOpen ? 'text-[#EF4444]' : 'text-white/10'}`} />
                        <span className="text-[9px] font-black text-white/30 uppercase tracking-widest">{servers.length} Server Aktif</span>
                     </div>
                 </div>
@@ -1087,10 +1087,10 @@ const Watch = () => {
                                 <button
                                     key={`${s.quality}-${s.name}-${idx}`}
                                     onClick={() => setServerAndQuality(s)}
-                                    className={`relative p-4 rounded-[20px] border transition-none flex flex-col items-start gap-3 active:scale-95 overflow-hidden ${isSelected ? 'bg-[#F6CF80] border-[#F6CF80]' : 'bg-[#16161a] border-white/5 hover:bg-[#1a1a1f]'}`}
+                                    className={`relative p-4 rounded-[20px] border transition-none flex flex-col items-start gap-3 active:scale-95 overflow-hidden ${isSelected ? 'bg-[#EF4444] border-[#EF4444]' : 'bg-[#16161a] border-white/5 hover:bg-[#1a1a1f]'}`}
                                 >
                                     <div className="flex items-center justify-between w-full relative z-10">
-                                        <div className={`p-2 rounded-lg ${isSelected ? 'bg-black/10 text-black' : 'text-[#F6CF80]'}`}>
+                                        <div className={`p-2 rounded-lg ${isSelected ? 'bg-black/10 text-black' : 'text-[#EF4444]'}`}>
                                             {nameLower.includes('blogger') ? <Globe size={18} /> : 
                                             nameLower.includes('filedon') ? <Cloud size={18} /> : 
                                             <Server size={18} />}
@@ -1146,7 +1146,7 @@ const Watch = () => {
                           onClick={() => handleShare('copy')}
                           className="h-11 px-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center justify-center gap-3 text-white hover:bg-white/10 transition-all font-bold text-xs shadow-xl active:scale-95"
                         >
-                           <Copy size={16} className="text-[#F6CF80]" />
+                           <Copy size={16} className="text-[#EF4444]" />
                            <span>Salin Link</span>
                         </button>
 
@@ -1168,7 +1168,7 @@ const Watch = () => {
             <div className="bg-[#16161a]/40 backdrop-blur-md p-6 md:p-8 rounded-[32px] border border-white/5 mb-20 shadow-2xl relative z-10">
                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-white/5 pb-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-[#F6CF80]/10 rounded-xl flex items-center justify-center border border-[#F6CF80]/20"><LayoutGrid className="w-5 h-5 text-[#F6CF80]" /></div>
+                    <div className="w-10 h-10 bg-[#EF4444]/10 rounded-xl flex items-center justify-center border border-[#EF4444]/20"><LayoutGrid className="w-5 h-5 text-[#EF4444]" /></div>
                     <div>
                       <h3 className="text-lg font-black text-white uppercase tracking-tight">SEMUA EPISODE</h3>
                       <p className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em]">Total {episodes.length} Tersedia</p>
@@ -1177,13 +1177,13 @@ const Watch = () => {
 
                   <div className="flex flex-wrap items-center gap-3">
                       <div className="relative group flex-1 md:flex-none">
-                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#F6CF80] transition-colors" />
+                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#EF4444] transition-colors" />
                          <input 
                            type="text" 
                            placeholder="Cari episode.." 
                            value={searchQuery} 
                            onChange={(e) => setSearchQuery(e.target.value)} 
-                           className="bg-black/40 border border-white/5 rounded-xl pl-10 pr-6 py-2.5 text-xs font-bold text-white focus:outline-none focus:border-[#F6CF80]/40 w-full md:w-48 transition-all shadow-inner" 
+                           className="bg-black/40 border border-white/5 rounded-xl pl-10 pr-6 py-2.5 text-xs font-bold text-white focus:outline-none focus:border-[#EF4444]/40 w-full md:w-48 transition-all shadow-inner" 
                          />
                       </div>
                       {totalPages > 1 && (
@@ -1207,7 +1207,7 @@ const Watch = () => {
                         const devSuffix = searchSource === 'dev' ? `?src=dev${devImgPart}${devTitlePart}${devUrlPart}` : '';
                         navigate(`/anime/${slug}/${ep.index}${devSuffix}`);
                       }} 
-                      className={`h-10 rounded-lg flex items-center justify-center font-black text-[11px] transition-all transform active:scale-90 relative overflow-hidden ${episode === ep.index.toString() ? 'bg-[#F6CF80] text-black shadow-[0_10px_20px_rgba(246,207,128,0.2)]' : 'bg-black/30 text-white/20 border border-white/5 hover:text-[#F6CF80] hover:bg-white/5'}`}
+                      className={`h-10 rounded-lg flex items-center justify-center font-black text-[11px] transition-all transform active:scale-90 relative overflow-hidden ${episode === ep.index.toString() ? 'bg-[#EF4444] text-black shadow-[0_10px_20px_rgba(246,207,128,0.2)]' : 'bg-black/30 text-white/20 border border-white/5 hover:text-[#EF4444] hover:bg-white/5'}`}
                     >
                       {ep.index}
                     </button>
@@ -1241,10 +1241,10 @@ const Watch = () => {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-3 mb-12">
-                       <span className="bg-[#F6CF80] text-black text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest leading-none flex items-center">{anime.type || 'SERIES'}</span>
+                       <span className="bg-[#EF4444] text-black text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest leading-none flex items-center">{anime.type || 'SERIES'}</span>
                        <span className="bg-white/5 text-white/60 text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest border border-white/5 leading-none flex items-center">{anime.status || 'FINISHED'}</span>
                        <span className="bg-white/5 text-white/60 text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest border border-white/5 leading-none flex items-center">{anime.year || '2017-10-03'}</span>
-                       <div className="flex items-center gap-2 text-[#F6CF80] font-black text-[9px] px-5 py-2 bg-[#F6CF80]/5 rounded-lg border border-[#F6CF80]/10 tracking-widest leading-none">
+                       <div className="flex items-center gap-2 text-[#EF4444] font-black text-[9px] px-5 py-2 bg-[#EF4444]/5 rounded-lg border border-[#EF4444]/10 tracking-widest leading-none">
                          <Star size={12} fill="currentColor"/> {anime.favorites || '23650'}
                        </div>
                     </div>
@@ -1257,17 +1257,17 @@ const Watch = () => {
                     <div className="w-full max-w-3xl mx-auto space-y-6 border-t border-white/5 pt-10">
                        <div className="flex justify-between items-center text-left group">
                           <span className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em]">STUDIO</span>
-                          <span className="text-xs md:text-sm font-bold text-white group-hover:text-[#F6CF80] transition-colors uppercase">{anime.studio || 'Studio Pierrot'}</span>
+                          <span className="text-xs md:text-sm font-bold text-white group-hover:text-[#EF4444] transition-colors uppercase">{anime.studio || 'Studio Pierrot'}</span>
                        </div>
                        <div className="flex justify-between items-center text-left group border-t border-white/5 pt-6">
                           <span className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em]">TAHUN</span>
-                          <span className="text-xs md:text-sm font-bold text-white group-hover:text-[#F6CF80] transition-colors">{anime.year || '2021'}</span>
+                          <span className="text-xs md:text-sm font-bold text-white group-hover:text-[#EF4444] transition-colors">{anime.year || '2021'}</span>
                        </div>
                        <div className="flex flex-col md:flex-row md:items-start justify-between text-left md:text-right group border-t border-white/5 pt-6 gap-4 md:gap-8">
                           <span className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em] shrink-0 text-left pt-0.5">GENRE</span>
                           <div className="flex flex-wrap md:justify-end gap-x-2 gap-y-1">
                              {anime.genre?.split(',').map((g: string, idx: number) => (
-                                <span key={idx} className="text-xs md:text-sm font-bold text-[#F6CF80] hover:text-white transition-colors">
+                                <span key={idx} className="text-xs md:text-sm font-bold text-[#EF4444] hover:text-white transition-colors">
                                    {g.trim()}{idx !== (anime.genre?.split(',').length - 1) ? ',' : ''}
                                 </span>
                              )) || 'Action, Adventure, Fantasy, Shounen'}
@@ -1281,8 +1281,8 @@ const Watch = () => {
             {/* Recommended Section - Improved robustness */}
             <div className="space-y-8 mt-20">
                <div className="flex flex-col text-left mb-8">
-                  <h3 className="text-[#F6CF80] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2">
-                    <div className="w-6 h-0.5 bg-[#F6CF80]"></div>
+                  <h3 className="text-[#EF4444] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2">
+                    <div className="w-6 h-0.5 bg-[#EF4444]"></div>
                     Smart AI Pick
                   </h3>
                   <h3 className="text-white font-black uppercase text-xl md:text-3xl tracking-tight">Mungkin Kamu Suka</h3>
@@ -1324,15 +1324,15 @@ const Watch = () => {
 
                             <div className="flex-1 min-w-0">
                                <div className="flex items-center gap-2 mb-1">
-                                  <Star size={10} className="text-[#F6CF80] fill-[#F6CF80]" />
-                                  <span className="text-[9px] font-black text-[#F6CF80] uppercase tracking-widest">{a.favorites || '8.5'}</span>
+                                  <Star size={10} className="text-[#EF4444] fill-[#EF4444]" />
+                                  <span className="text-[9px] font-black text-[#EF4444] uppercase tracking-widest">{a.favorites || '8.5'}</span>
                                </div>
-                               <h4 className="text-xs md:text-base font-black text-white uppercase tracking-tight line-clamp-1 group-hover:text-[#F6CF80] transition-colors">{a.title}</h4>
+                               <h4 className="text-xs md:text-base font-black text-white uppercase tracking-tight line-clamp-1 group-hover:text-[#EF4444] transition-colors">{a.title}</h4>
                                <p className="text-[8px] md:text-[9px] font-black text-white/20 uppercase tracking-[0.2em] mt-1 group-hover:text-white/40 transition-colors truncate">{a.genre?.split(',').slice(0, 2).join(', ') || 'Action'}</p>
                             </div>
                             
                             <div className="ml-auto pr-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                               <div className="w-8 h-8 rounded-full bg-[#F6CF80] flex items-center justify-center text-black">
+                               <div className="w-8 h-8 rounded-full bg-[#EF4444] flex items-center justify-center text-black">
                                   <Play size={14} fill="currentColor" />
                                </div>
                             </div>
@@ -1350,8 +1350,8 @@ const Watch = () => {
             {/* Comment Section */}
             <section className="mb-32 mt-32">
               <div className="flex items-center gap-4 mb-10">
-                <div className="w-12 h-12 bg-[#F6CF80]/10 rounded-2xl flex items-center justify-center border border-[#F6CF80]/20">
-                  <MessageCircle className="w-6 h-6 text-[#F6CF80]" />
+                <div className="w-12 h-12 bg-[#EF4444]/10 rounded-2xl flex items-center justify-center border border-[#EF4444]/20">
+                  <MessageCircle className="w-6 h-6 text-[#EF4444]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-black text-white uppercase tracking-tighter">DISKUSI STREAM</h3>
@@ -1361,13 +1361,13 @@ const Watch = () => {
 
               {/* Comment Form */}
               <div className="bg-[#16161a] rounded-[32px] p-6 mb-12 border border-white/5 relative group">
-                <div className="absolute inset-x-8 -top-px h-px bg-gradient-to-r from-transparent via-[#F6CF80]/40 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity" />
+                <div className="absolute inset-x-8 -top-px h-px bg-gradient-to-r from-transparent via-[#EF4444]/40 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity" />
                 
                 {replyTo && (
                   <div className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-3 mb-4 border border-white/5">
                     <div className="flex items-center gap-3">
-                      <Reply size={14} className="text-[#F6CF80]" />
-                      <span className="text-[10px] font-bold text-white/40">Membalas <span className="text-[#F6CF80]">@{replyTo.userUsername}</span></span>
+                      <Reply size={14} className="text-[#EF4444]" />
+                      <span className="text-[10px] font-bold text-white/40">Membalas <span className="text-[#EF4444]">@{replyTo.userUsername}</span></span>
                     </div>
                     <button onClick={() => setReplyTo(null)} className="text-[10px] font-black uppercase text-red-500/60 hover:text-red-500">Batal</button>
                   </div>
@@ -1387,14 +1387,14 @@ const Watch = () => {
                       value={commentInput}
                       onChange={(e) => setCommentInput(e.target.value)}
                       placeholder="Bagikan pendapatmu tentang episode ini..."
-                      className="w-full bg-black/40 border border-white/5 rounded-2xl p-4 text-sm font-medium text-white/90 focus:outline-none focus:border-[#F6CF80]/30 min-h-[100px] transition-all scrollbar-hide resize-none"
+                      className="w-full bg-black/40 border border-white/5 rounded-2xl p-4 text-sm font-medium text-white/90 focus:outline-none focus:border-[#EF4444]/30 min-h-[100px] transition-all scrollbar-hide resize-none"
                     />
                     
                     <div className="flex items-center justify-between mt-4">
                       <div className="flex items-center gap-2">
                         <button 
                           onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${showEmojiPicker ? 'bg-[#F6CF80] text-black shadow-lg shadow-[#F6CF80]/20' : 'bg-white/5 text-white/30 hover:text-[#F6CF80] hover:bg-white/10'}`}
+                          className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${showEmojiPicker ? 'bg-[#EF4444] text-black shadow-lg shadow-[#EF4444]/20' : 'bg-white/5 text-white/30 hover:text-[#EF4444] hover:bg-white/10'}`}
                         >
                           <Smile size={18} />
                         </button>
@@ -1417,7 +1417,7 @@ const Watch = () => {
                       <button 
                         onClick={handlePostComment}
                         disabled={!commentInput.trim() || isPosting}
-                        className={`h-11 px-6 rounded-xl font-black text-[11px] uppercase tracking-widest flex items-center gap-3 transition-all active:scale-95 ${commentInput.trim() ? 'bg-[#F6CF80] text-black shadow-xl shadow-[#F6CF80]/20' : 'bg-white/5 text-white/10 cursor-not-allowed'}`}
+                        className={`h-11 px-6 rounded-xl font-black text-[11px] uppercase tracking-widest flex items-center gap-3 transition-all active:scale-95 ${commentInput.trim() ? 'bg-[#EF4444] text-black shadow-xl shadow-[#EF4444]/20' : 'bg-white/5 text-white/10 cursor-not-allowed'}`}
                       >
                         {isPosting ? 'Mengirim...' : 'Kirim Komentar'}
                         <Send size={14} className={isPosting ? 'animate-pulse' : ''} />
@@ -1439,18 +1439,18 @@ const Watch = () => {
                       className="group/comment"
                     >
                       <div className="flex gap-4">
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-[16px] md:rounded-[20px] overflow-hidden border-2 border-white/5 bg-[#16161a] shrink-0 mt-1 ring-offset-[#0a0a0c] ring-offset-2 ring-transparent group-hover/comment:ring-[#F6CF80]/20 transition-all">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-[16px] md:rounded-[20px] overflow-hidden border-2 border-white/5 bg-[#16161a] shrink-0 mt-1 ring-offset-[#0a0a0c] ring-offset-2 ring-transparent group-hover/comment:ring-[#EF4444]/20 transition-all">
                           <img src={getImageUrl(comment.userAvatar)} onError={(e) => handleImageError(e, comment.userAvatar)} className="w-full h-full object-cover" alt="" />
                         </div>
                         <div className="flex-1 space-y-2">
                           <div className="flex items-center justify-between">
                             <div className="flex flex-col">
                               <div className="flex items-center gap-3">
-                                <span className="text-sm font-black text-white hover:text-[#F6CF80] transition-colors cursor-pointer">{comment.userName}</span>
+                                <span className="text-sm font-black text-white hover:text-[#EF4444] transition-colors cursor-pointer">{comment.userName}</span>
                                 <span className="text-[10px] font-bold text-white/20 tracking-tighter">@{comment.userUsername}</span>
                               </div>
                               <div className="flex items-center gap-2 mt-0.5">
-                                <div className="px-1.5 py-0.5 bg-[#F6CF80]/10 border border-[#F6CF80]/20 rounded text-[7px] font-black text-[#F6CF80] uppercase tracking-widest">
+                                <div className="px-1.5 py-0.5 bg-[#EF4444]/10 border border-[#EF4444]/20 rounded text-[7px] font-black text-[#EF4444] uppercase tracking-widest">
                                   LVL {getLevelFromExp(comment.userExp || 0)}
                                 </div>
                                 <span className="w-1 h-1 bg-white/10 rounded-full" />
@@ -1473,7 +1473,7 @@ const Watch = () => {
                                  const textarea = document.querySelector('textarea');
                                  textarea?.focus();
                                }}
-                               className="text-[10px] font-black uppercase tracking-widest text-[#F6CF80]/40 hover:text-[#F6CF80] transition-colors flex items-center gap-2"
+                               className="text-[10px] font-black uppercase tracking-widest text-[#EF4444]/40 hover:text-[#EF4444] transition-colors flex items-center gap-2"
                              >
                                 <Reply size={12} />
                                 Balas
@@ -1487,7 +1487,7 @@ const Watch = () => {
                                      text: 'Komentar yang dihapus tidak dapat dikembalikan.',
                                      icon: 'warning',
                                      showCancelButton: true,
-                                     confirmButtonColor: '#F6CF80',
+                                     confirmButtonColor: '#EF4444',
                                      cancelButtonColor: '#d33',
                                      confirmButtonText: 'Ya, Hapus!',
                                      cancelButtonText: 'Batal',
@@ -1509,7 +1509,7 @@ const Watch = () => {
                           {/* Replies */}
                           {comments.some(r => r.parentId === comment.id) && (
                             <div className="space-y-4 pt-4 ml-2 pl-6 border-l border-white/5 relative">
-                              <div className="absolute left-0 top-0 bottom-8 w-px bg-gradient-to-b from-[#F6CF80]/20 via-white/5 to-transparent" />
+                              <div className="absolute left-0 top-0 bottom-8 w-px bg-gradient-to-b from-[#EF4444]/20 via-white/5 to-transparent" />
                               
                               {(() => {
                                 const threadReplies = comments.filter(r => r.parentId === comment.id);
@@ -1520,7 +1520,7 @@ const Watch = () => {
                                   <>
                                     {displayedReplies.map(reply => (
                                       <div key={reply.id} className="flex gap-4 group/reply animate-in fade-in slide-in-from-left-4 duration-300">
-                                        <div className="w-8 h-8 rounded-xl overflow-hidden border-2 border-white/5 bg-[#16161a] shrink-0 group-hover/reply:border-[#F6CF80]/20 transition-all">
+                                        <div className="w-8 h-8 rounded-xl overflow-hidden border-2 border-white/5 bg-[#16161a] shrink-0 group-hover/reply:border-[#EF4444]/20 transition-all">
                                           <img src={getImageUrl(reply.userAvatar)} onError={(e) => handleImageError(e, reply.userAvatar)} className="w-full h-full object-cover" alt="" />
                                         </div>
                                         <div className="flex-1 space-y-1">
@@ -1541,7 +1541,7 @@ const Watch = () => {
                                                 const textarea = document.querySelector('textarea');
                                                 textarea?.focus();
                                               }}
-                                              className="text-[9px] font-black uppercase tracking-widest text-white/20 hover:text-[#F6CF80] transition-colors flex items-center gap-1.5"
+                                              className="text-[9px] font-black uppercase tracking-widest text-white/20 hover:text-[#EF4444] transition-colors flex items-center gap-1.5"
                                             >
                                                <Reply size={10} />
                                                Balas
@@ -1555,7 +1555,7 @@ const Watch = () => {
                                                     text: 'Balasan yang dihapus tidak dapat dikembalikan.',
                                                     icon: 'warning',
                                                     showCancelButton: true,
-                                                    confirmButtonColor: '#F6CF80',
+                                                    confirmButtonColor: '#EF4444',
                                                     cancelButtonColor: '#d33',
                                                     confirmButtonText: 'Ya, Hapus!',
                                                     cancelButtonText: 'Batal',
@@ -1579,7 +1579,7 @@ const Watch = () => {
                                     {threadReplies.length > 2 && (
                                       <button 
                                         onClick={() => toggleThread(comment.id!)}
-                                        className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#F6CF80]/10 hover:text-[#F6CF80] rounded-xl text-[10px] font-black uppercase tracking-widest text-white/30 transition-all group/expand"
+                                        className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-[#EF4444]/10 hover:text-[#EF4444] rounded-xl text-[10px] font-black uppercase tracking-widest text-white/30 transition-all group/expand"
                                       >
                                         <MessageCircle size={12} className="group-hover/expand:scale-110 transition-transform" />
                                         {isExpanded ? 'Tampilkan Lebih Sedikit' : `Lihat ${threadReplies.length - 2} Balasan Lainnya`}
@@ -1615,7 +1615,7 @@ const Watch = () => {
         {/* Copy Toast Notification */}
         <AnimatePresence>
           {copyToast && (
-            <motion.div initial={{y:100, opacity:0, x:'-50%'}} animate={{y:0, opacity:1, x:'-50%'}} exit={{y:100, opacity:0, x:'-50%'}} className="fixed bottom-32 left-1/2 bg-[#F6CF80] text-black px-10 py-4 rounded-[28px] font-black text-sm z-[9999] shadow-[0_20px_50px_rgba(246,207,128,0.4)] flex items-center gap-4">
+            <motion.div initial={{y:100, opacity:0, x:'-50%'}} animate={{y:0, opacity:1, x:'-50%'}} exit={{y:100, opacity:0, x:'-50%'}} className="fixed bottom-32 left-1/2 bg-[#EF4444] text-black px-10 py-4 rounded-[28px] font-black text-sm z-[9999] shadow-[0_20px_50px_rgba(246,207,128,0.4)] flex items-center gap-4">
                <Share2 size={18} />
                Tautan Episode Berhasil Disalin!
             </motion.div>
@@ -1630,7 +1630,7 @@ const Watch = () => {
 const DetailRow = ({ label, value, isGenre }: { label: string, value: string, isGenre?: boolean }) => (
   <div className="flex items-center justify-between py-4 border-b border-white/5">
      <span className="text-[10px] font-black text-white/20 uppercase tracking-[0.2em] shrink-0">{label}</span>
-     <span className={`text-[10px] md:text-xs font-black uppercase text-right truncate pl-10 ${isGenre ? 'text-[#F6CF80]' : 'text-white'}`}>{value}</span>
+     <span className={`text-[10px] md:text-xs font-black uppercase text-right truncate pl-10 ${isGenre ? 'text-[#EF4444]' : 'text-white'}`}>{value}</span>
   </div>
 );
 

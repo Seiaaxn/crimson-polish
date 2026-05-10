@@ -280,7 +280,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#F6CF80] selection:text-black pb-24 text-white relative">
+    <div className="min-h-screen bg-[#0a0a0c] font-sans selection:bg-[#EF4444] selection:text-black pb-24 text-white relative">
       {isLoading && <Loading />}
       <style>{`
         @keyframes shimmer { 0% { transform: translate3d(-100%, 0, 0) skewX(-20deg); } 100% { transform: translate3d(200%, 0, 0) skewX(-20deg); } }
@@ -294,7 +294,7 @@ const Home = () => {
       `}</style>
       
       {copyToast && (
-        <div className="fixed top-24 left-1/2 -translate-x-1/2 bg-[#F6CF80] text-black px-6 py-3 rounded-full font-black text-sm z-[999] shadow-[0_10px_30px_rgba(246,207,128,0.3)] animate-[fadeIn_0.3s_ease-out_forwards]">
+        <div className="fixed top-24 left-1/2 -translate-x-1/2 bg-[#EF4444] text-black px-6 py-3 rounded-full font-black text-sm z-[999] shadow-[0_10px_30px_rgba(246,207,128,0.3)] animate-[fadeIn_0.3s_ease-out_forwards]">
           Tautan berhasil disalin!
         </div>
       )}
@@ -329,7 +329,7 @@ const Home = () => {
                         onClick={() => {
                           navigate(animeService.getAnimePath(a));
                         }} 
-                        className="px-6 md:px-8 py-2 md:py-3 bg-[#F6CF80] text-black rounded-lg font-black tracking-wider text-[11px] md:text-sm flex items-center justify-center gap-2 shrink-0 transition-transform hover:scale-105"
+                        className="px-6 md:px-8 py-2 md:py-3 bg-[#EF4444] text-black rounded-lg font-black tracking-wider text-[11px] md:text-sm flex items-center justify-center gap-2 shrink-0 transition-transform hover:scale-105"
                       >
                         <svg className="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         <span className="leading-none pt-[2px]">TONTON SEKARANG</span>
@@ -345,7 +345,7 @@ const Home = () => {
           <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 flex items-center gap-2 z-20">
             <span className="text-xs font-black text-white">{(heroIndex % displaySlider.length) + 1} / {displaySlider.length}</span>
             <div className="w-8 md:w-10 h-[2px] bg-white/20 rounded-full"></div>
-            <button onClick={() => { if (isTransitioning && heroIndex < displaySlider.length) setHeroIndex(p => p + 1); }} className="text-white hover:text-[#F6CF80] transition-colors">
+            <button onClick={() => { if (isTransitioning && heroIndex < displaySlider.length) setHeroIndex(p => p + 1); }} className="text-white hover:text-[#EF4444] transition-colors">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7"/></svg>
             </button>
           </div>
@@ -359,7 +359,7 @@ const Home = () => {
             <div className="flex flex-col">
               <h2 className="text-xl font-black text-white leading-none tracking-tight flex items-center gap-2">
                 LANJUTKAN MENONTON
-                <div className="w-2 h-2 rounded-full bg-[#F6CF80] animate-pulse"></div>
+                <div className="w-2 h-2 rounded-full bg-[#EF4444] animate-pulse"></div>
               </h2>
               <span className="text-[10px] text-white/40 mt-1 font-bold uppercase tracking-widest">Akses cepat tontonan terakhirmu</span>
             </div>
@@ -398,13 +398,13 @@ const Home = () => {
                 </div>
 
                 <div className="relative z-10 flex-1 min-w-0 pr-10">
-                  <h3 className="text-xs md:text-sm font-black text-white uppercase tracking-tight line-clamp-1 mb-1 group-hover:text-[#F6CF80] transition-colors">{item.title}</h3>
+                  <h3 className="text-xs md:text-sm font-black text-white uppercase tracking-tight line-clamp-1 mb-1 group-hover:text-[#EF4444] transition-colors">{item.title}</h3>
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-widest">Episode {item.episode}</span>
+                    <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-widest">Episode {item.episode}</span>
                     {item.duration > 0 && (
                       <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
                         <div 
-                          className="h-full bg-[#F6CF80]" 
+                          className="h-full bg-[#EF4444]" 
                           style={{ width: `${Math.min(100, (item.timestamp / item.duration) * 100)}%` }}
                         ></div>
                       </div>
@@ -412,7 +412,7 @@ const Home = () => {
                   </div>
                 </div>
 
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 group-hover:bg-[#F6CF80] group-hover:text-black transition-all">
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 group-hover:bg-[#EF4444] group-hover:text-black transition-all">
                   <Play size={14} fill="currentColor" />
                 </div>
               </div>
@@ -423,14 +423,14 @@ const Home = () => {
 
       {/* INSTALL APP BANNER */}
       <section className="max-w-7xl mx-auto px-4 mt-8 md:mt-10">
-        <div className="relative overflow-hidden bg-gradient-to-br from-[#F6CF80]/20 to-[#16161a] p-6 md:p-8 rounded-[40px] border border-[#F6CF80]/30 shadow-[0_0_40px_rgba(246,207,128,0.1)] group">
+        <div className="relative overflow-hidden bg-gradient-to-br from-[#EF4444]/20 to-[#16161a] p-6 md:p-8 rounded-[40px] border border-[#EF4444]/30 shadow-[0_0_40px_rgba(246,207,128,0.1)] group">
            <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
-              <Smartphone size={120} className="text-[#F6CF80] rotate-12" />
+              <Smartphone size={120} className="text-[#EF4444] rotate-12" />
            </div>
            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
               <div>
                  <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-[#F6CF80] text-black p-2 rounded-xl">
+                    <div className="bg-[#EF4444] text-black p-2 rounded-xl">
                        <Download size={20} />
                     </div>
                     <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter">Download Aplikasi</h3>
@@ -459,7 +459,7 @@ const Home = () => {
                         });
                     }
                  }}
-                 className="bg-[#F6CF80] text-black hover:bg-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs shadow-2xl hover:scale-105 active:scale-95 transition-all text-center"
+                 className="bg-[#EF4444] text-black hover:bg-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs shadow-2xl hover:scale-105 active:scale-95 transition-all text-center"
               >
                  Install Sekarang
               </button>
@@ -486,7 +486,7 @@ const Home = () => {
              </div>
              <div className="flex gap-3">
                 <button onClick={() => handleShare('copy')} className="bg-white/5 hover:bg-white/10 border border-white/10 px-4 py-2.5 rounded-xl flex items-center gap-2 text-xs font-black cursor-pointer text-white">
-                   <svg className="w-4 h-4 text-[#F6CF80]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                   <svg className="w-4 h-4 text-[#EF4444]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
                    Salin Link
                 </button>
                 <button onClick={() => handleShare('fb')} className="bg-[#1877F2]/10 hover:bg-[#1877F2]/20 border border-[#1877F2]/20 p-2.5 rounded-xl cursor-pointer">
@@ -504,8 +504,8 @@ const Home = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col cursor-pointer group" onClick={() => navigate(`/ongoing${slider.length > 0 ? '?src=sanka' : ''}`)}>
             <div className="flex items-center gap-2">
-              <h2 className="text-xl font-black text-white leading-none group-hover:text-[#F6CF80] transition-colors tracking-tight uppercase">ANIME ONGOING</h2>
-              <svg className="w-5 h-5 text-white/40 group-hover:text-[#F6CF80] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+              <h2 className="text-xl font-black text-white leading-none group-hover:text-[#EF4444] transition-colors tracking-tight uppercase">ANIME ONGOING</h2>
+              <svg className="w-5 h-5 text-white/40 group-hover:text-[#EF4444] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
             </div>
             <span className="text-[10px] text-white/40 mt-1 font-bold uppercase tracking-widest">Update anime terbaru hari ini</span>
           </div>
@@ -537,18 +537,18 @@ const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
                   {(a.current_episode || a.episode) && (
-                    <div className="absolute top-2 left-2 bg-[#F6CF80] text-black px-2 py-0.5 rounded text-[10px] md:text-[8px] font-black uppercase">
+                    <div className="absolute top-2 left-2 bg-[#EF4444] text-black px-2 py-0.5 rounded text-[10px] md:text-[8px] font-black uppercase">
                       {a.episode || `EP ${a.current_episode}`}
                     </div>
                   )}
                 </div>
-                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#F6CF80] transition-colors uppercase tracking-tight">{a.title}</h3>
+                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#EF4444] transition-colors uppercase tracking-tight">{a.title}</h3>
               </div>
             ))
           }
           {isFetchingMore && (
             <div className="min-w-[128px] h-[192px] flex items-center justify-center bg-white/5 rounded-xl border border-dashed border-white/10 animate-pulse">
-              <div className="w-8 h-8 border-2 border-[#F6CF80] border-t-transparent rounded-full animate-spin" />
+              <div className="w-8 h-8 border-2 border-[#EF4444] border-t-transparent rounded-full animate-spin" />
             </div>
           )}
         </div>
@@ -558,8 +558,8 @@ const Home = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col cursor-pointer group" onClick={() => navigate('/schedule')}>
             <div className="flex items-center gap-2">
-              <h2 className="text-xl font-black text-white leading-none group-hover:text-[#F6CF80] transition-colors tracking-tight">TODAY</h2>
-              <svg className="w-5 h-5 text-white/40 group-hover:text-[#F6CF80] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+              <h2 className="text-xl font-black text-white leading-none group-hover:text-[#EF4444] transition-colors tracking-tight">TODAY</h2>
+              <svg className="w-5 h-5 text-white/40 group-hover:text-[#EF4444] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
             </div>
             <span className="text-[10px] text-white/40 mt-1 font-bold uppercase tracking-widest">Anime hari ini</span>
           </div>
@@ -580,7 +580,7 @@ const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
                 </div>
-                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#F6CF80] transition-colors">{a.title}</h3>
+                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#EF4444] transition-colors">{a.title}</h3>
               </div>
             ))
           }
@@ -593,8 +593,8 @@ const Home = () => {
           <div className="flex items-center justify-between mb-4">
             <div className="flex flex-col cursor-pointer group" onClick={() => navigate('/completed?src=sanka')}>
               <div className="flex items-center gap-2">
-                <h2 className="text-xl font-black text-white leading-none group-hover:text-[#F6CF80] transition-colors tracking-tight uppercase">COMPLETED ANIME</h2>
-                <svg className="w-5 h-5 text-white/40 group-hover:text-[#F6CF80] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <h2 className="text-xl font-black text-white leading-none group-hover:text-[#EF4444] transition-colors tracking-tight uppercase">COMPLETED ANIME</h2>
+                <svg className="w-5 h-5 text-white/40 group-hover:text-[#EF4444] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
               <span className="text-[10px] text-white/40 mt-1 font-bold uppercase tracking-widest">Anime yang sudah tamat di Server 2</span>
             </div>
@@ -624,7 +624,7 @@ const Home = () => {
                     </div>
                   )}
                 </div>
-                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#F6CF80] transition-colors">{a.title}</h3>
+                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#EF4444] transition-colors">{a.title}</h3>
               </div>
             ))}
           </div>
@@ -637,8 +637,8 @@ const Home = () => {
           <div className="flex items-center justify-between mb-4">
             <div className="flex flex-col cursor-pointer group" onClick={() => navigate('/movies?src=sanka')}>
               <div className="flex items-center gap-2">
-                <h2 className="text-xl font-black text-white leading-none group-hover:text-[#F6CF80] transition-colors tracking-tight uppercase">ANIME MOVIES</h2>
-                <svg className="w-5 h-5 text-white/40 group-hover:text-[#F6CF80] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <h2 className="text-xl font-black text-white leading-none group-hover:text-[#EF4444] transition-colors tracking-tight uppercase">ANIME MOVIES</h2>
+                <svg className="w-5 h-5 text-white/40 group-hover:text-[#EF4444] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
               <span className="text-[10px] text-white/40 mt-1 font-bold uppercase tracking-widest">Koleksi layar lebar di Server 2</span>
             </div>
@@ -662,11 +662,11 @@ const Home = () => {
                     onError={(e) => handleImageError(e, a.image_poster)}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                   />
-                  <div className="absolute top-2 left-2 bg-[#F6CF80] text-black px-2 py-0.5 rounded text-[8px] font-black uppercase">
+                  <div className="absolute top-2 left-2 bg-[#EF4444] text-black px-2 py-0.5 rounded text-[8px] font-black uppercase">
                     MOVIE
                   </div>
                 </div>
-                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#F6CF80] transition-colors">{a.title}</h3>
+                <h3 className="text-[11px] font-bold text-white/80 line-clamp-1 group-hover:text-[#EF4444] transition-colors">{a.title}</h3>
               </div>
             ))}
           </div>
@@ -679,8 +679,8 @@ const Home = () => {
           <div className="flex items-center justify-between mb-8">
             <div className="flex flex-col cursor-pointer group" onClick={() => navigate('/browse?src=sanka')}>
               <div className="flex items-center gap-2">
-                <h2 className="text-xl font-black text-white leading-none group-hover:text-[#F6CF80] transition-colors tracking-tight uppercase">HOME COLLECTION</h2>
-                <svg className="w-5 h-5 text-white/40 group-hover:text-[#F6CF80] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+                <h2 className="text-xl font-black text-white leading-none group-hover:text-[#EF4444] transition-colors tracking-tight uppercase">HOME COLLECTION</h2>
+                <svg className="w-5 h-5 text-white/40 group-hover:text-[#EF4444] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
               </div>
               <span className="text-[10px] text-white/40 mt-1 font-bold uppercase tracking-widest">Pilihan anime terbaik Server 2</span>
             </div>
@@ -702,10 +702,10 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
                   <div className="absolute bottom-3 left-3 flex flex-col">
-                    <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-widest">{a.episode || a.type}</span>
+                    <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-widest">{a.episode || a.type}</span>
                   </div>
                 </div>
-                <h3 className="text-sm font-black text-white/90 line-clamp-1 group-hover:text-[#F6CF80] transition-colors uppercase tracking-tight">{a.title}</h3>
+                <h3 className="text-sm font-black text-white/90 line-clamp-1 group-hover:text-[#EF4444] transition-colors uppercase tracking-tight">{a.title}</h3>
                 <p className="text-[10px] text-white/40 font-bold uppercase mt-1 tracking-widest">{a.status_or_day || 'Server 2'}</p>
               </div>
             ))}
@@ -718,12 +718,12 @@ const Home = () => {
         <div className="flex items-center justify-between mb-8">
           <div className="flex flex-col cursor-pointer group" onClick={() => navigate('/search')}>
              <div className="flex items-center gap-2">
-               <h2 className="text-xl font-black text-white leading-none tracking-tight group-hover:text-[#F6CF80] transition-colors uppercase">POPULAR TODAY</h2>
-               <svg className="w-5 h-5 text-white/40 group-hover:text-[#F6CF80] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+               <h2 className="text-xl font-black text-white leading-none tracking-tight group-hover:text-[#EF4444] transition-colors uppercase">POPULAR TODAY</h2>
+               <svg className="w-5 h-5 text-white/40 group-hover:text-[#EF4444] transition-colors" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
              </div>
              <span className="text-[10px] text-white/40 mt-1 font-bold uppercase tracking-widest">Anime terpopuler hari ini</span>
           </div>
-          <button onClick={() => navigate('/search')} className="text-[10px] font-black text-[#F6CF80] uppercase tracking-widest hover:opacity-70 transition-opacity">VIEW ALL</button>
+          <button onClick={() => navigate('/search')} className="text-[10px] font-black text-[#EF4444] uppercase tracking-widest hover:opacity-70 transition-opacity">VIEW ALL</button>
         </div>
         
         <div className="flex flex-col gap-4">
@@ -734,8 +734,8 @@ const Home = () => {
                 ? 'bg-linear-to-r from-[#1a1a1e] to-[#0d0d0f]' 
                 : 'bg-linear-to-r from-[#141417] to-[#0a0a0c]';
               const borderStyle = isTop3 
-                ? 'border-l-4 border-[#F6CF80]' 
-                : 'border border-white/5 hover:border-[#F6CF80]/20';
+                ? 'border-l-4 border-[#EF4444]' 
+                : 'border border-white/5 hover:border-[#EF4444]/20';
                 
               return (
                 <div 
@@ -764,29 +764,29 @@ const Home = () => {
 
                   <div className="relative z-20 flex items-center gap-4 md:gap-10 w-full pr-[45%]">
                     <div className="relative shrink-0 w-12 md:w-20 text-center">
-                       <span className={`text-5xl md:text-8xl font-black italic transition-all duration-500 block ${isTop3 ? 'text-[#F6CF80] drop-shadow-[0_0_20px_rgba(246,207,128,0.5)]' : 'text-white/[0.03] group-hover:text-white/10'}`}>
+                       <span className={`text-5xl md:text-8xl font-black italic transition-all duration-500 block ${isTop3 ? 'text-[#EF4444] drop-shadow-[0_0_20px_rgba(246,207,128,0.5)]' : 'text-white/[0.03] group-hover:text-white/10'}`}>
                         {index + 1}
                       </span>
                       {!isTop3 && (
-                         <span className="absolute inset-0 flex items-center justify-center text-xl md:text-3xl font-black text-white/10 group-hover:text-[#F6CF80]/40 transition-colors">
+                         <span className="absolute inset-0 flex items-center justify-center text-xl md:text-3xl font-black text-white/10 group-hover:text-[#EF4444]/40 transition-colors">
                             {index + 1}
                          </span>
                       )}
                     </div>
 
                     <div className="flex flex-col pr-2 flex-1 min-w-0">
-                      <h3 className="text-white font-black text-[13px] md:text-3xl line-clamp-1 group-hover:text-[#F6CF80] transition-colors uppercase tracking-tight leading-tight">{anime.title}</h3>
+                      <h3 className="text-white font-black text-[13px] md:text-3xl line-clamp-1 group-hover:text-[#EF4444] transition-colors uppercase tracking-tight leading-tight">{anime.title}</h3>
                       <div className="flex items-center gap-2 mt-1 md:mt-2">
                         <div className="flex items-center gap-1.5">
-                           <svg className="w-3 h-3 md:w-5 md:h-5 text-[#F6CF80] fill-current drop-shadow-[0_0_8px_rgba(246,207,128,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                           <span className="text-[12px] md:text-lg text-[#F6CF80] font-black uppercase tracking-widest">{anime.favorites || anime.rating || 'N/A'}</span>
+                           <svg className="w-3 h-3 md:w-5 md:h-5 text-[#EF4444] fill-current drop-shadow-[0_0_8px_rgba(246,207,128,0.5)]" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                           <span className="text-[12px] md:text-lg text-[#EF4444] font-black uppercase tracking-widest">{anime.favorites || anime.rating || 'N/A'}</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="absolute right-8 md:right-12 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0 hidden lg:flex items-center justify-center z-30">
-                    <div className="w-16 h-16 rounded-full bg-[#F6CF80] flex items-center justify-center text-black shadow-[0_0_50px_rgba(246,207,128,0.6)] transform hover:scale-110 active:scale-90 transition-transform">
+                    <div className="w-16 h-16 rounded-full bg-[#EF4444] flex items-center justify-center text-black shadow-[0_0_50px_rgba(246,207,128,0.6)] transform hover:scale-110 active:scale-90 transition-transform">
                       <Play size={32} fill="currentColor" className="ml-1" />
                     </div>
                   </div>

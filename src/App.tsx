@@ -80,7 +80,7 @@ export default function App() {
   if (initializing) {
     return (
       <div className="min-h-screen bg-[#0a0a0c] flex items-center justify-center">
-        <Loader2 className="text-[#F6CF80] animate-spin" size={48} />
+        <Loader2 className="text-[#EF4444] animate-spin" size={48} />
       </div>
     );
   }

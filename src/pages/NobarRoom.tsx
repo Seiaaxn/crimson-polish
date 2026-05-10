@@ -87,7 +87,7 @@ const NobarRoom = () => {
                cancelButtonText: 'Batal',
                background: '#16161a',
                color: '#fff',
-               confirmButtonColor: '#F6CF80',
+               confirmButtonColor: '#EF4444',
                cancelButtonColor: 'rgba(255,255,255,0.1)'
              }).then((result) => {
                if (result.isConfirmed) {
@@ -342,7 +342,7 @@ const NobarRoom = () => {
 
   if (isLoading) return <div className="min-h-screen bg-[#0a0a0c] flex items-center justify-center shrink-0">
     <div className="flex flex-col items-center gap-6">
-      <div className="w-16 h-16 border-4 border-[#F6CF80]/20 border-t-[#F6CF80] rounded-full animate-spin"></div>
+      <div className="w-16 h-16 border-4 border-[#EF4444]/20 border-t-[#EF4444] rounded-full animate-spin"></div>
       <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/20">Menyiapkan Streaming...</p>
     </div>
   </div>;
@@ -362,7 +362,7 @@ const NobarRoom = () => {
       <main className="pt-24 pb-32 px-4 md:px-8 max-w-[1600px] mx-auto">
          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 bg-[#16161a] p-4 px-6 rounded-3xl border border-white/5 shadow-2xl relative z-10">
             <div className="flex items-center gap-4">
-               <div className="flex items-center gap-2 bg-[#F6CF80] text-black px-4 py-2 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-[0_0_20px_rgba(246,207,128,0.2)]">
+               <div className="flex items-center gap-2 bg-[#EF4444] text-black px-4 py-2 rounded-xl font-black text-[10px] uppercase tracking-widest shadow-[0_0_20px_rgba(246,207,128,0.2)]">
                   <Users size={14} /> {activeRoom?.members.length || 0} NOBAR AKTIF
                </div>
                <div className="hidden md:flex items-center gap-3">
@@ -417,7 +417,7 @@ const NobarRoom = () => {
                                 e.stopPropagation();
                                 toggleFullScreen();
                               }}
-                              className="w-14 h-14 bg-[#F6CF80] text-black rounded-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-2xl"
+                              className="w-14 h-14 bg-[#EF4444] text-black rounded-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-2xl"
                               title="Layar Penuh"
                            >
                               <Maximize2 size={28} />
@@ -429,10 +429,10 @@ const NobarRoom = () => {
                   {!isHost && !isPlaying && (
                      <div className="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-30">
                         <button onClick={manualSync} className="flex flex-col items-center gap-6 group">
-                           <div className="w-24 h-24 bg-[#F6CF80] text-black rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                           <div className="w-24 h-24 bg-[#EF4444] text-black rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
                               <Play size={40} fill="black" className="ml-1" />
                            </div>
-                           <p className="font-black text-[10px] uppercase tracking-[0.3em] text-[#F6CF80] animate-pulse">Klik Untuk Gabung Nobar</p>
+                           <p className="font-black text-[10px] uppercase tracking-[0.3em] text-[#EF4444] animate-pulse">Klik Untuk Gabung Nobar</p>
                         </button>
                      </div>
                   )}
@@ -442,34 +442,34 @@ const NobarRoom = () => {
                         <div className="flex items-center justify-between">
                            <div className="flex items-center gap-3">
                               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.5)]" />
-                              <h3 className="font-black text-[10px] tracking-[0.2em] text-[#F6CF80] uppercase">Host Control Panel</h3>
+                              <h3 className="font-black text-[10px] tracking-[0.2em] text-[#EF4444] uppercase">Host Control Panel</h3>
                            </div>
                            <div className="flex items-center gap-4 relative">
-                              <button onClick={() => setShowSpeedMenu(!showSpeedMenu)} className="flex items-center gap-2 hover:text-[#F6CF80] transition-colors">
+                              <button onClick={() => setShowSpeedMenu(!showSpeedMenu)} className="flex items-center gap-2 hover:text-[#EF4444] transition-colors">
                                 <Zap size={16} /> <span className="font-mono text-[10px] font-black">{playbackSpeed}x</span>
                               </button>
                               <AnimatePresence>
                                 {showSpeedMenu && (
                                   <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="absolute top-8 right-12 bg-black/80 backdrop-blur-xl border border-white/10 p-2 rounded-xl z-50 min-w-[80px]">
                                     {[0.5, 1, 1.5, 2].map(s => (
-                                      <button key={s} onClick={() => changeSpeed(s)} className={`w-full text-left px-3 py-1.5 rounded-lg text-[10px] font-black transition-colors ${playbackSpeed === s ? 'text-[#F6CF80]' : 'text-white/40 hover:text-white'}`}>
+                                      <button key={s} onClick={() => changeSpeed(s)} className={`w-full text-left px-3 py-1.5 rounded-lg text-[10px] font-black transition-colors ${playbackSpeed === s ? 'text-[#EF4444]' : 'text-white/40 hover:text-white'}`}>
                                         {s}x
                                       </button>
                                     ))}
                                   </motion.div>
                                 )}
                               </AnimatePresence>
-                              <button onClick={toggleFullScreen} className="hover:text-[#F6CF80]"><Maximize2 size={18} /></button>
+                              <button onClick={toggleFullScreen} className="hover:text-[#EF4444]"><Maximize2 size={18} /></button>
                            </div>
                         </div>
 
                         <div className="flex flex-col gap-8">
                            <div className="flex items-center justify-center gap-12">
-                              <button onClick={() => skipTime(-10)} className="text-white/60 hover:text-[#F6CF80] transition-colors"><RotateCcw size={36} /></button>
-                              <button onClick={togglePlay} className="w-24 h-24 bg-[#F6CF80] text-black rounded-[32px] flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-2xl">
+                              <button onClick={() => skipTime(-10)} className="text-white/60 hover:text-[#EF4444] transition-colors"><RotateCcw size={36} /></button>
+                              <button onClick={togglePlay} className="w-24 h-24 bg-[#EF4444] text-black rounded-[32px] flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-2xl">
                                  {isPlaying ? <Pause size={44} fill="black" /> : <Play size={44} fill="black" className="ml-1" />}
                               </button>
-                              <button onClick={() => skipTime(10)} className="text-white/60 hover:text-[#F6CF80] transition-colors"><RotateCw size={36} /></button>
+                              <button onClick={() => skipTime(10)} className="text-white/60 hover:text-[#EF4444] transition-colors"><RotateCw size={36} /></button>
                            </div>
                            <div className="p-1 px-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/5 flex items-center gap-4">
                               <span className="text-[10px] font-black font-mono text-white/40 w-12">{Math.floor(currentTime/60)}:{Math.floor(currentTime%60).toString().padStart(2,'0')}</span>
@@ -479,7 +479,7 @@ const NobarRoom = () => {
                                  if (videoRef.current) videoRef.current.currentTime = pos * duration;
                                  if (roomIdFromUrl) roomService.updatePlayback(roomIdFromUrl, isPlaying, videoRef.current!.currentTime);
                               }}>
-                                 <div className="absolute top-0 left-0 h-full bg-[#F6CF80]" style={{ width: `${(currentTime/duration)*100}%` }}></div>
+                                 <div className="absolute top-0 left-0 h-full bg-[#EF4444]" style={{ width: `${(currentTime/duration)*100}%` }}></div>
                               </div>
                               <span className="text-[10px] font-black font-mono text-white/40 w-12">{Math.floor(duration/60)}:{Math.floor(duration%60).toString().padStart(2,'0')}</span>
                            </div>
@@ -492,7 +492,7 @@ const NobarRoom = () => {
                   <div className="bg-[#16161a] p-8 rounded-[3rem] border border-white/5 shadow-2xl relative overflow-hidden group">
                      <div className="relative z-10 space-y-6">
                         <div className="flex items-center justify-between">
-                           <h3 className="font-black text-xs uppercase tracking-widest text-[#F6CF80]">EPISODE LAINNYA</h3>
+                           <h3 className="font-black text-xs uppercase tracking-widest text-[#EF4444]">EPISODE LAINNYA</h3>
                         </div>
                         <div className="flex flex-wrap gap-2">
                            {episodes.map((ep: any) => (
@@ -503,7 +503,7 @@ const NobarRoom = () => {
                                   await roomService.startWatching(roomIdFromUrl!, newPath);
                                   navigate(newPath);
                                 }}
-                                className={`w-11 h-11 rounded-xl flex items-center justify-center font-black text-xs transition-all ${ep.index.toString() === episode ? 'bg-[#F6CF80] text-black' : 'bg-white/5 text-white/30 hover:bg-white/10'}`}
+                                className={`w-11 h-11 rounded-xl flex items-center justify-center font-black text-xs transition-all ${ep.index.toString() === episode ? 'bg-[#EF4444] text-black' : 'bg-white/5 text-white/30 hover:bg-white/10'}`}
                               >
                                  {ep.index}
                               </button>
@@ -518,14 +518,14 @@ const NobarRoom = () => {
                <div className="bg-[#111114] rounded-[2.5rem] border border-white/5 p-6 shadow-2xl">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
-                      <Users size={18} className="text-[#F6CF80]" />
+                      <Users size={18} className="text-[#EF4444]" />
                       <h4 className="font-black text-[10px] uppercase tracking-[0.2em]">Penonton ({activeRoom?.members.length || 0})</h4>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-4">
                     {activeRoom?.members.map((member) => (
                       <div key={member.uid} className="flex flex-col items-center gap-2">
-                        <div className={`w-12 h-12 rounded-2xl overflow-hidden border-2 ${member.uid === activeRoom.hostId ? 'border-[#F6CF80]' : 'border-white/5'}`}>
+                        <div className={`w-12 h-12 rounded-2xl overflow-hidden border-2 ${member.uid === activeRoom.hostId ? 'border-[#EF4444]' : 'border-white/5'}`}>
                           <img 
                             src={getImageUrl(member.avatar) || `https://api.dicebear.com/7.x/avataaars/svg?seed=${member.name}`} 
                             onError={(e) => handleImageError(e, member.avatar || '')}
@@ -533,7 +533,7 @@ const NobarRoom = () => {
                             alt="" 
                           />
                         </div>
-                        <span className={`text-[8px] font-black uppercase tracking-widest ${member.uid === activeRoom.hostId ? 'text-[#F6CF80]' : 'text-white/40'}`}>
+                        <span className={`text-[8px] font-black uppercase tracking-widest ${member.uid === activeRoom.hostId ? 'text-[#EF4444]' : 'text-white/40'}`}>
                           {member.uid === activeRoom.hostId ? 'HOST' : (member.name?.split(' ')[0] || 'User')}
                         </span>
                       </div>
@@ -543,7 +543,7 @@ const NobarRoom = () => {
 
                <div className="bg-[#111114] rounded-[3rem] border border-white/5 flex flex-col h-[500px] shadow-2xl relative overflow-hidden">
                   <div className="p-6 border-b border-white/5 bg-black/20 flex items-center justify-between">
-                     <h4 className="font-black text-[10px] uppercase tracking-[0.2em] text-[#F6CF80]">Chat Nobar</h4>
+                     <h4 className="font-black text-[10px] uppercase tracking-[0.2em] text-[#EF4444]">Chat Nobar</h4>
                      <div className="flex items-center gap-2">
                        <span className="text-[9px] font-black text-green-500 uppercase">Live</span>
                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -553,7 +553,7 @@ const NobarRoom = () => {
                      {messages.map((msg) => (
                        <div key={msg.id} className={`flex flex-col ${msg.senderId === auth.currentUser?.uid ? 'items-end' : 'items-start'}`}>
                            <span className="text-[8px] font-black text-white/20 uppercase tracking-widest mb-1 px-1">{msg.senderName}</span>
-                           <div className={`max-w-[90%] px-4 py-3 rounded-2xl text-[11px] font-medium ${msg.senderId === auth.currentUser?.uid ? 'bg-[#F6CF80] text-black rounded-tr-none' : 'bg-white/5 text-white/80 rounded-tl-none border border-white/5'}`}>
+                           <div className={`max-w-[90%] px-4 py-3 rounded-2xl text-[11px] font-medium ${msg.senderId === auth.currentUser?.uid ? 'bg-[#EF4444] text-black rounded-tr-none' : 'bg-white/5 text-white/80 rounded-tl-none border border-white/5'}`}>
                              {msg.text}
                            </div>
                        </div>
@@ -569,7 +569,7 @@ const NobarRoom = () => {
                           onChange={(e) => setChatText(e.target.value)}
                           className="w-full bg-black/40 border border-white/10 rounded-2xl py-4 pl-5 pr-14 text-xs font-medium outline-none"
                         />
-                        <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#F6CF80] text-black rounded-xl flex items-center justify-center">
+                        <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#EF4444] text-black rounded-xl flex items-center justify-center">
                            <Send size={16} />
                         </button>
                      </form>
@@ -587,10 +587,10 @@ const NobarRoom = () => {
                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-2 leading-none">{anime.title}</h2>
                  <p className="text-white/20 text-[10px] uppercase tracking-[0.4em] mb-10">{anime.alternative_title || anime.title}</p>
                  <div className="flex flex-wrap justify-center gap-3 mb-10">
-                    <span className="bg-[#F6CF80] text-black text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest">{anime.type || 'SERIES'}</span>
+                    <span className="bg-[#EF4444] text-black text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest">{anime.type || 'SERIES'}</span>
                     <span className="bg-white/5 text-white/60 text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest border border-white/5">{anime.status || 'FINISHED'}</span>
                     <span className="bg-white/5 text-white/60 text-[9px] font-black px-5 py-2 rounded-lg uppercase tracking-widest border border-white/5">{anime.year || '2024'}</span>
-                    <div className="flex items-center gap-2 text-[#F6CF80] font-black text-[9px] px-5 py-2 bg-[#F6CF80]/5 rounded-lg border border-[#F6CF80]/10 tracking-widest">
+                    <div className="flex items-center gap-2 text-[#EF4444] font-black text-[9px] px-5 py-2 bg-[#EF4444]/5 rounded-lg border border-[#EF4444]/10 tracking-widest">
                       <Star size={12} fill="currentColor"/> {anime.favorites || '0'}
                     </div>
                  </div>
@@ -611,7 +611,7 @@ const NobarRoom = () => {
                        <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.4em]">GENRE & THEMES</p>
                        <div className="flex flex-wrap gap-x-3 gap-y-1">
                           {anime.genre?.split(',').map((g: any, i: any) => (
-                             <span key={i} className="text-sm font-black text-[#F6CF80] uppercase tracking-tight">{g.trim()}</span>
+                             <span key={i} className="text-sm font-black text-[#EF4444] uppercase tracking-tight">{g.trim()}</span>
                           ))}
                        </div>
                     </div>
@@ -623,8 +623,8 @@ const NobarRoom = () => {
          {/* Active Rooms Section - Global Visibility */}
          <div className="mt-32 w-full space-y-10">
             <div className="flex flex-col text-left">
-               <h3 className="text-[#F6CF80] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2">
-                  <div className="w-6 h-0.5 bg-[#F6CF80]"></div>
+               <h3 className="text-[#EF4444] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2">
+                  <div className="w-6 h-0.5 bg-[#EF4444]"></div>
                   Sedang Berlangsung
                </h3>
                <h3 className="text-white font-black uppercase text-xl md:text-3xl tracking-tight">Pindah Nobar Lain</h3>
@@ -657,7 +657,7 @@ const NobarRoom = () => {
                               
                               {/* Room Status Badges */}
                               <div className="absolute top-6 inset-x-6 flex justify-between items-start z-10">
-                                 <div className="flex items-center gap-2 bg-[#F6CF80] px-4 py-2 rounded-2xl border border-white/20 shadow-xl shadow-[#F6CF80]/20 scale-100 group-hover:scale-110 transition-transform">
+                                 <div className="flex items-center gap-2 bg-[#EF4444] px-4 py-2 rounded-2xl border border-white/20 shadow-xl shadow-[#EF4444]/20 scale-100 group-hover:scale-110 transition-transform">
                                     <div className="w-2 h-2 bg-black rounded-full animate-pulse" />
                                     <span className="text-[10px] font-black uppercase text-black tracking-[0.2em]">LIHAT LIVE • {room.members?.length || 1}</span>
                                  </div>
@@ -675,21 +675,21 @@ const NobarRoom = () => {
                                              alt=""
                                           />
                                        </div>
-                                       <span className="text-[10px] font-black text-[#F6CF80] uppercase tracking-widest">{room.hostName}</span>
+                                       <span className="text-[10px] font-black text-[#EF4444] uppercase tracking-widest">{room.hostName}</span>
                                     </div>
-                                    <h4 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 group-hover:text-[#F6CF80] transition-colors line-clamp-2 drop-shadow-lg">{room.animeTitle}</h4>
+                                    <h4 className="text-xl md:text-2xl font-black text-white leading-tight mb-2 group-hover:text-[#EF4444] transition-colors line-clamp-2 drop-shadow-lg">{room.animeTitle}</h4>
                                     <p className="text-xs text-white/40 font-black uppercase tracking-[0.3em]">EPISODE {room.episodeIndex + 1}</p>
                                  </div>
                                  
                                  <div className="flex items-center gap-2 w-full translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                                    <button className="flex-1 py-4 bg-[#F6CF80] text-black rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-[#F6CF80]/20 flex items-center justify-center gap-2">
+                                    <button className="flex-1 py-4 bg-[#EF4444] text-black rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-[#EF4444]/20 flex items-center justify-center gap-2">
                                        <Zap size={16} fill="currentColor" /> PINDAH NOBAR
                                     </button>
                                  </div>
                               </div>
                               
                               {/* Hover Overlay Light */}
-                              <div className="absolute inset-0 bg-[#F6CF80]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                              <div className="absolute inset-0 bg-[#EF4444]/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                            </div>
                         ))}
                      </div>
@@ -716,7 +716,7 @@ const NobarRoom = () => {
          {isHost && recommendations.length > 0 && (
             <div className="mt-32 space-y-10">
                <div className="flex flex-col text-left">
-                  <h3 className="text-[#F6CF80] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2"><div className="w-6 h-0.5 bg-[#F6CF80]"></div>Host Smart Pick</h3>
+                  <h3 className="text-[#EF4444] font-black uppercase text-[10px] tracking-[0.4em] mb-2 flex items-center gap-2"><div className="w-6 h-0.5 bg-[#EF4444]"></div>Host Smart Pick</h3>
                   <h3 className="text-white font-black uppercase text-xl md:text-3xl tracking-tight">Mungkin Kamu Suka</h3>
                </div>
                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -728,11 +728,11 @@ const NobarRoom = () => {
                              <img src={getImageUrl(a.image_poster)} onError={(e) => handleImageError(e, a.image_poster)} className="w-full h-full object-cover" alt="" />
                           </div>
                           <div className="flex-1 min-w-0">
-                             <div className="flex items-center gap-2 mb-1"><Star size={10} className="text-[#F6CF80] fill-[#F6CF80]" /><span className="text-[9px] font-black text-[#F6CF80] uppercase tracking-widest">{a.favorites || '8.5'}</span></div>
-                             <h4 className="text-xs md:text-base font-black text-white uppercase tracking-tight truncate group-hover:text-[#F6CF80] transition-colors">{a.title}</h4>
+                             <div className="flex items-center gap-2 mb-1"><Star size={10} className="text-[#EF4444] fill-[#EF4444]" /><span className="text-[9px] font-black text-[#EF4444] uppercase tracking-widest">{a.favorites || '8.5'}</span></div>
+                             <h4 className="text-xs md:text-base font-black text-white uppercase tracking-tight truncate group-hover:text-[#EF4444] transition-colors">{a.title}</h4>
                              <p className="text-[8px] md:text-[9px] font-black text-white/20 uppercase tracking-widest mt-1 truncate">{a.genre?.split(',').slice(0, 2).join(', ')}</p>
                           </div>
-                          <div className="ml-auto pr-2 opacity-0 group-hover:opacity-100 transition-opacity"><div className="w-8 h-8 rounded-full bg-[#F6CF80] flex items-center justify-center text-black shadow-lg"><Play size={14} fill="currentColor" /></div></div>
+                          <div className="ml-auto pr-2 opacity-0 group-hover:opacity-100 transition-opacity"><div className="w-8 h-8 rounded-full bg-[#EF4444] flex items-center justify-center text-black shadow-lg"><Play size={14} fill="currentColor" /></div></div>
                        </div>
                     </motion.div>
                   ))}

@@ -64,7 +64,7 @@ const Help = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-white font-sans selection:bg-[#F6CF80] selection:text-black pb-32">
+    <div className="min-h-screen bg-[#0a0a0c] text-white font-sans selection:bg-[#EF4444] selection:text-black pb-32">
       <Navbar />
 
       <main className="pt-32 max-w-4xl mx-auto px-6">
@@ -73,7 +73,7 @@ const Help = () => {
           <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="w-16 h-16 bg-[#F6CF80] text-black rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(246,207,128,0.3)] mb-6"
+            className="w-16 h-16 bg-[#EF4444] text-black rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(246,207,128,0.3)] mb-6"
           >
             <HelpCircle size={32} />
           </motion.div>
@@ -83,7 +83,7 @@ const Help = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4"
           >
-            Bantuan & <span className="text-[#F6CF80]">Feedback</span>
+            Bantuan & <span className="text-[#EF4444]">Feedback</span>
           </motion.h1>
           <motion.p 
             initial={{ y: 20, opacity: 0 }}
@@ -100,13 +100,13 @@ const Help = () => {
         <div className="flex p-1.5 bg-white/5 backdrop-blur-xl rounded-[28px] border border-white/5 mb-12 shadow-2xl max-w-sm mx-auto">
           <button 
             onClick={() => setActiveTab('faq')}
-            className={`flex-1 py-4 px-6 rounded-[24px] text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'faq' ? 'bg-[#F6CF80] text-black' : 'text-white/40 hover:text-white'}`}
+            className={`flex-1 py-4 px-6 rounded-[24px] text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'faq' ? 'bg-[#EF4444] text-black' : 'text-white/40 hover:text-white'}`}
           >
             Pusat FAQ
           </button>
           <button 
             onClick={() => setActiveTab('feedback')}
-            className={`flex-1 py-4 px-6 rounded-[24px] text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'feedback' ? 'bg-[#F6CF80] text-black' : 'text-white/40 hover:text-white'}`}
+            className={`flex-1 py-4 px-6 rounded-[24px] text-xs font-black uppercase tracking-widest transition-all ${activeTab === 'feedback' ? 'bg-[#EF4444] text-black' : 'text-white/40 hover:text-white'}`}
           >
              Kirim Saran
           </button>
@@ -123,13 +123,13 @@ const Help = () => {
             >
               {/* FAQ Search */}
               <div className="relative group">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#F6CF80] transition-colors" />
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-[#EF4444] transition-colors" />
                 <input 
                   type="text" 
                   placeholder="Cari solusi kendala anda..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-[#16161a] border border-white/5 rounded-[32px] py-6 pl-16 pr-8 text-sm font-bold text-white focus:outline-none focus:border-[#F6CF80]/40 transition-all placeholder:text-white/10 shadow-2xl"
+                  className="w-full bg-[#16161a] border border-white/5 rounded-[32px] py-6 pl-16 pr-8 text-sm font-bold text-white focus:outline-none focus:border-[#EF4444]/40 transition-all placeholder:text-white/10 shadow-2xl"
                 />
               </div>
 
@@ -138,17 +138,17 @@ const Help = () => {
                 {filteredFaqs.map((faq, idx) => (
                   <div 
                     key={idx}
-                    className="bg-[#16161a] border border-white/5 rounded-[28px] overflow-hidden group hover:border-[#F6CF80]/20 transition-all shadow-xl"
+                    className="bg-[#16161a] border border-white/5 rounded-[28px] overflow-hidden group hover:border-[#EF4444]/20 transition-all shadow-xl"
                   >
                     <button 
                       onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
                       className="w-full p-6 md:p-8 flex items-center justify-between text-left gap-4"
                     >
                       <div className="flex flex-col gap-2">
-                        <span className="text-[9px] font-black uppercase text-[#F6CF80] tracking-[0.3em]">{faq.category}</span>
+                        <span className="text-[9px] font-black uppercase text-[#EF4444] tracking-[0.3em]">{faq.category}</span>
                         <h3 className="text-sm md:text-lg font-black text-white group-hover:translate-x-2 transition-transform">{faq.q}</h3>
                       </div>
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-white/5 text-white/20 transition-all ${expandedFaq === idx ? 'rotate-180 bg-[#F6CF80] text-black shadow-lg shadow-[#F6CF80]/20' : ''}`}>
+                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-white/5 text-white/20 transition-all ${expandedFaq === idx ? 'rotate-180 bg-[#EF4444] text-black shadow-lg shadow-[#EF4444]/20' : ''}`}>
                         <ChevronDown size={20} />
                       </div>
                     </button>
@@ -172,9 +172,9 @@ const Help = () => {
               </div>
 
               {/* Still Need Help? */}
-              <div className="bg-[#16161a] rounded-[40px] p-8 md:p-12 border border-[#F6CF80]/10 flex flex-col md:flex-row items-center justify-between gap-8 mt-20">
+              <div className="bg-[#16161a] rounded-[40px] p-8 md:p-12 border border-[#EF4444]/10 flex flex-col md:flex-row items-center justify-between gap-8 mt-20">
                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-[#F6CF80]/10 rounded-3xl flex items-center justify-center text-[#F6CF80] border border-[#F6CF80]/20">
+                    <div className="w-16 h-16 bg-[#EF4444]/10 rounded-3xl flex items-center justify-center text-[#EF4444] border border-[#EF4444]/20">
                        <MessageSquare size={32} />
                     </div>
                     <div>
@@ -208,9 +208,9 @@ const Help = () => {
                   </div>
 
                   <div className="space-y-4">
-                    <FeedbackInfo icon={<Mail className="text-[#F6CF80]"/>} text="ryu694602@gmail.com" />
-                    <FeedbackInfo icon={<ShieldCheck className="text-[#F6CF80]"/>} text="Data Anonim & Aman" />
-                    <FeedbackInfo icon={<Zap className="text-[#F6CF80]"/>} text="Fast Response System" />
+                    <FeedbackInfo icon={<Mail className="text-[#EF4444]"/>} text="ryu694602@gmail.com" />
+                    <FeedbackInfo icon={<ShieldCheck className="text-[#EF4444]"/>} text="Data Anonim & Aman" />
+                    <FeedbackInfo icon={<Zap className="text-[#EF4444]"/>} text="Fast Response System" />
                   </div>
                 </div>
 
@@ -220,7 +220,7 @@ const Help = () => {
                       <input 
                         type="text" 
                         placeholder="Contoh: Bug di Player..." 
-                        className="w-full bg-black/40 border border-white/5 rounded-[24px] py-4 px-6 text-sm font-bold text-white focus:outline-none focus:border-[#F6CF80]/40 transition-all placeholder:text-white/5"
+                        className="w-full bg-black/40 border border-white/5 rounded-[24px] py-4 px-6 text-sm font-bold text-white focus:outline-none focus:border-[#EF4444]/40 transition-all placeholder:text-white/5"
                       />
                    </div>
                    <div className="space-y-2">
@@ -228,10 +228,10 @@ const Help = () => {
                       <textarea 
                         rows={5}
                         placeholder="Ceritakan detail masalah atau saran fitur yang anda inginkan..." 
-                        className="w-full bg-black/40 border border-white/5 rounded-[24px] py-4 px-6 text-sm font-bold text-white focus:outline-none focus:border-[#F6CF80]/40 transition-all placeholder:text-white/5 resize-none"
+                        className="w-full bg-black/40 border border-white/5 rounded-[24px] py-4 px-6 text-sm font-bold text-white focus:outline-none focus:border-[#EF4444]/40 transition-all placeholder:text-white/5 resize-none"
                       ></textarea>
                    </div>
-                   <button className="w-full bg-[#F6CF80] text-black h-16 rounded-[24px] font-black uppercase text-xs tracking-[0.3em] flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_20px_40px_rgba(246,207,128,0.2)]">
+                   <button className="w-full bg-[#EF4444] text-black h-16 rounded-[24px] font-black uppercase text-xs tracking-[0.3em] flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_20px_40px_rgba(246,207,128,0.2)]">
                       Kirim Feedback <Send size={16} />
                    </button>
                 </div>
@@ -247,7 +247,7 @@ const Help = () => {
 };
 
 const SocialBtn = ({ icon, href }: { icon: any, href: string }) => (
-  <a href={href} className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-white/40 hover:bg-[#F6CF80] hover:text-black transition-all border border-white/5">
+  <a href={href} className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-white/40 hover:bg-[#EF4444] hover:text-black transition-all border border-white/5">
     {icon}
   </a>
 );

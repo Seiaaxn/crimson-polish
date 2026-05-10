@@ -96,28 +96,28 @@ const Footer = () => {
         <div className="absolute top-[-40px] left-1/2 -translate-x-1/2 flex flex-col items-center z-20 pointer-events-none">
           <div className="relative">
              {/* Glow for Center Button */}
-             <div className={`absolute inset-0 blur-2xl rounded-full scale-150 transition-all duration-500 ${location.pathname === '/search' ? 'bg-[#F6CF80]/40' : 'bg-[#F6CF80]/10'}`}></div>
+             <div className={`absolute inset-0 blur-2xl rounded-full scale-150 transition-all duration-500 ${location.pathname === '/search' ? 'bg-[#EF4444]/40' : 'bg-[#EF4444]/10'}`}></div>
              
              <Link 
               to="/search" 
-              className={`w-[74px] h-[74px] rounded-full flex items-center justify-center border-[6px] border-[#0a0a0c] transition-all duration-300 active:scale-90 pointer-events-auto shadow-2xl ${location.pathname === '/search' ? 'bg-[#F6CF80] text-black scale-105' : 'bg-[#1a1a1e] text-white/40 hover:text-white'}`}
+              className={`w-[74px] h-[74px] rounded-full flex items-center justify-center border-[6px] border-[#0a0a0c] transition-all duration-300 active:scale-90 pointer-events-auto shadow-2xl ${location.pathname === '/search' ? 'bg-[#EF4444] text-black scale-105' : 'bg-[#1a1a1e] text-white/40 hover:text-white'}`}
              >
                 <Search className="w-8 h-8" strokeWidth={3} />
              </Link>
           </div>
-          <span className={`text-[9px] font-black uppercase tracking-widest mt-2 transition-all duration-500 ${location.pathname === '/search' ? 'text-[#F6CF80] opacity-100 translate-y-0' : 'text-white/20 opacity-0 translate-y-2'}`}>SEARCH</span>
+          <span className={`text-[9px] font-black uppercase tracking-widest mt-2 transition-all duration-500 ${location.pathname === '/search' ? 'text-[#EF4444] opacity-100 translate-y-0' : 'text-white/20 opacity-0 translate-y-2'}`}>SEARCH</span>
         </div>
 
         {/* Sidebar Actions */}
         <div className="relative z-10 flex w-full h-full px-6">
           <div className="flex-1 flex items-center justify-between pr-8">
             <Link to="/" className="flex flex-col items-center gap-1 group transition-all active:scale-95">
-              <Home className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/' ? 'text-[#F6CF80] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/' ? 2.5 : 2} />
-              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/' ? 'text-[#F6CF80] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>Home</span>
+              <Home className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/' ? 'text-[#EF4444] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/' ? 2.5 : 2} />
+              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/' ? 'text-[#EF4444] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>Home</span>
             </Link>
             <Link to="/schedule" className="flex flex-col items-center gap-1 group transition-all active:scale-95">
-              <Calendar className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/schedule' ? 'text-[#F6CF80] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/schedule' ? 2.5 : 2} />
-              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/schedule' ? 'text-[#F6CF80] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>Schedule</span>
+              <Calendar className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/schedule' ? 'text-[#EF4444] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/schedule' ? 2.5 : 2} />
+              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/schedule' ? 'text-[#EF4444] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>Schedule</span>
             </Link>
           </div>
 
@@ -126,12 +126,12 @@ const Footer = () => {
 
           <div className="flex-1 flex items-center justify-between pl-8">
             <Link to="/history" className="flex flex-col items-center gap-1 group transition-all active:scale-95">
-              <Clock className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/history' ? 'text-[#F6CF80] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/history' ? 2.5 : 2} />
-              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/history' ? 'text-[#F6CF80] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>History</span>
+              <Clock className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/history' ? 'text-[#EF4444] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/history' ? 2.5 : 2} />
+              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/history' ? 'text-[#EF4444] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>History</span>
             </Link>
             <Link to="/profile" className="flex flex-col items-center gap-1 group transition-all active:scale-95">
-              <User className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/profile' ? 'text-[#F6CF80] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/profile' ? 2.5 : 2} />
-              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/profile' ? 'text-[#F6CF80] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>Account</span>
+              <User className={`w-5 h-5 transition-all duration-300 ${location.pathname === '/profile' ? 'text-[#EF4444] -translate-y-1' : 'text-white/30 group-hover:text-white/60'}`} strokeWidth={location.pathname === '/profile' ? 2.5 : 2} />
+              <span className={`text-[8px] font-black uppercase tracking-tighter transition-all duration-500 ${location.pathname === '/profile' ? 'text-[#EF4444] opacity-100 translate-y-0 scale-110' : 'text-white/10 opacity-0 translate-y-2'}`}>Account</span>
             </Link>
           </div>
         </div>
