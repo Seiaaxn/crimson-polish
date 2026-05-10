@@ -109,6 +109,7 @@ export interface HistoryItem {
   duration: number;
   watchedAt: any;
   server?: 'main' | 'backup' | 'sanka';
+  isDevEntry?: boolean;
 }
 
 export interface Comment {
