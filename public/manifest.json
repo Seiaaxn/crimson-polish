@@ -1,0 +1,20 @@
+{
+  "name": "ChisaStream",
+  "short_name": "ChisaStream",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0c",
+  "theme_color": "#F6CF80",
+  "icons": [
+    {
+      "src": "https://repgyetdcodkynrbxocg.supabase.co/storage/v1/object/public/images/telegram-1778401091005-146ffc5f.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://repgyetdcodkynrbxocg.supabase.co/storage/v1/object/public/images/telegram-1778401091005-146ffc5f.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
