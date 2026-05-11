@@ -56,6 +56,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isFetchingMore, setIsFetchingMore] = useState(false);
   const [continueWatching, setContinueWatching] = useState<HistoryItem[]>([]);
+  const [customAnime, setCustomAnime] = useState<any[]>([]);
   const [showContinueWatching, setShowContinueWatching] = useState(true);
   const [heroIndex, setHeroIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -105,6 +106,7 @@ const Home = () => {
     });
 
     window.scrollTo(0, 0);
+    userService.getCustomAnime().then(setCustomAnime);
     if (window.__NEFUSOFT_CACHE__) return () => unsubscribe();
     
     let isMounted = true;
