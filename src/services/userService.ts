@@ -285,7 +285,15 @@ export const userService = {
     try {
       const profile = await userService.getProfile();
       const currentInfo = profile.levelInfo || { level: 1, exp: 0, unlockedBadges: [] };
-      const newExp = currentInfo.exp + amount;
+      // Premium users earn 5x EXP from any source
+      let multiplier = 1;
+      if (profile.isPremium) {
+        const stillActive = !profile.premiumUntil
+          || (profile.premiumUntil.toDate ? profile.premiumUntil.toDate().getTime() : new Date(profile.premiumUntil).getTime()) > Date.now();
+        if (stillActive) multiplier = 5;
+      }
+      const gained = amount * multiplier;
+      const newExp = currentInfo.exp + gained;
       const newLevel = getLevelFromExp(newExp);
       
       const updates: any = {
