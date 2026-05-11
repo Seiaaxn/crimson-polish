@@ -28,6 +28,7 @@ import ComicHome from './pages/ComicHome';
 import ComicDetail from './pages/ComicDetail';
 import ComicRead from './pages/ComicRead';
 import Welcome from './pages/Welcome';
+import Premium from './pages/Premium';
 import { auth } from './lib/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { Loader2 } from 'lucide-react';
@@ -113,6 +114,7 @@ export default function App() {
           <Route path="/comic" element={<ComicHome />} />
           <Route path="/comic/:slug" element={<ComicDetail />} />
           <Route path="/comic-read/:chapterSlug" element={<ComicRead />} />
+          <Route path="/premium" element={<Premium />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ErrorBoundary>

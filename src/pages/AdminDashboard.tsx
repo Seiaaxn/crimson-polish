@@ -19,7 +19,11 @@ import {
   Loader2,
   RefreshCcw,
   CheckCircle2,
-  AlertCircle
+  AlertCircle,
+  Crown,
+  Plus,
+  Upload,
+  Film
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { userService, UserProfile } from '../services/userService';
@@ -34,6 +38,9 @@ interface AdminStats {
 const AdminDashboard: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
   const [users, setUsers] = useState<(UserProfile & { uid: string, isAdmin?: boolean })[]>([]);
+  const [customAnime, setCustomAnime] = useState<any[]>([]);
+  const [form, setForm] = useState({ title: '', image_poster: '', image_cover: '', synopsis: '', type: 'TV', year: '', genre: '', episode: '', videoUrl: '', category: 'anime' as 'anime' | 'comic' | 'donghua' });
+  const [submitting, setSubmitting] = useState(false);
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -69,12 +76,14 @@ const AdminDashboard: React.FC = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const [allUsers, adminStats] = await Promise.all([
+      const [allUsers, adminStats, animes] = await Promise.all([
         userService.getAllUsers(),
-        userService.getAdminStats()
+        userService.getAdminStats(),
+        userService.getCustomAnime()
       ]);
       setUsers(allUsers);
       setStats(adminStats);
+      setCustomAnime(animes);
     } catch (error) {
       console.error('Error fetching admin data:', error);
     } finally {
@@ -113,6 +122,50 @@ const AdminDashboard: React.FC = () => {
       if (!isNaN(amount)) {
         handleAction(uid, () => userService.adminUpdateUserLevel(uid, amount));
       }
+    }
+  };
+
+  const togglePremium = (uid: string, currentlyPremium: boolean) => {
+    if (currentlyPremium) {
+      if (!window.confirm('Cabut Premium dari user ini?')) return;
+      handleAction(uid, () => userService.adminRevokePremium(uid));
+    } else {
+      const daysStr = window.prompt('Berikan Premium berapa hari? (7 = mingguan, 30 = bulanan, 365 = tahunan)', '7');
+      if (!daysStr) return;
+      const days = parseInt(daysStr);
+      if (isNaN(days) || days <= 0) return;
+      handleAction(uid, () => userService.adminGrantPremium(uid, days));
+    }
+  };
+
+  const submitAnime = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.title || !form.image_poster) {
+      setFeedback({ type: 'error', message: 'Title dan poster wajib diisi' });
+      return;
+    }
+    setSubmitting(true);
+    try {
+      await userService.adminAddCustomAnime(form);
+      setFeedback({ type: 'success', message: 'Anime berhasil diupload!' });
+      setForm({ title: '', image_poster: '', image_cover: '', synopsis: '', type: 'TV', year: '', genre: '', episode: '', videoUrl: '', category: 'anime' });
+      const animes = await userService.getCustomAnime();
+      setCustomAnime(animes);
+    } catch (err: any) {
+      setFeedback({ type: 'error', message: err.message || 'Upload gagal' });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const removeCustomAnime = async (id: string) => {
+    if (!window.confirm('Hapus anime ini?')) return;
+    try {
+      await userService.adminDeleteCustomAnime(id);
+      setCustomAnime(prev => prev.filter(a => a.id !== id));
+      setFeedback({ type: 'success', message: 'Anime dihapus' });
+    } catch (err: any) {
+      setFeedback({ type: 'error', message: err.message });
     }
   };
 
@@ -312,6 +365,13 @@ const AdminDashboard: React.FC = () => {
                             >
                               <Award size={18} />
                             </button>
+                            <button
+                              onClick={() => togglePremium(user.uid, !!user.isPremium)}
+                              title={user.isPremium ? 'Cabut Premium' : 'Beri Premium'}
+                              className={`p-2.5 border rounded-xl transition-all ${user.isPremium ? 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/20' : 'bg-white/5 border-white/5 hover:bg-yellow-500/10 hover:border-yellow-500/20 hover:text-yellow-400'}`}
+                            >
+                              <Crown size={18} />
+                            </button>
                             <button 
                               onClick={() => toggleAdmin(user.uid, !!user.isAdmin)}
                               title={user.isAdmin ? "Revoke Admin" : "Make Admin"}
@@ -345,6 +405,60 @@ const AdminDashboard: React.FC = () => {
               </tbody>
             </table>
           </div>
+        </section>
+
+        {/* Custom Anime Upload */}
+        <section className="mt-12 bg-[#16161a] border border-white/5 rounded-[40px] overflow-hidden shadow-2xl">
+          <div className="p-8 md:p-10 border-b border-white/5 bg-white/[0.02]">
+            <div className="flex items-center gap-3 mb-1">
+              <Film className="text-[#EF4444]" size={20} />
+              <h3 className="text-xl font-black uppercase tracking-tight">Upload Anime / Comic / Donghua</h3>
+            </div>
+            <p className="text-xs font-bold text-white/30 uppercase tracking-widest">Konten yang diupload akan tampil di halaman Home dan section terkait</p>
+          </div>
+          <form onSubmit={submitAnime} className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-2">
+              {(['anime', 'comic', 'donghua'] as const).map(c => (
+                <button type="button" key={c} onClick={() => setForm({ ...form, category: c })}
+                  className={`py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all border ${form.category === c ? 'bg-[#EF4444] text-black border-[#EF4444]' : 'bg-white/5 text-white/40 border-white/5 hover:border-white/10'}`}>
+                  {c}
+                </button>
+              ))}
+            </div>
+            <input required value={form.title} onChange={e => setForm({ ...form, title: e.target.value })} placeholder="Judul *" className="bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <input value={form.episode} onChange={e => setForm({ ...form, episode: e.target.value })} placeholder="Episode (mis. Ep 12)" className="bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <input required value={form.image_poster} onChange={e => setForm({ ...form, image_poster: e.target.value })} placeholder="URL Poster *" className="md:col-span-2 bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <input value={form.image_cover} onChange={e => setForm({ ...form, image_cover: e.target.value })} placeholder="URL Cover (opsional)" className="md:col-span-2 bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <input value={form.type} onChange={e => setForm({ ...form, type: e.target.value })} placeholder="Type (TV/Movie/OVA)" className="bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <input value={form.year} onChange={e => setForm({ ...form, year: e.target.value })} placeholder="Tahun" className="bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <input value={form.genre} onChange={e => setForm({ ...form, genre: e.target.value })} placeholder="Genre (Action, Romance, ...)" className="md:col-span-2 bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <input value={form.videoUrl} onChange={e => setForm({ ...form, videoUrl: e.target.value })} placeholder="Video URL (link nonton/embed)" className="md:col-span-2 bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <textarea value={form.synopsis} onChange={e => setForm({ ...form, synopsis: e.target.value })} placeholder="Sinopsis" rows={3} className="md:col-span-2 bg-white/5 border border-white/5 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#EF4444]/40" />
+            <button disabled={submitting} type="submit" className="md:col-span-2 flex items-center justify-center gap-2 py-3 bg-[#EF4444] text-black font-black text-xs uppercase tracking-widest rounded-xl hover:bg-[#DC2626] transition-all disabled:opacity-50">
+              {submitting ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />}
+              {submitting ? 'Mengupload...' : 'Upload Konten'}
+            </button>
+          </form>
+
+          {customAnime.length > 0 && (
+            <div className="px-8 md:px-10 pb-10">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/30 mb-4">Konten Tersimpan ({customAnime.length})</h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {customAnime.map(a => (
+                  <div key={a.id} className="relative group">
+                    <div className="aspect-[3/4.2] rounded-xl overflow-hidden bg-white/5 border border-white/5">
+                      <img src={a.image_poster} alt={a.title} className="w-full h-full object-cover" />
+                    </div>
+                    <p className="mt-2 text-[10px] font-black uppercase tracking-tight line-clamp-1">{a.title}</p>
+                    <p className="text-[9px] text-white/30 uppercase tracking-widest">{a.category}</p>
+                    <button onClick={() => removeCustomAnime(a.id)} className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/70 text-red-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Trash2 size={12} />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       </main>
     </div>

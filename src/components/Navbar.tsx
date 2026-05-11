@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, User, History, X, Play, Star, Loader2, Home, Users, Calendar, ChevronRight, LayoutGrid, Zap, MessageSquare, Film, CheckCircle2, Shield, BookOpen } from 'lucide-react';
+import { Search, User, History, X, Play, Star, Loader2, Home, Users, Calendar, ChevronRight, LayoutGrid, Zap, MessageSquare, Film, CheckCircle2, Shield, BookOpen, Crown } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { getImageUrl, handleImageError } from '../lib/imageUtils';
@@ -26,6 +26,7 @@ const Navbar = () => {
   const [searchSource, setSearchSource] = useState<'main' | 'backup' | 'sanka' | 'comic'>('sanka');
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isPremium, setIsPremium] = useState(false);
 
   useEffect(() => {
     if (profile?.settings?.apiServer) {
@@ -37,6 +38,8 @@ const Navbar = () => {
   const checkAdmin = async () => {
     const status = await userService.isAdmin();
     setIsAdmin(status);
+    const premium = await userService.isPremium();
+    setIsPremium(premium);
   };
 
   useEffect(() => {
@@ -193,6 +196,7 @@ const Navbar = () => {
                   { name: 'Dashboard', icon: Home, path: '/' },
                   { name: 'Welcome Banner', icon: Zap, path: '/welcome' },
                   ...(isAdmin ? [{ name: 'Admin Panel', icon: Shield, path: '/admin', badge: 'System' }] : []),
+                  { name: isPremium ? 'Premium Aktif' : 'Upgrade Premium', icon: Crown, path: '/premium', badge: isPremium ? 'Active' : 'Pro' },
                   { name: 'Baca Manga', icon: BookOpen, path: '/comic', badge: 'New' },
                   { name: 'Terbaru', icon: Zap, path: '/latest?src=sanka', badge: 'Hot' },
                   { name: 'Sedang Berjalan', icon: Calendar, path: '/ongoing' },
@@ -430,6 +434,8 @@ const Navbar = () => {
                 <div className="flex items-center gap-1.5">
                    <span className="text-[10px] font-black text-white group-hover:text-[#EF4444] transition-colors">LVL {profile.levelInfo?.level || 1}</span>
                    <Zap size={8} fill="currentColor" className="text-[#EF4444]" />
+                   {isAdmin && <span title="Admin" className="px-1 py-0.5 rounded bg-[#EF4444] text-black text-[7px] font-black uppercase tracking-widest">Admin</span>}
+                   {isPremium && !isAdmin && <Crown size={8} className="text-yellow-400 fill-yellow-400" />}
                 </div>
                 <div className="w-10 h-1 bg-white/10 rounded-full mt-0.5 overflow-hidden">
                    <div 
