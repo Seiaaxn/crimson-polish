@@ -423,6 +423,37 @@ const Home = () => {
         </section>
       )}
 
+      {/* CUSTOM UPLOADS (Admin) */}
+      {customAnime.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 mt-8 md:mt-10">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#EF4444] mb-1">Eksklusif Chisastream</p>
+              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white">Pilihan Admin</h3>
+            </div>
+          </div>
+          <div className="flex gap-3 md:gap-4 overflow-x-auto no-scrollbar pb-2">
+            {customAnime.map((a) => (
+              <div
+                key={a.id}
+                onClick={() => {
+                  if (a.videoUrl) window.open(a.videoUrl, '_blank');
+                }}
+                className="min-w-[130px] md:min-w-[160px] cursor-pointer group"
+              >
+                <div className="relative aspect-[3/4.2] rounded-xl overflow-hidden bg-[#16161a] border border-white/5 shadow-lg group-hover:border-[#EF4444]/40 transition-all">
+                  <img src={getImageUrl(a.image_poster)} onError={(e) => handleImageError(e, a.image_poster)} className="w-full h-full object-cover group-hover:scale-105 transition-transform" alt={a.title} />
+                  <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-[#EF4444] text-black text-[8px] font-black uppercase tracking-widest rounded">{a.category || 'anime'}</div>
+                  {a.episode && <div className="absolute bottom-2 right-2 px-1.5 py-0.5 bg-black/70 text-white text-[9px] font-black rounded">{a.episode}</div>}
+                </div>
+                <p className="mt-2 text-xs font-black text-white uppercase tracking-tight line-clamp-1 group-hover:text-[#EF4444] transition-colors">{a.title}</p>
+                {a.genre && <p className="text-[9px] text-white/30 uppercase tracking-widest line-clamp-1">{a.genre}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* INSTALL APP BANNER */}
       <section className="max-w-7xl mx-auto px-4 mt-8 md:mt-10">
         <div className="relative overflow-hidden bg-gradient-to-br from-[#EF4444]/20 to-[#16161a] p-6 md:p-8 rounded-[40px] border border-[#EF4444]/30 shadow-[0_0_40px_rgba(246,207,128,0.1)] group">
