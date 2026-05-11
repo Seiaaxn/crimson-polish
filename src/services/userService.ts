@@ -70,6 +70,8 @@ export interface UserProfile {
   }[];
   uid?: string;
   isDevEntry?: boolean;
+  isPremium?: boolean;
+  premiumUntil?: any;
 }
 
 export interface UserStats {
