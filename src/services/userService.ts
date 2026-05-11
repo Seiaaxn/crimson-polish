@@ -809,12 +809,12 @@ export const userService = {
       
       // Fallback for owner: if they are the designated owner but doc doesn't exist, 
       // they should be allowed to view (bootstrap will catch up)
-      const ownerEmail = 'gadingkencana04@gmail.com';
+      const ownerEmail = 'ryu694602@gmail.com';
       return user.email === ownerEmail;
     } catch (e) {
       // Even if fetch fails, if email matches owner, we allow access 
       // (the subsequent data fetches will still be protected by rules)
-      const ownerEmail = 'gadingkencana04@gmail.com';
+      const ownerEmail = 'ryu694602@gmail.com';
       return user.email === ownerEmail;
     }
   },
@@ -929,7 +929,7 @@ export const userService = {
     if (!user) return;
     
     // We only allow bootstrapping if the user is the one specified in the metadata or the first one ever
-    const ownerEmail = 'gadingkencana04@gmail.com'; 
+    const ownerEmail = 'ryu694602@gmail.com'; 
     if (user.email === ownerEmail) {
       try {
         const adminRef = doc(db, `admins/${user.uid}`);
