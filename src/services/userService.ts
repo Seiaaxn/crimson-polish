@@ -969,6 +969,86 @@ export const userService = {
     } catch (error) {
        handleFirestoreError(error, OperationType.UPDATE, `users/${uid}`);
     }
+  },
+
+  // --- PREMIUM ---
+  isPremium: async (): Promise<boolean> => {
+    const user = auth.currentUser;
+    if (!user) return false;
+    try {
+      const snap = await getDoc(doc(db, `users/${user.uid}`));
+      if (!snap.exists()) return false;
+      const data = snap.data() as UserProfile;
+      if (!data.isPremium) return false;
+      if (data.premiumUntil) {
+        const until = data.premiumUntil.toDate ? data.premiumUntil.toDate() : new Date(data.premiumUntil);
+        if (until.getTime() < Date.now()) return false;
+      }
+      return true;
+    } catch { return false; }
+  },
+
+  adminGrantPremium: async (targetUid: string, days: number) => {
+    if (!(await userService.isAdmin())) throw new Error('Unauthorized');
+    const until = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
+    await updateDoc(doc(db, `users/${targetUid}`), {
+      isPremium: true,
+      premiumUntil: Timestamp.fromDate(until)
+    });
+  },
+
+  adminRevokePremium: async (targetUid: string) => {
+    if (!(await userService.isAdmin())) throw new Error('Unauthorized');
+    await updateDoc(doc(db, `users/${targetUid}`), {
+      isPremium: false,
+      premiumUntil: null
+    });
+  },
+
+  // --- CUSTOM ANIME (admin uploads, shown across pages) ---
+  getCustomAnime: async (): Promise<any[]> => {
+    try {
+      const snap = await getDocs(collection(db, 'custom_anime'));
+      return snap.docs.map(d => ({ id: d.id, ...(d.data() as any) }))
+        .sort((a, b) => {
+          const at = a.createdAt?.toMillis ? a.createdAt.toMillis() : 0;
+          const bt = b.createdAt?.toMillis ? b.createdAt.toMillis() : 0;
+          return bt - at;
+        });
+    } catch (e) {
+      console.error('Failed to load custom anime', e);
+      return [];
+    }
+  },
+
+  adminAddCustomAnime: async (data: {
+    title: string;
+    image_poster: string;
+    image_cover?: string;
+    synopsis?: string;
+    type?: string;
+    year?: string;
+    genre?: string;
+    episode?: string;
+    videoUrl?: string;
+    category?: 'anime' | 'comic' | 'donghua';
+  }) => {
+    if (!(await userService.isAdmin())) throw new Error('Unauthorized');
+    const id = (data.title || 'item').toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 80) + '-' + Date.now().toString(36);
+    await setDoc(doc(db, `custom_anime/${id}`), {
+      ...data,
+      image_cover: data.image_cover || data.image_poster,
+      category: data.category || 'anime',
+      isCustom: true,
+      createdBy: auth.currentUser?.uid || null,
+      createdAt: serverTimestamp()
+    });
+    return id;
+  },
+
+  adminDeleteCustomAnime: async (id: string) => {
+    if (!(await userService.isAdmin())) throw new Error('Unauthorized');
+    await deleteDoc(doc(db, `custom_anime/${id}`));
   }
 };
 
