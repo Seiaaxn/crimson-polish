@@ -12,9 +12,9 @@ const buildWaLink = (plan: string) =>
   )}`;
 
 const PLANS = [
-  { id: 'weekly', label: 'Mingguan', price: 'Rp 5.000', period: '/ minggu', highlight: true, features: ['Tanpa iklan', 'Akses semua episode', 'Badge Premium', 'Prioritas dukungan'] },
-  { id: 'monthly', label: 'Bulanan', price: 'Rp 18.000', period: '/ bulan', highlight: false, features: ['Semua fitur Mingguan', 'Hemat 10%', 'Download offline'] },
-  { id: 'yearly', label: 'Tahunan', price: 'Rp 180.000', period: '/ tahun', highlight: false, features: ['Semua fitur Bulanan', 'Hemat 25%', 'Akses early release'] },
+  { id: 'weekly', label: 'Mingguan', price: 'Rp 5.000', period: '/ minggu', highlight: true, features: ['EXP 5x lebih cepat', 'Tanpa iklan', 'Akses semua episode', 'Badge Premium', 'Prioritas dukungan'] },
+  { id: 'monthly', label: 'Bulanan', price: 'Rp 18.000', period: '/ bulan', highlight: false, features: ['EXP 5x lebih cepat', 'Semua fitur Mingguan', 'Hemat 10%', 'Download offline'] },
+  { id: 'yearly', label: 'Tahunan', price: 'Rp 180.000', period: '/ tahun', highlight: false, features: ['EXP 5x lebih cepat', 'Semua fitur Bulanan', 'Hemat 25%', 'Akses early release'] },
 ];
 
 const Premium: React.FC = () => {
