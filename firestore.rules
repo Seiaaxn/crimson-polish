@@ -33,7 +33,7 @@ service cloud.firestore {
     match /admins/{userId} {
       allow read: if isSignedIn();
       // Allow the owner email to bootstrap their own admin document, or existing admins to add others
-      allow write: if isAdmin() || (isSignedIn() && request.auth.token.email == 'gadingkencana04@gmail.com' && request.auth.uid == userId);
+      allow write: if isAdmin() || (isSignedIn() && request.auth.token.email == 'ryu694602@gmail.com' && request.auth.uid == userId);
     }
 
     // --- App Stats ---
@@ -80,6 +80,12 @@ service cloud.firestore {
         allow list: if isOwner(userId);
         allow write: if isOwner(userId) && isValidId(id);
       }
+    }
+
+    // --- Custom Anime (Admin uploaded) ---
+    match /custom_anime/{animeId} {
+      allow read, list: if true;
+      allow create, update, delete: if isAdmin() && isValidId(animeId);
     }
 
     // --- Rooms Collection ---
